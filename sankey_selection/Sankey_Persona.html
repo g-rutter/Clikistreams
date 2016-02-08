@@ -1,0 +1,50 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Persona (disambiguation)', ' Shin Megami Tensei: Persona 3', 11 ],
+       [ 'Persona (disambiguation)', ' Shin Megami Tensei: Persona', 2691 ],
+       [ 'Persona (disambiguation)', ' Revelations: Persona', 271 ],
+       [ 'Persona (disambiguation)', ' Persona 2', 16 ],
+       [ 'Persona (disambiguation)', ' Persona (psychology)', 30 ],
+       [ 'Persona (disambiguation)', ' Persona (2008 film)', 142 ],
+       [ 'Persona (disambiguation)', ' Persona (1966 film)', 651 ],
+       [ 'Persona (disambiguation)', ' Mozilla Persona', 14 ],
+       [ 'Persona (disambiguation)', ' Avatar (computing)', 19 ],
+       [ 'Persona (disambiguation)', ' Shin Megami Tensei: Persona 4', 36 ],
+       [ 'Persona (disambiguation)', ' Personas (El Canto del Loco album)', 10 ],
+       [ 'Persona (disambiguation)', ' Persona 5', 26 ],
+       [ 'Persona (disambiguation)', ' Persona (user experience)', 49 ],
+       [ 'Persona (disambiguation)', ' Persona (Queen Latifah album)', 10 ],
+       [ 'Persona (disambiguation)', ' Persona: Trinity Soul', 122 ],
+       [ 'Persona (disambiguation)', ' Persona', 24 ],
+       [ 'other-wikipedia', 'Persona (disambiguation)', 168 ],
+       [ 'other-google', 'Persona (disambiguation)', 120 ],
+       [ 'other-empty', 'Persona (disambiguation)', 39 ],
+       [ 'Persona', 'Persona (disambiguation)', 3830 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

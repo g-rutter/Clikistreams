@@ -1,0 +1,63 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Resurrection (disambiguation)', ' The Resurrection', 15 ],
+       [ 'Resurrection (disambiguation)', ' Resurrection (novel)', 29 ],
+       [ 'Resurrection (disambiguation)', ' Resurrection (The Outer Limits)', 11 ],
+       [ 'Resurrection (disambiguation)', ' Resurrection (2001 film)', 41 ],
+       [ 'Resurrection (disambiguation)', ' Resurrection', 60 ],
+       [ 'Resurrection (disambiguation)', ' Resurrection of the dead', 54 ],
+       [ 'Resurrection (disambiguation)', ' Resurrection of Jesus', 50 ],
+       [ 'Resurrection (disambiguation)', ' Resurrection (U.S. TV series)', 4080 ],
+       [ 'Resurrection (disambiguation)', ' Resurrection (South Korean TV series)', 93 ],
+       [ 'Resurrection (disambiguation)', ' Resurrection (New Found Glory album)', 20 ],
+       [ 'Resurrection (disambiguation)', ' Resurrection (Common album)', 54 ],
+       [ 'Resurrection (disambiguation)', ' Resurrection (Anastacia album)', 10 ],
+       [ 'Resurrection (disambiguation)', ' Resurrection (1999 film)', 48 ],
+       [ 'Resurrection (disambiguation)', ' Resurrection (1980 film)', 52 ],
+       [ 'Resurrection (disambiguation)', ' Resurrection (1960 film)', 11 ],
+       [ 'Resurrection (disambiguation)', ' Resurrected (film)', 10 ],
+       [ 'Resurrection (disambiguation)', ' Raising of Lazarus', 11 ],
+       [ 'Resurrection (disambiguation)', ' Lazarus syndrome', 17 ],
+       [ 'Resurrection (disambiguation)', ' Kevin Reynolds (director)', 180 ],
+       [ 'List of Revenge episodes', 'Resurrection (disambiguation)', 18 ],
+       [ 'List of Once Upon a Time episodes', 'Resurrection (disambiguation)', 19 ],
+       [ 'The Resurrection', 'Resurrection (disambiguation)', 15 ],
+       [ 'The Librarians (2014 TV series)', 'Resurrection (disambiguation)', 13 ],
+       [ 'Resurrection (novel)', 'Resurrection (disambiguation)', 38 ],
+       [ 'Resurrection', 'Resurrection (disambiguation)', 3265 ],
+       [ 'Main Page', 'Resurrection (disambiguation)', 194 ],
+       [ 'List of Reign (TV series) episodes', 'Resurrection (disambiguation)', 11 ],
+       [ 'other-empty', 'Resurrection (disambiguation)', 141 ],
+       [ 'Resurrection of the dead', 'Resurrection (disambiguation)', 19 ],
+       [ 'Resurrection (song)', 'Resurrection (disambiguation)', 12 ],
+       [ 'Resurrection (U.S. TV series)', 'Resurrection (disambiguation)', 192 ],
+       [ 'other-wikipedia', 'Resurrection (disambiguation)', 413 ],
+       [ 'other-google', 'Resurrection (disambiguation)', 39 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

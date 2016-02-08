@@ -1,0 +1,45 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Silk Road (disambiguation)', ' Silkroad Online', 172 ],
+       [ 'Silk Road (disambiguation)', ' Silk Way (disambiguation)', 13 ],
+       [ 'Silk Road (disambiguation)', ' Silk Route (disambiguation)', 36 ],
+       [ 'Silk Road (disambiguation)', ' Silk Road (marketplace)', 3087 ],
+       [ 'Silk Road (disambiguation)', ' Maritime Silk Road (film)', 24 ],
+       [ 'Silk Road (disambiguation)', ' Maritime Silk Road (disambiguation)', 19 ],
+       [ 'Silk Road (disambiguation)', ' Main Page', 10 ],
+       [ 'Silk Road (disambiguation)', ' The Silk Road (film)', 56 ],
+       [ 'Silk Road (disambiguation)', ' Silk Road Project', 32 ],
+       [ 'Silk Road (disambiguation)', ' Silk Road', 65 ],
+       [ 'Silk Road (disambiguation)', ' SilkRoad, Inc.', 52 ],
+       [ 'other-wikipedia', 'Silk Road (disambiguation)', 34 ],
+       [ 'other-google', 'Silk Road (disambiguation)', 156 ],
+       [ 'Silk Road', 'Silk Road (disambiguation)', 3597 ],
+       [ 'other-empty', 'Silk Road (disambiguation)', 55 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

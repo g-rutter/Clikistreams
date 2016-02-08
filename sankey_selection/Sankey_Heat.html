@@ -1,0 +1,63 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Heat (disambiguation)', ' Pungency', 10 ],
+       [ 'Heat (disambiguation)', ' High-explosive anti-tank warhead', 180 ],
+       [ 'Heat (disambiguation)', ' Heat (Lupica novel)', 31 ],
+       [ 'Heat (disambiguation)', ' Heat (Goldman novel)', 30 ],
+       [ 'Heat (disambiguation)', ' Heat (2006 film)', 57 ],
+       [ 'Heat (disambiguation)', ' Heat (1995 film)', 4274 ],
+       [ 'Heat (disambiguation)', ' Heat (1986 film)', 151 ],
+       [ 'Heat (disambiguation)', ' HEAT (software)', 13 ],
+       [ 'Heat (disambiguation)', ' Wild Card (2015 film)', 608 ],
+       [ 'Heat (disambiguation)', ' Thermal energy', 69 ],
+       [ 'Heat (disambiguation)', ' The Heat (film)', 183 ],
+       [ 'Heat (disambiguation)', ' Miami Heat', 37 ],
+       [ 'Heat (disambiguation)', ' Heat (video game)', 148 ],
+       [ 'Heat (disambiguation)', ' Heat (soundtrack)', 32 ],
+       [ 'Heat (disambiguation)', ' Heat (manga)', 13 ],
+       [ 'Heat (disambiguation)', ' Heat (magazine)', 21 ],
+       [ 'Heat (disambiguation)', ' Heat (1996 film)', 68 ],
+       [ 'Heat (disambiguation)', ' Heat (1972 film)', 47 ],
+       [ 'Heat (disambiguation)', ' Heat', 56 ],
+       [ 'Heat (disambiguation)', ' H.E.A.T', 45 ],
+       [ 'Heat (disambiguation)', ' Estrous cycle', 205 ],
+       [ 'Heat (disambiguation)', ' Bill Buford', 10 ],
+       [ 'other-bing', 'Heat (disambiguation)', 10 ],
+       [ 'Main Page', 'Heat (disambiguation)', 337 ],
+       [ 'other-other', 'Heat (disambiguation)', 57 ],
+       [ 'High-explosive anti-tank warhead', 'Heat (disambiguation)', 102 ],
+       [ 'Hironobu Kageyama', 'Heat (disambiguation)', 16 ],
+       [ 'Heat', 'Heat (disambiguation)', 3035 ],
+       [ 'H.E.A.T', 'Heat (disambiguation)', 20 ],
+       [ 'The Heat (film)', 'Heat (disambiguation)', 133 ],
+       [ 'other-empty', 'Heat (disambiguation)', 257 ],
+       [ 'other-wikipedia', 'Heat (disambiguation)', 550 ],
+       [ 'other-google', 'Heat (disambiguation)', 67 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

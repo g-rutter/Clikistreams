@@ -1,0 +1,44 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Chef (disambiguation)', ' Esoteric programming language', 69 ],
+       [ 'Chef (disambiguation)', ' Chief', 22 ],
+       [ 'Chef (disambiguation)', ' Chef (software)', 538 ],
+       [ 'Chef (disambiguation)', ' Chef (company)', 34 ],
+       [ 'Chef (disambiguation)', ' Chef!', 70 ],
+       [ 'Chef (disambiguation)', ' The Chef (film)', 298 ],
+       [ 'Chef (disambiguation)', ' Chef (film)', 3661 ],
+       [ 'Chef (disambiguation)', ' Chef (South Park)', 113 ],
+       [ 'Chef (disambiguation)', ' Chef', 16 ],
+       [ 'other-google', 'Chef (disambiguation)', 43 ],
+       [ 'other-wikipedia', 'Chef (disambiguation)', 121 ],
+       [ 'other-empty', 'Chef (disambiguation)', 60 ],
+       [ 'Main Page', 'Chef (disambiguation)', 15 ],
+       [ 'Chef', 'Chef (disambiguation)', 4106 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

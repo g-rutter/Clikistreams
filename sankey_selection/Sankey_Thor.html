@@ -1,0 +1,72 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Thor (disambiguation)', ' Tor', 16 ],
+       [ 'Thor (disambiguation)', ' Thor Salden', 11 ],
+       [ 'Thor (disambiguation)', ' Thor III', 10 ],
+       [ 'Thor (disambiguation)', ' Thor (soundtrack)', 27 ],
+       [ 'Thor (disambiguation)', ' Thor (singer)', 15 ],
+       [ 'Thor (disambiguation)', ' Thor (film)', 2764 ],
+       [ 'Thor (disambiguation)', ' Thor (comics)', 1116 ],
+       [ 'Thor (disambiguation)', ' Thor (Marvel Comics)', 2824 ],
+       [ 'Thor (disambiguation)', ' Thor: The Dark World', 1458 ],
+       [ 'Thor (disambiguation)', ' Thor', 121 ],
+       [ 'Thor (disambiguation)', ' PGM-17 Thor', 27 ],
+       [ 'Thor (disambiguation)', ' Marvel Animated Features', 88 ],
+       [ 'Thor (disambiguation)', ' Mark 7 nuclear bomb', 19 ],
+       [ 'Thor (disambiguation)', ' List of minor The Hitchhiker\'s Guide to the Galaxy characters', 13 ],
+       [ 'Thor (disambiguation)', ' Kinetic bombardment', 108 ],
+       [ 'Thor (disambiguation)', ' Jon Mikl Thor', 66 ],
+       [ 'Thor (disambiguation)', ' HNoMS Thor', 13 ],
+       [ 'Thor (disambiguation)', ' German auxiliary cruiser Thor', 16 ],
+       [ 'Thor (disambiguation)', ' Chris Hemsworth', 11 ],
+       [ 'Thor (disambiguation)', ' Björgólfur Thor Björgólfsson', 12 ],
+       [ 'Thor (disambiguation)', ' Asgard (Stargate)', 28 ],
+       [ 'Thor (disambiguation)', ' Almighty Thor', 52 ],
+       [ 'Thor (disambiguation)', ' Thor T/A', 12 ],
+       [ 'Thor (disambiguation)', ' Thor Nis Christiansen', 14 ],
+       [ 'Thor (disambiguation)', ' Thor Industries', 10 ],
+       [ 'Thor (disambiguation)', ' Thor (satellite)', 60 ],
+       [ 'Thor (disambiguation)', ' Thor (rocket family)', 46 ],
+       [ 'Thor (disambiguation)', ' Thor (band)', 73 ],
+       [ 'Thor (disambiguation)', ' Thor (Comico Comics)', 58 ],
+       [ 'Thor (disambiguation)', ' THOR (trading platform)', 24 ],
+       [ 'Thor (disambiguation)', ' Legends of Valhalla: Thor', 19 ],
+       [ 'Thor (disambiguation)', ' Karl-Gerät', 14 ],
+       [ 'List of satellites in geosynchronous orbit', 'Thor (disambiguation)', 21 ],
+       [ 'Kinetic bombardment', 'Thor (disambiguation)', 355 ],
+       [ 'other-google', 'Thor (disambiguation)', 70 ],
+       [ 'other-wikipedia', 'Thor (disambiguation)', 281 ],
+       [ 'Avengers: Age of Ultron', 'Thor (disambiguation)', 24 ],
+       [ 'Main Page', 'Thor (disambiguation)', 97 ],
+       [ 'Thor', 'Thor (disambiguation)', 7508 ],
+       [ 'Thor: The Dark World', 'Thor (disambiguation)', 20 ],
+       [ 'Tor', 'Thor (disambiguation)', 13 ],
+       [ 'other-empty', 'Thor (disambiguation)', 180 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

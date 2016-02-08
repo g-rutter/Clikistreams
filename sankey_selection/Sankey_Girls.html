@@ -1,0 +1,42 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Girls (disambiguation)', ' Girls (comics)', 20 ],
+       [ 'Girls (disambiguation)', ' Girls (TV series)', 6531 ],
+       [ 'Girls (disambiguation)', ' Girls (2014 film)', 100 ],
+       [ 'Girls (disambiguation)', ' List of Serial Experiments Lain episodes', 18 ],
+       [ 'Girls (disambiguation)', ' Girls (band)', 158 ],
+       [ 'Girls (disambiguation)', ' Girls (Beastie Boys song)', 18 ],
+       [ 'Girls (disambiguation)', ' Girls (1980 film)', 11 ],
+       [ 'other-wikipedia', 'Girls (disambiguation)', 24 ],
+       [ 'other-google', 'Girls (disambiguation)', 16 ],
+       [ 'other-empty', 'Girls (disambiguation)', 73 ],
+       [ 'Girl (disambiguation)', 'Girls (disambiguation)', 143 ],
+       [ 'Girl', 'Girls (disambiguation)', 6324 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

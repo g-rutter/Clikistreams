@@ -1,0 +1,47 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Dune (disambiguation)', ' Dúné', 20 ],
+       [ 'Dune (disambiguation)', ' Dunes (hotel and casino)', 15 ],
+       [ 'Dune (disambiguation)', ' Dune (franchise)', 1798 ],
+       [ 'Dune (disambiguation)', ' Dune (card game)', 17 ],
+       [ 'Dune (disambiguation)', ' Dune (board game)', 31 ],
+       [ 'Dune (disambiguation)', ' Dune (band)', 150 ],
+       [ 'Dune (disambiguation)', ' Arrakis', 72 ],
+       [ 'Dune (disambiguation)', ' Frank Herbert\'s Dune', 390 ],
+       [ 'Dune (disambiguation)', ' Dune (video game)', 220 ],
+       [ 'Dune (disambiguation)', ' Dune (soundtrack)', 30 ],
+       [ 'Dune (disambiguation)', ' Dune (novel)', 2334 ],
+       [ 'Dune (disambiguation)', ' Dune (film)', 1935 ],
+       [ 'other-wikipedia', 'Dune (disambiguation)', 93 ],
+       [ 'other-google', 'Dune (disambiguation)', 14 ],
+       [ 'Main Page', 'Dune (disambiguation)', 24 ],
+       [ 'other-empty', 'Dune (disambiguation)', 72 ],
+       [ 'Dune', 'Dune (disambiguation)', 5797 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

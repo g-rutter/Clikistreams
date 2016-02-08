@@ -1,0 +1,66 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Gladiator (disambiguation)', ' USS Gladiator', 20 ],
+       [ 'Gladiator (disambiguation)', ' The Gladiators (band)', 38 ],
+       [ 'Gladiator (disambiguation)', ' The Gladiator (1938 film)', 40 ],
+       [ 'Gladiator (disambiguation)', ' Gladius', 12 ],
+       [ 'Gladiator (disambiguation)', ' Gladiators 2000', 13 ],
+       [ 'Gladiator (disambiguation)', ' Gladiators (franchise)', 38 ],
+       [ 'Gladiator (disambiguation)', ' Gladiators (1992 UK TV series)', 170 ],
+       [ 'Gladiator (disambiguation)', ' Gladiator Tactical Unmanned Ground Vehicle', 14 ],
+       [ 'Gladiator (disambiguation)', ' Gladiator (video game)', 17 ],
+       [ 'Gladiator (disambiguation)', ' Gladiator (soundtrack)', 51 ],
+       [ 'Gladiator (disambiguation)', ' Gladiator (novel)', 38 ],
+       [ 'Gladiator (disambiguation)', ' Gladiator (Melvin Potter)', 21 ],
+       [ 'Gladiator (disambiguation)', ' Gladiator (Kallark)', 129 ],
+       [ 'Gladiator (disambiguation)', ' Gladiator (Dami Im song)', 11 ],
+       [ 'Gladiator (disambiguation)', ' Gladiator (1992 film)', 149 ],
+       [ 'Gladiator (disambiguation)', ' Gladiator', 88 ],
+       [ 'Gladiator (disambiguation)', ' American Gladiators', 26 ],
+       [ 'Gladiator (disambiguation)', ' The Gladiators (film)', 51 ],
+       [ 'Gladiator (disambiguation)', ' The Gladiator (1986 film)', 48 ],
+       [ 'Gladiator (disambiguation)', ' Shadow of Rome', 13 ],
+       [ 'Gladiator (disambiguation)', ' Jeep Gladiator', 11 ],
+       [ 'Gladiator (disambiguation)', ' HMS Gladiator', 13 ],
+       [ 'Gladiator (disambiguation)', ' Gloster Gladiator', 42 ],
+       [ 'Gladiator (disambiguation)', ' Gladiators (2008 UK TV series)', 41 ],
+       [ 'Gladiator (disambiguation)', ' Gladiators (2008 Australian TV series)', 15 ],
+       [ 'Gladiator (disambiguation)', ' Gladiator Begins', 11 ],
+       [ 'Gladiator (disambiguation)', ' Gladiator (2000 film)', 3222 ],
+       [ 'Gladiator (disambiguation)', ' Gladiator: Sword of Vengeance', 14 ],
+       [ 'Gladiator (disambiguation)', ' American Gladiators (2008 TV series)', 19 ],
+       [ 'other-empty', 'Gladiator (disambiguation)', 179 ],
+       [ 'The Gladiators (film)', 'Gladiator (disambiguation)', 17 ],
+       [ 'other-other', 'Gladiator (disambiguation)', 17 ],
+       [ 'Main Page', 'Gladiator (disambiguation)', 91 ],
+       [ 'other-google', 'Gladiator (disambiguation)', 55 ],
+       [ 'other-wikipedia', 'Gladiator (disambiguation)', 298 ],
+       [ 'Gladiator', 'Gladiator (disambiguation)', 3068 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

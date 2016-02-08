@@ -1,0 +1,58 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Stalker (disambiguation)', ' Stalking', 81 ],
+       [ 'Stalker (disambiguation)', ' Stalkers (comics)', 13 ],
+       [ 'Stalker (disambiguation)', ' Stalker (1979 film)', 758 ],
+       [ 'Stalker (disambiguation)', ' Stalk', 19 ],
+       [ 'Stalker (disambiguation)', ' S.T.A.L.K.E.R. (series)', 447 ],
+       [ 'Stalker (disambiguation)', ' S.T.A.L.K.E.R.: Call of Pripyat', 50 ],
+       [ 'Stalker (disambiguation)', ' List of Batman Beyond characters', 20 ],
+       [ 'Stalker (disambiguation)', ' Barry Windham', 10 ],
+       [ 'Stalker (disambiguation)', ' Stalker (novel)', 29 ],
+       [ 'Stalker (disambiguation)', ' Stalker (comics)', 19 ],
+       [ 'Stalker (disambiguation)', ' Stalker (TV series)', 3032 ],
+       [ 'Stalker (disambiguation)', ' Stalker (2012 film)', 169 ],
+       [ 'Stalker (disambiguation)', ' Stalker (2010 film)', 174 ],
+       [ 'Stalker (disambiguation)', ' S.T.A.L.K.E.R.: Shadow of Chernobyl', 128 ],
+       [ 'Stalker (disambiguation)', ' S.T.A.L.K.E.R.: Clear Sky', 28 ],
+       [ 'Stalker (disambiguation)', ' Lockheed Martin Stalker', 12 ],
+       [ 'Stalker (disambiguation)', ' CSI: Crime Scene Investigation (season 2)', 24 ],
+       [ 'other-other', 'Stalker (disambiguation)', 106 ],
+       [ 'Main Page', 'Stalker (disambiguation)', 55 ],
+       [ 'Stalking', 'Stalker (disambiguation)', 3828 ],
+       [ 'other-bing', 'Stalker (disambiguation)', 44 ],
+       [ 'other-empty', 'Stalker (disambiguation)', 248 ],
+       [ 'Stalker (TV series)', 'Stalker (disambiguation)', 15 ],
+       [ 'List of monster movies', 'Stalker (disambiguation)', 24 ],
+       [ 'other-yahoo', 'Stalker (disambiguation)', 31 ],
+       [ 'other-twitter', 'Stalker (disambiguation)', 16 ],
+       [ 'other-wikipedia', 'Stalker (disambiguation)', 381 ],
+       [ 'other-google', 'Stalker (disambiguation)', 73 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

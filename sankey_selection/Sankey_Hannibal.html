@@ -1,0 +1,102 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Hannibal (disambiguation)', ' Will Graham', 15 ],
+       [ 'Hannibal (disambiguation)', ' The Silence of the Lambs (novel)', 259 ],
+       [ 'Hannibal (disambiguation)', ' The Silence of the Lambs (film)', 12 ],
+       [ 'Hannibal (disambiguation)', ' The Exorcist (novel)', 57 ],
+       [ 'Hannibal (disambiguation)', ' Stephen King', 13 ],
+       [ 'Hannibal (disambiguation)', ' Sodomy', 71 ],
+       [ 'Hannibal (disambiguation)', ' Sadomasochism', 12 ],
+       [ 'Hannibal (disambiguation)', ' Ridley Scott', 16 ],
+       [ 'Hannibal (disambiguation)', ' Red Dragon (novel)', 42 ],
+       [ 'Hannibal (disambiguation)', ' Red Dragon (film)', 20 ],
+       [ 'Hannibal (disambiguation)', ' Publishers Weekly list of bestselling novels in the United States in the 1990s', 13 ],
+       [ 'Hannibal (disambiguation)', ' Prefrontal cortex', 64 ],
+       [ 'Hannibal (disambiguation)', ' Moray eel', 66 ],
+       [ 'Hannibal (disambiguation)', ' Methamphetamine', 10 ],
+       [ 'Hannibal (disambiguation)', ' Mason Verger (character)', 212 ],
+       [ 'Hannibal (disambiguation)', ' Lobotomy', 91 ],
+       [ 'Hannibal (disambiguation)', ' List of Cobra characters', 30 ],
+       [ 'Hannibal (disambiguation)', ' John "Hannibal" Smith', 32 ],
+       [ 'Hannibal (disambiguation)', ' Johannes Vermeer', 40 ],
+       [ 'Hannibal (disambiguation)', ' Hannibal – Rome\'s Worst Nightmare', 43 ],
+       [ 'Hannibal (disambiguation)', ' Hannibal Lecter', 1260 ],
+       [ 'Hannibal (disambiguation)', ' Hannibal King', 32 ],
+       [ 'Hannibal (disambiguation)', ' Hannibal Directive', 10 ],
+       [ 'Hannibal (disambiguation)', ' Hannibal (slave ship)', 10 ],
+       [ 'Hannibal (disambiguation)', ' Hannibal (film)', 1660 ],
+       [ 'Hannibal (disambiguation)', ' Hannibal (TV series)', 5300 ],
+       [ 'Hannibal (disambiguation)', ' Hannibal (Leckie novel)', 17 ],
+       [ 'Hannibal (disambiguation)', ' Hannibal (Harris novel)', 289 ],
+       [ 'Hannibal (disambiguation)', ' Hannibal, Missouri', 17 ],
+       [ 'Hannibal (disambiguation)', ' Hannibal', 89 ],
+       [ 'Hannibal (disambiguation)', ' Behaviour therapy', 10 ],
+       [ 'Hannibal (disambiguation)', ' Abram Petrovich Gannibal', 59 ],
+       [ 'Hannibal (disambiguation)', ' Thomas Harris', 139 ],
+       [ 'Hannibal (disambiguation)', ' Pazzi conspiracy', 103 ],
+       [ 'Hannibal (disambiguation)', ' Manhunter (film)', 17 ],
+       [ 'Hannibal (disambiguation)', ' List of Xiaolin Showdown characters', 11 ],
+       [ 'Hannibal (disambiguation)', ' Hannibal Rising (film)', 17 ],
+       [ 'Hannibal (disambiguation)', ' Hannibal Rising', 546 ],
+       [ 'Hannibal (disambiguation)', ' Hannibal Master of the Beast', 13 ],
+       [ 'Hannibal (disambiguation)', ' Hannibal Buress', 21 ],
+       [ 'Hannibal (disambiguation)', ' Hannibal (given name)', 164 ],
+       [ 'Hannibal (disambiguation)', ' Hannibal (1959 film)', 38 ],
+       [ 'Hannibal (disambiguation)', ' Hannibal-TV', 12 ],
+       [ 'Hannibal (disambiguation)', ' Devon Nicholson', 32 ],
+       [ 'Hannibal (disambiguation)', ' Deciduous teeth', 104 ],
+       [ 'Hannibal (disambiguation)', ' Clarice Starling', 143 ],
+       [ 'Hannibal (disambiguation)', ' Buffalo Bill (character)', 37 ],
+       [ 'other-google', 'Hannibal (disambiguation)', 1490 ],
+       [ 'other-wikipedia', 'Hannibal (disambiguation)', 197 ],
+       [ 'Hannibal Lecter (franchise)', 'Hannibal (disambiguation)', 371 ],
+       [ 'Hannibal Rising', 'Hannibal (disambiguation)', 82 ],
+       [ 'Clarice Starling', 'Hannibal (disambiguation)', 99 ],
+       [ 'other-yahoo', 'Hannibal (disambiguation)', 15 ],
+       [ 'other-other', 'Hannibal (disambiguation)', 21 ],
+       [ 'Mason Verger (character)', 'Hannibal (disambiguation)', 75 ],
+       [ 'Red Dragon (novel)', 'Hannibal (disambiguation)', 246 ],
+       [ 'Main Page', 'Hannibal (disambiguation)', 17 ],
+       [ 'The Silence of the Lambs (novel)', 'Hannibal (disambiguation)', 549 ],
+       [ 'other-bing', 'Hannibal (disambiguation)', 34 ],
+       [ 'The Silence of the Lambs (film)', 'Hannibal (disambiguation)', 11 ],
+       [ 'Self-cannibalism', 'Hannibal (disambiguation)', 11 ],
+       [ 'Pazzi conspiracy', 'Hannibal (disambiguation)', 11 ],
+       [ 'Thomas Harris', 'Hannibal (disambiguation)', 442 ],
+       [ 'other-empty', 'Hannibal (disambiguation)', 322 ],
+       [ 'Development hell', 'Hannibal (disambiguation)', 18 ],
+       [ 'Hannibal (TV series)', 'Hannibal (disambiguation)', 40 ],
+       [ 'Jack Crawford (character)', 'Hannibal (disambiguation)', 33 ],
+       [ 'Frederick Chilton', 'Hannibal (disambiguation)', 89 ],
+       [ 'Hannibal Lecter', 'Hannibal (disambiguation)', 959 ],
+       [ 'Hannibal (Harris novel)', 'Hannibal (disambiguation)', 139 ],
+       [ 'Hannibal (film)', 'Hannibal (disambiguation)', 269 ],
+       [ 'Hannibal', 'Hannibal (disambiguation)', 7571 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

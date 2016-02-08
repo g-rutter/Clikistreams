@@ -1,0 +1,63 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Utopia (disambiguation)', ' Utopia (typeface)', 15 ],
+       [ 'Utopia (disambiguation)', ' Utopia (book)', 364 ],
+       [ 'Utopia (disambiguation)', ' Utopia (band)', 112 ],
+       [ 'Utopia (disambiguation)', ' Utopia (UK TV series)', 3462 ],
+       [ 'Utopia (disambiguation)', ' Utopia (Lincoln Child novel)', 23 ],
+       [ 'Utopia (disambiguation)', ' Utopia (Australian TV series)', 184 ],
+       [ 'Utopia (disambiguation)', ' Utopia (2013 film)', 72 ],
+       [ 'Utopia (disambiguation)', ' Jolt Online Gaming', 67 ],
+       [ 'Utopia (disambiguation)', ' Eutopia (short story)', 20 ],
+       [ 'Utopia (disambiguation)', ' Ütopya', 65 ],
+       [ 'Utopia (disambiguation)', ' Utopia (video game)', 39 ],
+       [ 'Utopia (disambiguation)', ' Utopia (comics)', 49 ],
+       [ 'Utopia (disambiguation)', ' Utopia (U.S. reality TV series)', 1055 ],
+       [ 'Utopia (disambiguation)', ' Utopia (German science fiction)', 63 ],
+       [ 'Utopia (disambiguation)', ' Utopia (Doctor Who)', 31 ],
+       [ 'Utopia (disambiguation)', ' Utopia (1983 film)', 17 ],
+       [ 'Utopia (disambiguation)', ' Utopia: The Creation of a Nation', 20 ],
+       [ 'Utopia (disambiguation)', ' Utopia', 112 ],
+       [ 'Utopia (disambiguation)', ' System Packet Interface', 11 ],
+       [ 'Utopia (disambiguation)', ' Isaac Asimov\'s Utopia', 21 ],
+       [ 'Utopia (disambiguation)', ' Atoll K', 15 ],
+       [ 'other-google', 'Utopia (disambiguation)', 486 ],
+       [ 'other-wikipedia', 'Utopia (disambiguation)', 591 ],
+       [ 'other-other', 'Utopia (disambiguation)', 104 ],
+       [ 'Utopia (UK TV series)', 'Utopia (disambiguation)', 16 ],
+       [ 'other-bing', 'Utopia (disambiguation)', 28 ],
+       [ 'Utopia (book)', 'Utopia (disambiguation)', 142 ],
+       [ 'Main Page', 'Utopia (disambiguation)', 214 ],
+       [ 'Black Mirror (TV series)', 'Utopia (disambiguation)', 11 ],
+       [ 'Utopia (comics)', 'Utopia (disambiguation)', 19 ],
+       [ 'Utopia', 'Utopia (disambiguation)', 3332 ],
+       [ 'other-empty', 'Utopia (disambiguation)', 312 ],
+       [ 'other-yahoo', 'Utopia (disambiguation)', 39 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

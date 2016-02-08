@@ -1,0 +1,52 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Lucy (disambiguation)', ' Lucy spy ring', 12 ],
+       [ 'Lucy (disambiguation)', ' Lucy (novel)', 43 ],
+       [ 'Lucy (disambiguation)', ' Lucy (guitar)', 22 ],
+       [ 'Lucy (disambiguation)', ' Lucy (chimpanzee)', 23 ],
+       [ 'Lucy (disambiguation)', ' Lucy (Candlebox album)', 13 ],
+       [ 'Lucy (disambiguation)', ' Lucy (Australopithecus)', 633 ],
+       [ 'Lucy (disambiguation)', ' Lucy (2014 film)', 7069 ],
+       [ 'Lucy (disambiguation)', ' Lucy (2003 film)', 132 ],
+       [ 'Lucy (disambiguation)', ' Lucy, the Daughter of the Devil', 27 ],
+       [ 'Lucy (disambiguation)', ' Lucy', 30 ],
+       [ 'Lucy (disambiguation)', ' The Lucy poems', 11 ],
+       [ 'Lucy (disambiguation)', ' Steve Grand', 13 ],
+       [ 'Lucy (disambiguation)', ' Scarlett Johansson', 12 ],
+       [ 'Lucy (disambiguation)', ' BPM 37093', 11 ],
+       [ 'Lucia', 'Lucy (disambiguation)', 12 ],
+       [ 'Lucy', 'Lucy (disambiguation)', 6224 ],
+       [ 'Main Page', 'Lucy (disambiguation)', 228 ],
+       [ 'other-bing', 'Lucy (disambiguation)', 12 ],
+       [ 'other-other', 'Lucy (disambiguation)', 10 ],
+       [ 'other-empty', 'Lucy (disambiguation)', 235 ],
+       [ 'other-wikipedia', 'Lucy (disambiguation)', 460 ],
+       [ 'other-google', 'Lucy (disambiguation)', 115 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Incubus (disambiguation)', ' The Incubus (film)', 65 ],
+       [ 'Incubus (disambiguation)', ' Succubus (disambiguation)', 37 ],
+       [ 'Incubus (disambiguation)', ' Incubus', 86 ],
+       [ 'Incubus (disambiguation)', ' Opprobrium (band)', 53 ],
+       [ 'Incubus (disambiguation)', ' Incubus (band)', 3623 ],
+       [ 'Incubus (disambiguation)', ' Incubus (2006 film)', 86 ],
+       [ 'Incubus (disambiguation)', ' Incubus (1966 film)', 76 ],
+       [ 'Incubus', 'Incubus (disambiguation)', 3575 ],
+       [ 'Succubus (disambiguation)', 'Incubus (disambiguation)', 13 ],
+       [ 'The Incubus (film)', 'Incubus (disambiguation)', 13 ],
+       [ 'other-wikipedia', 'Incubus (disambiguation)', 45 ],
+       [ 'other-google', 'Incubus (disambiguation)', 51 ],
+       [ 'Incubus (band)', 'Incubus (disambiguation)', 161 ],
+       [ 'other-empty', 'Incubus (disambiguation)', 45 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

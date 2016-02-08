@@ -1,0 +1,90 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Ghost (disambiguation)', ' The Ghost Writer (film)', 74 ],
+       [ 'Ghost (disambiguation)', ' The Ghost (American band)', 55 ],
+       [ 'Ghost (disambiguation)', ' The Ghost (1963 film)', 35 ],
+       [ 'Ghost (disambiguation)', ' Rolls-Royce Ghost', 17 ],
+       [ 'Ghost (disambiguation)', ' Phantom (TV series)', 25 ],
+       [ 'Ghost (disambiguation)', ' Juliet Marine Systems Ghost', 40 ],
+       [ 'Ghost (disambiguation)', ' IAI Ghost', 10 ],
+       [ 'Ghost (disambiguation)', ' Haunted (Beyoncé song)', 10 ],
+       [ 'Ghost (disambiguation)', ' HIStory/Ghosts', 30 ],
+       [ 'Ghost (disambiguation)', ' Glossary of video game terms', 19 ],
+       [ 'Ghost (disambiguation)', ' Ghosts (band)', 57 ],
+       [ 'Ghost (disambiguation)', ' Ghosts (2006 film)', 26 ],
+       [ 'Ghost (disambiguation)', ' Ghost in the machine (disambiguation)', 31 ],
+       [ 'Ghost (disambiguation)', ' Ghost (game)', 21 ],
+       [ 'Ghost (disambiguation)', ' Ghost (comics)', 50 ],
+       [ 'Ghost (disambiguation)', ' Ghost (2012 film)', 32 ],
+       [ 'Ghost (disambiguation)', ' Ghost (2004 band)', 33 ],
+       [ 'Ghost (disambiguation)', ' Ghost (1998 film)', 32 ],
+       [ 'Ghost (disambiguation)', ' Ghost (1990 film)', 2337 ],
+       [ 'Ghost (disambiguation)', ' Ghost (1984 band)', 49 ],
+       [ 'Ghost (disambiguation)', ' Ghost: Mouichido Dakishimetai', 23 ],
+       [ 'Ghost (disambiguation)', ' Ghost', 48 ],
+       [ 'Ghost (disambiguation)', ' G.ho.st', 16 ],
+       [ 'Ghost (disambiguation)', ' Dead Friend', 27 ],
+       [ 'Ghost (disambiguation)', ' Call of Duty: Modern Warfare 2', 14 ],
+       [ 'Ghost (disambiguation)', ' Apparition', 14 ],
+       [ 'Ghost (disambiguation)', ' The Ghost (Faroese band)', 13 ],
+       [ 'Ghost (disambiguation)', ' The Ghost (2008 film)', 15 ],
+       [ 'Ghost (disambiguation)', ' The Ghost (1982 film)', 22 ],
+       [ 'Ghost (disambiguation)', ' StarCraft: Ghost', 12 ],
+       [ 'Ghost (disambiguation)', ' Mystery Skulls', 13 ],
+       [ 'Ghost (disambiguation)', ' Michael Jackson\'s Ghosts', 33 ],
+       [ 'Ghost (disambiguation)', ' Jessabelle', 72 ],
+       [ 'Ghost (disambiguation)', ' Ghosts I–IV', 17 ],
+       [ 'Ghost (disambiguation)', ' Ghosts (play)', 32 ],
+       [ 'Ghost (disambiguation)', ' Ghosts (Japan song)', 15 ],
+       [ 'Ghost (disambiguation)', ' Ghost the Musical', 10 ],
+       [ 'Ghost (disambiguation)', ' Ghost note', 21 ],
+       [ 'Ghost (disambiguation)', ' Ghost (software)', 67 ],
+       [ 'Ghost (disambiguation)', ' Ghost (production team)', 10 ],
+       [ 'Ghost (disambiguation)', ' Ghost (blogging platform)', 72 ],
+       [ 'Ghost (disambiguation)', ' Ghost (Swedish band)', 643 ],
+       [ 'Ghost (disambiguation)', ' Ghost (Ella Henderson song)', 473 ],
+       [ 'Ghost (disambiguation)', ' Ghost (Devin Townsend Project album)', 16 ],
+       [ 'Ghost (disambiguation)', ' Faddeev–Popov ghost', 10 ],
+       [ 'Ghost (disambiguation)', ' Call of Duty: Ghosts', 51 ],
+       [ 'Ghost', 'Ghost (disambiguation)', 3235 ],
+       [ 'Ghost band', 'Ghost (disambiguation)', 32 ],
+       [ 'other-bing', 'Ghost (disambiguation)', 17 ],
+       [ 'other-other', 'Ghost (disambiguation)', 41 ],
+       [ 'Main Page', 'Ghost (disambiguation)', 227 ],
+       [ 'other-empty', 'Ghost (disambiguation)', 249 ],
+       [ 'When Harry Met Sally...', 'Ghost (disambiguation)', 10 ],
+       [ 'other-yahoo', 'Ghost (disambiguation)', 13 ],
+       [ 'List of ghost films', 'Ghost (disambiguation)', 17 ],
+       [ 'List of programs broadcast by Hum TV', 'Ghost (disambiguation)', 12 ],
+       [ 'Ghost ship', 'Ghost (disambiguation)', 44 ],
+       [ 'Ghostly (disambiguation)', 'Ghost (disambiguation)', 19 ],
+       [ 'other-wikipedia', 'Ghost (disambiguation)', 498 ],
+       [ 'other-google', 'Ghost (disambiguation)', 138 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

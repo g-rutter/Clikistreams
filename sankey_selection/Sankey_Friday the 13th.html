@@ -1,0 +1,52 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Friday the 13th (disambiguation)', ' Triskaidekaphobia', 56 ],
+       [ 'Friday the 13th (disambiguation)', ' Thomas W. Lawson (businessman)', 12 ],
+       [ 'Friday the 13th (disambiguation)', ' Friday the 13th (franchise)', 2947 ],
+       [ 'Friday the 13th (disambiguation)', ' Friday the 13th (1980 film)', 2250 ],
+       [ 'Friday the 13th (disambiguation)', ' Friday, The Thirteenth', 12 ],
+       [ 'Friday the 13th (disambiguation)', ' Black Friday', 63 ],
+       [ 'Friday the 13th (disambiguation)', ' Friday the Thirteenth (album)', 14 ],
+       [ 'Friday the 13th (disambiguation)', ' Friday the Thirteenth (1933 film)', 337 ],
+       [ 'Friday the 13th (disambiguation)', ' Friday the 13th mini-crash', 18 ],
+       [ 'Friday the 13th (disambiguation)', ' Friday the 13th (2009 film)', 769 ],
+       [ 'Friday the 13th (disambiguation)', ' Friday the 13th (1989 video game)', 251 ],
+       [ 'Friday the 13th (disambiguation)', ' Friday the 13th (1985 video game)', 187 ],
+       [ 'Friday the 13th (disambiguation)', ' Friday the 13th: The Series', 125 ],
+       [ 'Friday the 13th (disambiguation)', ' Friday the 13th', 67 ],
+       [ 'Friday the 13th (disambiguation)', ' Friday 13th EP', 15 ],
+       [ 'Friday the 13th (disambiguation)', ' Fozzy', 12 ],
+       [ 'Friday the 13th', 'Friday the 13th (disambiguation)', 6282 ],
+       [ 'other-empty', 'Friday the 13th (disambiguation)', 108 ],
+       [ 'Main Page', 'Friday the 13th (disambiguation)', 12 ],
+       [ 'other-other', 'Friday the 13th (disambiguation)', 12 ],
+       [ 'other-google', 'Friday the 13th (disambiguation)', 343 ],
+       [ 'other-wikipedia', 'Friday the 13th (disambiguation)', 153 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

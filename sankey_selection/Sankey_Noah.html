@@ -1,0 +1,54 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Noah (disambiguation)', ' Toyota Noah', 10 ],
+       [ 'Noah (disambiguation)', ' Noah (name)', 155 ],
+       [ 'Noah (disambiguation)', ' Noah (band)', 21 ],
+       [ 'Noah (disambiguation)', ' Main Page', 10 ],
+       [ 'Noah (disambiguation)', ' Dougray Scott', 13 ],
+       [ 'Noah (disambiguation)', ' Pro Wrestling Noah', 85 ],
+       [ 'Noah (disambiguation)', ' Noah (duo)', 12 ],
+       [ 'Noah (disambiguation)', ' Noah (The Walking Dead)', 44 ],
+       [ 'Noah (disambiguation)', ' Noah (TV series)', 32 ],
+       [ 'Noah (disambiguation)', ' Noah (2014 film)', 3602 ],
+       [ 'Noah (disambiguation)', ' Noah (1998 film)', 96 ],
+       [ 'Noah (disambiguation)', ' Noah', 131 ],
+       [ 'Noah (disambiguation)', ' King Noah', 22 ],
+       [ 'other-google', 'Noah (disambiguation)', 206 ],
+       [ 'other-wikipedia', 'Noah (disambiguation)', 286 ],
+       [ 'List of Christian films', 'Noah (disambiguation)', 159 ],
+       [ 'other-yahoo', 'Noah (disambiguation)', 97 ],
+       [ 'Noah', 'Noah (disambiguation)', 2930 ],
+       [ 'Noa', 'Noah (disambiguation)', 10 ],
+       [ 'other-empty', 'Noah (disambiguation)', 351 ],
+       [ 'other-other', 'Noah (disambiguation)', 142 ],
+       [ 'Noah\'s Ark (disambiguation)', 'Noah (disambiguation)', 85 ],
+       [ 'Main Page', 'Noah (disambiguation)', 99 ],
+       [ 'other-bing', 'Noah (disambiguation)', 93 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

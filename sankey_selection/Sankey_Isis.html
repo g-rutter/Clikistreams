@@ -1,0 +1,97 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Isis (disambiguation)', ' Ísis Valverde', 10 ],
+       [ 'Isis (disambiguation)', ' Toyota Isis', 20 ],
+       [ 'Isis (disambiguation)', ' The Isis Magazine', 34 ],
+       [ 'Isis (disambiguation)', ' The Adara Group', 261 ],
+       [ 'Isis (disambiguation)', ' Mons Vitruvius', 11 ],
+       [ 'Isis (disambiguation)', ' Main Page', 55 ],
+       [ 'Isis (disambiguation)', ' Lindsay Kay Hayward', 17 ],
+       [ 'Isis (disambiguation)', ' Islamic State of Iraq and the Levant', 16231 ],
+       [ 'Isis (disambiguation)', ' Isis Unveiled', 10 ],
+       [ 'Isis (disambiguation)', ' Isis River', 10 ],
+       [ 'Isis (disambiguation)', ' Isis Casalduc', 15 ],
+       [ 'Isis (disambiguation)', ' Isis Carmen Jones', 15 ],
+       [ 'Isis (disambiguation)', ' Isis Adventure', 14 ],
+       [ 'Isis (disambiguation)', ' Isis (song)', 55 ],
+       [ 'Isis (disambiguation)', ' Isis (journal)', 28 ],
+       [ 'Isis (disambiguation)', ' Isis (horn-rock band)', 34 ],
+       [ 'Isis (disambiguation)', ' Isis (band)', 574 ],
+       [ 'Isis (disambiguation)', ' ISIS Papyrus', 53 ],
+       [ 'Isis (disambiguation)', ' ISIS (satellite)', 16 ],
+       [ 'Isis (disambiguation)', ' ISIS (operating system)', 61 ],
+       [ 'Isis (disambiguation)', ' ISI', 35 ],
+       [ 'Isis (disambiguation)', ' IS-IS', 62 ],
+       [ 'Isis (disambiguation)', ' Hera Agathon', 63 ],
+       [ 'Isis (disambiguation)', ' HMS Isis', 12 ],
+       [ 'Isis (disambiguation)', ' DJ Isis', 21 ],
+       [ 'Isis (disambiguation)', ' Archer (TV series)', 272 ],
+       [ 'Isis (disambiguation)', ' The Secrets of Isis', 133 ],
+       [ 'Isis (disambiguation)', ' The Isis', 32 ],
+       [ 'Isis (disambiguation)', ' Softcard', 70 ],
+       [ 'Isis (disambiguation)', ' Smallville (season 10)', 23 ],
+       [ 'Isis (disambiguation)', ' Mae-Wan Ho', 18 ],
+       [ 'Isis (disambiguation)', ' List of pharmaceutical companies', 124 ],
+       [ 'Isis (disambiguation)', ' List of Marvel Comics characters: I', 67 ],
+       [ 'Isis (disambiguation)', ' Levant', 11 ],
+       [ 'Isis (disambiguation)', ' Islamic state', 41 ],
+       [ 'Isis (disambiguation)', ' Isis Temple', 11 ],
+       [ 'Isis (disambiguation)', ' Isis Taylor', 40 ],
+       [ 'Isis (disambiguation)', ' Isis Nyong\'o', 10 ],
+       [ 'Isis (disambiguation)', ' Isis King', 20 ],
+       [ 'Isis (disambiguation)', ' Isis Innovation', 111 ],
+       [ 'Isis (disambiguation)', ' Isis Gomes', 24 ],
+       [ 'Isis (disambiguation)', ' Isis (genus)', 14 ],
+       [ 'Isis (disambiguation)', ' Isis (DC Comics)', 95 ],
+       [ 'Isis (disambiguation)', ' Isis (Brisbane band)', 21 ],
+       [ 'Isis (disambiguation)', ' Isis (Bluewater Comics)', 16 ],
+       [ 'Isis (disambiguation)', ' Isis', 750 ],
+       [ 'Isis (disambiguation)', ' International Species Information System', 35 ],
+       [ 'Isis (disambiguation)', ' Institute for the Secularisation of Islamic Society', 74 ],
+       [ 'Isis (disambiguation)', ' Institute for Science and International Security', 35 ],
+       [ 'Isis (disambiguation)', ' Image and Scanner Interface Specification', 15 ],
+       [ 'Isis (disambiguation)', ' ISIS neutron source', 19 ],
+       [ 'Isis (disambiguation)', ' IS', 19 ],
+       [ 'Isis (disambiguation)', ' Hurricane Isis', 16 ],
+       [ 'Isis (disambiguation)', ' Goa\'uld characters in Stargate', 26 ],
+       [ 'Isis (disambiguation)', ' Family Research Institute', 58 ],
+       [ 'Isis (disambiguation)', ' Double copula', 20 ],
+       [ 'Isis (disambiguation)', ' Bottom bracket', 12 ],
+       [ 'other-empty', 'Isis (disambiguation)', 951 ],
+       [ 'other-other', 'Isis (disambiguation)', 110 ],
+       [ 'other-bing', 'Isis (disambiguation)', 40 ],
+       [ 'Isis', 'Isis (disambiguation)', 9190 ],
+       [ 'other-yahoo', 'Isis (disambiguation)', 59 ],
+       [ 'IS-IS', 'Isis (disambiguation)', 55 ],
+       [ 'Islamic State of Iraq and the Levant', 'Isis (disambiguation)', 19266 ],
+       [ 'other-wikipedia', 'Isis (disambiguation)', 849 ],
+       [ 'other-twitter', 'Isis (disambiguation)', 172 ],
+       [ 'other-google', 'Isis (disambiguation)', 6692 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

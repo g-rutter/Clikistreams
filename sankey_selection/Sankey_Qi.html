@@ -1,0 +1,53 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Qi (disambiguation)', ' Stephen Fry', 42 ],
+       [ 'Qi (disambiguation)', ' Quite Interesting', 20 ],
+       [ 'Qi (disambiguation)', ' Qi hardware', 25 ],
+       [ 'Qi (disambiguation)', ' Qi (surname)', 12 ],
+       [ 'Qi (disambiguation)', ' Qi (state)', 13 ],
+       [ 'Qi (disambiguation)', ' Qi (inductive power standard)', 293 ],
+       [ 'Qi (disambiguation)', ' QI (Dutch version)', 29 ],
+       [ 'Qi (disambiguation)', ' Intelligence quotient', 10 ],
+       [ 'Qi (disambiguation)', ' Quite Interesting Limited', 87 ],
+       [ 'Qi (disambiguation)', ' Qi (programming language)', 39 ],
+       [ 'Qi (disambiguation)', ' Qi', 139 ],
+       [ 'Qi (disambiguation)', ' QI (Czech TV series)', 28 ],
+       [ 'Qi (disambiguation)', ' QI', 3769 ],
+       [ 'Qi (disambiguation)', ' KI', 25 ],
+       [ 'Qi (disambiguation)', ' Intresseklubben', 28 ],
+       [ 'Qi (disambiguation)', ' Chi', 23 ],
+       [ 'Chi', 'Qi (disambiguation)', 89 ],
+       [ 'Qi (inductive power standard)', 'Qi (disambiguation)', 23 ],
+       [ 'Qi', 'Qi (disambiguation)', 4266 ],
+       [ 'QI', 'Qi (disambiguation)', 263 ],
+       [ 'other-empty', 'Qi (disambiguation)', 54 ],
+       [ 'other-wikipedia', 'Qi (disambiguation)', 40 ],
+       [ 'other-google', 'Qi (disambiguation)', 224 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

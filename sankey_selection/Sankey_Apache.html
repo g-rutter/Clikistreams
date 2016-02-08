@@ -1,0 +1,63 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Apache (disambiguation)', ' The Sugarhill Gang', 27 ],
+       [ 'Apache (disambiguation)', ' Texas Tommy (dance move)', 26 ],
+       [ 'Apache (disambiguation)', ' Southern Athabaskan languages', 27 ],
+       [ 'Apache (disambiguation)', ' North American A-36 Apache', 58 ],
+       [ 'Apache (disambiguation)', ' List of Maximals', 25 ],
+       [ 'Apache (disambiguation)', ' List of Hollows in Bleach', 11 ],
+       [ 'Apache (disambiguation)', ' Apaches (subculture)', 52 ],
+       [ 'Apache (disambiguation)', ' Apaches (film)', 27 ],
+       [ 'Apache (disambiguation)', ' Apache HTTP Server', 972 ],
+       [ 'Apache (disambiguation)', ' Apache Corporation', 32 ],
+       [ 'Apache (disambiguation)', ' Apache (dance)', 32 ],
+       [ 'Apache (disambiguation)', ' APACHE II', 15 ],
+       [ 'Apache (disambiguation)', ' USS Apache', 14 ],
+       [ 'Apache (disambiguation)', ' TVS Apache', 10 ],
+       [ 'Apache (disambiguation)', ' Piper PA-23', 18 ],
+       [ 'Apache (disambiguation)', ' Chevrolet Task Force', 12 ],
+       [ 'Apache (disambiguation)', ' Carlos Hathcock', 89 ],
+       [ 'Apache (disambiguation)', ' Boeing AH-64 Apache', 1004 ],
+       [ 'Apache (disambiguation)', ' Apache revolver', 58 ],
+       [ 'Apache (disambiguation)', ' Apache Software Foundation', 579 ],
+       [ 'Apache (disambiguation)', ' Apache Group', 17 ],
+       [ 'Apache (disambiguation)', ' Apache (rapper)', 93 ],
+       [ 'Apache (disambiguation)', ' Apache (missile)', 20 ],
+       [ 'Apache (disambiguation)', ' Apache (instrumental)', 240 ],
+       [ 'Apache (disambiguation)', ' Apache (film)', 15 ],
+       [ 'Apache (disambiguation)', ' Apache', 35 ],
+       [ 'Apache (disambiguation)', ' AgustaWestland Apache', 100 ],
+       [ 'other-wikipedia', 'Apache (disambiguation)', 104 ],
+       [ 'other-google', 'Apache (disambiguation)', 103 ],
+       [ 'Les Apaches', 'Apache (disambiguation)', 10 ],
+       [ 'Apache', 'Apache (disambiguation)', 3217 ],
+       [ 'APACHE II', 'Apache (disambiguation)', 47 ],
+       [ 'other-empty', 'Apache (disambiguation)', 44 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

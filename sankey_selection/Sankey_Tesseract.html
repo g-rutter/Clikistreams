@@ -1,0 +1,48 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Tesseract (disambiguation)', ' Tesseract (software)', 240 ],
+       [ 'Tesseract (disambiguation)', ' Tesseract (band)', 1347 ],
+       [ 'Tesseract (disambiguation)', ' List of Skulduggery Pleasant characters', 20 ],
+       [ 'Tesseract (disambiguation)', ' Interstellar (film)', 122 ],
+       [ 'Tesseract (disambiguation)', ' Cube 2: Sauerbraten', 29 ],
+       [ 'Tesseract (disambiguation)', ' Yamaha Tesseract', 43 ],
+       [ 'Tesseract (disambiguation)', ' The Tesseract (novel)', 97 ],
+       [ 'Tesseract (disambiguation)', ' The Tesseract (film)', 168 ],
+       [ 'Tesseract (disambiguation)', ' Tesseract', 158 ],
+       [ 'Tesseract (disambiguation)', ' Evangelion (mecha)', 18 ],
+       [ 'Tesseract (disambiguation)', ' Cosmic Cube', 770 ],
+       [ 'Tesseract (disambiguation)', ' A Wrinkle in Time (film)', 94 ],
+       [ 'Tesseract (disambiguation)', ' A Wrinkle in Time', 149 ],
+       [ 'other-empty', 'Tesseract (disambiguation)', 54 ],
+       [ 'other-wikipedia', 'Tesseract (disambiguation)', 80 ],
+       [ 'other-google', 'Tesseract (disambiguation)', 266 ],
+       [ 'Tesseract', 'Tesseract (disambiguation)', 3066 ],
+       [ 'Cosmic Cube', 'Tesseract (disambiguation)', 270 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

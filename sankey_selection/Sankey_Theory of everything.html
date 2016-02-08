@@ -1,0 +1,94 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Theory of everything (disambiguation)', ' Theory of everything', 677 ],
+       [ 'Theory of everything (disambiguation)', ' Theories for Everything', 14 ],
+       [ 'Theory of everything (disambiguation)', ' The Theory of Everything (Ayreon album)', 702 ],
+       [ 'Theory of everything (disambiguation)', ' The Theory of Everything (2014 film)', 18527 ],
+       [ 'Theory of everything (disambiguation)', ' The Imitation Game', 16 ],
+       [ 'Theory of everything (disambiguation)', ' Stephen Hawking', 44 ],
+       [ 'Theory of everything (disambiguation)', ' Main Page', 20 ],
+       [ 'Theory of everything (disambiguation)', ' A Theory of Everything', 282 ],
+       [ 'Theory of everything (disambiguation)', ' Toe (disambiguation)', 12 ],
+       [ 'Theory of everything (disambiguation)', ' Theory of everything (philosophy)', 455 ],
+       [ 'Theory of everything (disambiguation)', ' Theory of Everything (album)', 12 ],
+       [ 'Theory of everything (disambiguation)', ' The Theory of Everything (Life On Planet 9 album)', 69 ],
+       [ 'Theory of everything (disambiguation)', ' The Theory of Everything (2006 film)', 394 ],
+       [ 'Theory of everything (disambiguation)', ' CSI: Crime Scene Investigation (season 8)', 40 ],
+       [ 'Theory of everything (disambiguation)', ' An Exceptionally Simple Theory of Everything', 93 ],
+       [ 'other-empty', 'Theory of everything (disambiguation)', 3646 ],
+       [ 'Michael Keaton', 'Theory of everything (disambiguation)', 16 ],
+       [ 'Selma (film)', 'Theory of everything (disambiguation)', 94 ],
+       [ 'Nightcrawler (film)', 'Theory of everything (disambiguation)', 28 ],
+       [ 'The Grand Budapest Hotel', 'Theory of everything (disambiguation)', 76 ],
+       [ 'Whiplash (2014 film)', 'Theory of everything (disambiguation)', 113 ],
+       [ 'Wiki', 'Theory of everything (disambiguation)', 12 ],
+       [ 'Wild (film)', 'Theory of everything (disambiguation)', 14 ],
+       [ 'Two Days, One Night', 'Theory of everything (disambiguation)', 12 ],
+       [ 'University of Cambridge in popular culture', 'Theory of everything (disambiguation)', 15 ],
+       [ 'other-yahoo', 'Theory of everything (disambiguation)', 141 ],
+       [ 'other-wikipedia', 'Theory of everything (disambiguation)', 2976 ],
+       [ 'other-google', 'Theory of everything (disambiguation)', 3106 ],
+       [ 'other-other', 'Theory of everything (disambiguation)', 204 ],
+       [ 'other-facebook', 'Theory of everything (disambiguation)', 11 ],
+       [ 'Main Page', 'Theory of everything (disambiguation)', 1072 ],
+       [ 'Theory of everything', 'Theory of everything (disambiguation)', 8649 ],
+       [ 'The Imitation Game', 'Theory of everything (disambiguation)', 249 ],
+       [ 'Son of a Gun (film)', 'Theory of everything (disambiguation)', 17 ],
+       [ 'The Theory of Everything (2014 film)', 'Theory of everything (disambiguation)', 97 ],
+       [ 'other-bing', 'Theory of everything (disambiguation)', 88 ],
+       [ 'Still Alice', 'Theory of everything (disambiguation)', 110 ],
+       [ 'Stephen Hawking', 'Theory of everything (disambiguation)', 269 ],
+       [ 'The Judge (2014 film)', 'Theory of everything (disambiguation)', 16 ],
+       [ 'J. K. Simmons', 'Theory of everything (disambiguation)', 10 ],
+       [ 'Into the Woods (film)', 'Theory of everything (disambiguation)', 12 ],
+       [ 'Eddie Redmayne', 'Theory of everything (disambiguation)', 146 ],
+       [ 'Harry Lloyd', 'Theory of everything (disambiguation)', 66 ],
+       [ 'Evolution', 'Theory of everything (disambiguation)', 10 ],
+       [ 'Foxcatcher', 'Theory of everything (disambiguation)', 49 ],
+       [ 'Fifty Shades of Grey (film)', 'Theory of everything (disambiguation)', 19 ],
+       [ 'Kingsman: The Secret Service', 'Theory of everything (disambiguation)', 18 ],
+       [ 'Interstellar (film)', 'Theory of everything (disambiguation)', 14 ],
+       [ 'Benedict Cumberbatch', 'Theory of everything (disambiguation)', 14 ],
+       [ 'Academy Award for Best Actor', 'Theory of everything (disambiguation)', 32 ],
+       [ '87th Academy Awards', 'Theory of everything (disambiguation)', 17 ],
+       [ 'Birdman (film)', 'Theory of everything (disambiguation)', 299 ],
+       [ 'A Theory of Everything', 'Theory of everything (disambiguation)', 311 ],
+       [ 'American Heist', 'Theory of everything (disambiguation)', 16 ],
+       [ 'American Sniper (film)', 'Theory of everything (disambiguation)', 50 ],
+       [ 'Alan Turing', 'Theory of everything (disambiguation)', 11 ],
+       [ 'Alejandro González Iñárritu', 'Theory of everything (disambiguation)', 14 ],
+       [ 'Big Hero 6 (film)', 'Theory of everything (disambiguation)', 19 ],
+       [ 'Dumb and Dumber To', 'Theory of everything (disambiguation)', 12 ],
+       [ 'Boyhood (film)', 'Theory of everything (disambiguation)', 81 ],
+       [ 'Graham Moore (writer)', 'Theory of everything (disambiguation)', 10 ],
+       [ 'Jane Wilde Hawking', 'Theory of everything (disambiguation)', 27 ],
+       [ 'Jupiter Ascending', 'Theory of everything (disambiguation)', 23 ],
+       [ 'Gone Girl (film)', 'Theory of everything (disambiguation)', 28 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

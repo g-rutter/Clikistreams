@@ -1,0 +1,50 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Spartacus (disambiguation)', ' Spartakus and the Sun Beneath the Sea', 10 ],
+       [ 'Spartacus (disambiguation)', ' Spartacus (Fast novel)', 28 ],
+       [ 'Spartacus (disambiguation)', ' Spartacus: War of the Damned', 1265 ],
+       [ 'Spartacus (disambiguation)', ' Spartacus: Vengeance', 1216 ],
+       [ 'Spartacus (disambiguation)', ' Sins of Rome', 18 ],
+       [ 'Spartacus (disambiguation)', ' Spartacus League', 14 ],
+       [ 'Spartacus (disambiguation)', ' Spartacus (miniseries)', 1047 ],
+       [ 'Spartacus (disambiguation)', ' Spartacus (film)', 1100 ],
+       [ 'Spartacus (disambiguation)', ' Spartacus (ballet)', 35 ],
+       [ 'Spartacus (disambiguation)', ' Spartacus (The Farm album)', 11 ],
+       [ 'Spartacus (disambiguation)', ' Spartacus (TV series)', 9014 ],
+       [ 'Spartacus (disambiguation)', ' Spartacus (Gibbon novel)', 14 ],
+       [ 'Spartacus (disambiguation)', ' Spartacus: Gods of the Arena', 971 ],
+       [ 'Spartacus (disambiguation)', ' Spartacus: Blood and Sand', 1959 ],
+       [ 'Spartacus (disambiguation)', ' Spartacus', 149 ],
+       [ 'other-empty', 'Spartacus (disambiguation)', 167 ],
+       [ 'Spartak', 'Spartacus (disambiguation)', 16 ],
+       [ 'Spartacus', 'Spartacus (disambiguation)', 13005 ],
+       [ 'other-wikipedia', 'Spartacus (disambiguation)', 102 ],
+       [ 'other-google', 'Spartacus (disambiguation)', 60 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

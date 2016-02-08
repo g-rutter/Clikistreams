@@ -1,0 +1,59 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Muse (disambiguation)', ' The Muse (1999 film)', 50 ],
+       [ 'Muse (disambiguation)', ' Muse cell', 17 ],
+       [ 'Muse (disambiguation)', ' Muse Watson', 22 ],
+       [ 'Muse (disambiguation)', ' Muse (surname)', 64 ],
+       [ 'Muse (disambiguation)', ' Muse (band)', 7309 ],
+       [ 'Muse (disambiguation)', ' Muse (Star Trek: Voyager)', 16 ],
+       [ 'Muse (disambiguation)', ' Muse (Hong Kong magazine)', 14 ],
+       [ 'Muse (disambiguation)', ' Muse (EP)', 42 ],
+       [ 'Muse (disambiguation)', ' Multiple sub-Nyquist sampling encoding', 21 ],
+       [ 'Muse (disambiguation)', ' The Muse', 99 ],
+       [ 'Muse (disambiguation)', ' Project MUSE', 12 ],
+       [ 'Muse (disambiguation)', ' Muse (comics)', 22 ],
+       [ 'Muse (disambiguation)', ' Muse (children\'s magazine)', 38 ],
+       [ 'Muse (disambiguation)', ' Muse (Jolin Tsai album)', 11 ],
+       [ 'Muse (disambiguation)', ' Muse, Burma', 11 ],
+       [ 'Muse (disambiguation)', ' Muse', 98 ],
+       [ 'Muse (disambiguation)', ' MusE', 11 ],
+       [ 'Muse (disambiguation)', ' Multi Unit Spectroscopic Explorer', 39 ],
+       [ 'Muse (disambiguation)', ' Mews', 13 ],
+       [ 'Muse (disambiguation)', ' Love Live!', 35 ],
+       [ 'Muse (disambiguation)', ' Adobe Muse', 43 ],
+       [ 'other-other', 'Muse (disambiguation)', 15 ],
+       [ 'Miliyah Kato', 'Muse (disambiguation)', 26 ],
+       [ 'Main Page', 'Muse (disambiguation)', 29 ],
+       [ 'other-wikipedia', 'Muse (disambiguation)', 108 ],
+       [ 'other-google', 'Muse (disambiguation)', 266 ],
+       [ 'The Muse', 'Muse (disambiguation)', 54 ],
+       [ 'other-empty', 'Muse (disambiguation)', 169 ],
+       [ 'Muse', 'Muse (disambiguation)', 7891 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

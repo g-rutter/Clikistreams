@@ -1,0 +1,46 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Castle (disambiguation)', ' Rook (chess)', 21 ],
+       [ 'Castle (disambiguation)', ' List of Chuck gadgets', 22 ],
+       [ 'Castle (disambiguation)', ' Castling', 20 ],
+       [ 'Castle (disambiguation)', ' Castles (video game)', 50 ],
+       [ 'Castle (disambiguation)', ' Castle (surname)', 24 ],
+       [ 'Castle (disambiguation)', ' Castle (book)', 20 ],
+       [ 'Castle (disambiguation)', ' The Castle (video game)', 11 ],
+       [ 'Castle (disambiguation)', ' The Castle', 12 ],
+       [ 'Castle (disambiguation)', ' Castle (novel)', 43 ],
+       [ 'Castle (disambiguation)', ' Castle (TV series)', 11167 ],
+       [ 'Castle (disambiguation)', ' Castle', 76 ],
+       [ 'other-empty', 'Castle (disambiguation)', 113 ],
+       [ 'The Castle', 'Castle (disambiguation)', 18 ],
+       [ 'other-wikipedia', 'Castle (disambiguation)', 213 ],
+       [ 'Main Page', 'Castle (disambiguation)', 48 ],
+       [ 'Castle', 'Castle (disambiguation)', 10570 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Lazarus effect (disambiguation)', ' The Lazarus Effect (2015 film)', 17684 ],
+       [ 'Lazarus effect (disambiguation)', ' Main Page', 20 ],
+       [ 'Lazarus effect (disambiguation)', ' 2015 in film', 15 ],
+       [ 'Lazarus effect (disambiguation)', ' The Lazarus Effect (novel)', 7136 ],
+       [ 'Lazarus effect (disambiguation)', ' The Lazarus Effect (2010 film)', 1926 ],
+       [ 'Lazarus effect (disambiguation)', ' Lazarus effect', 5009 ],
+       [ 'Lazarus effect (disambiguation)', ' Lazarus', 891 ],
+       [ 'other-yahoo', 'Lazarus effect (disambiguation)', 425 ],
+       [ 'List of American films of 2015', 'Lazarus effect (disambiguation)', 83 ],
+       [ 'Lazarus', 'Lazarus effect (disambiguation)', 14 ],
+       [ 'Lazarus syndrome', 'Lazarus effect (disambiguation)', 10 ],
+       [ 'Lazarus effect', 'Lazarus effect (disambiguation)', 7125 ],
+       [ 'other-wikipedia', 'Lazarus effect (disambiguation)', 3246 ],
+       [ 'other-google', 'Lazarus effect (disambiguation)', 18737 ],
+       [ 'The Lazarus Effect (2015 film)', 'Lazarus effect (disambiguation)', 87 ],
+       [ 'other-bing', 'Lazarus effect (disambiguation)', 614 ],
+       [ 'other-other', 'Lazarus effect (disambiguation)', 193 ],
+       [ 'Project Almanac', 'Lazarus effect (disambiguation)', 10 ],
+       [ 'Main Page', 'Lazarus effect (disambiguation)', 673 ],
+       [ 'Focus (2015 film)', 'Lazarus effect (disambiguation)', 67 ],
+       [ 'Kingsman: The Secret Service', 'Lazarus effect (disambiguation)', 16 ],
+       [ 'other-empty', 'Lazarus effect (disambiguation)', 1772 ],
+       [ 'The Lazarus Experiment', 'Lazarus effect (disambiguation)', 32 ],
+       [ 'The Lazarus Effect (2010 film)', 'Lazarus effect (disambiguation)', 140 ],
+       [ 'The Lazarus Effect (novel)', 'Lazarus effect (disambiguation)', 340 ],
+       [ 'The Lazarus Project', 'Lazarus effect (disambiguation)', 70 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

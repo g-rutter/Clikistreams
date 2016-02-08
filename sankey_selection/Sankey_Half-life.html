@@ -1,0 +1,50 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Half-life (disambiguation)', ' List of Marvel Comics characters: H', 22 ],
+       [ 'Half-life (disambiguation)', ' Halflife (Doctor Who)', 13 ],
+       [ 'Half-life (disambiguation)', ' Half Life (3 album)', 47 ],
+       [ 'Half-life (disambiguation)', ' Half-Life 2', 361 ],
+       [ 'Half-life (disambiguation)', ' Half-Life (series)', 1655 ],
+       [ 'Half-life (disambiguation)', ' Halflife (EP)', 10 ],
+       [ 'Half-life (disambiguation)', ' Half Life (novel)', 22 ],
+       [ 'Half-life (disambiguation)', ' Half-life', 83 ],
+       [ 'Half-life (disambiguation)', ' Half-Life (video game)', 2039 ],
+       [ 'Half-life (disambiguation)', ' Half-Life (novel)', 28 ],
+       [ 'Half-life (disambiguation)', ' Half-Life (film)', 59 ],
+       [ 'Half-life (disambiguation)', ' Effective half-life', 40 ],
+       [ 'Half-life (disambiguation)', ' Biological half-life', 62 ],
+       [ 'other-wikipedia', 'Half-life (disambiguation)', 221 ],
+       [ 'other-google', 'Half-life (disambiguation)', 136 ],
+       [ 'Half-life', 'Half-life (disambiguation)', 3587 ],
+       [ 'First-person shooter', 'Half-life (disambiguation)', 10 ],
+       [ 'other-empty', 'Half-life (disambiguation)', 329 ],
+       [ 'Main Page', 'Half-life (disambiguation)', 57 ],
+       [ 'other-other', 'Half-life (disambiguation)', 87 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

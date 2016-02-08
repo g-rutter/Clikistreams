@@ -1,0 +1,50 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Bones (disambiguation)', ' Temperance "Bones" Brennan', 32 ],
+       [ 'Bones (disambiguation)', ' Robert Culp', 98 ],
+       [ 'Bones (disambiguation)', ' Leonard McCoy', 51 ],
+       [ 'Bones (disambiguation)', ' Bones (studio)', 133 ],
+       [ 'Bones (disambiguation)', ' Bones (nickname)', 75 ],
+       [ 'Bones (disambiguation)', ' Bones (The Killers song)', 18 ],
+       [ 'Bones (disambiguation)', ' Bones (TV series)', 3760 ],
+       [ 'Bones (disambiguation)', ' Bones (2010 film)', 68 ],
+       [ 'Bones (disambiguation)', ' Bones (2001 film)', 113 ],
+       [ 'Bones (disambiguation)', ' Bones (surname)', 14 ],
+       [ 'Bones (disambiguation)', ' Bones (instrument)', 16 ],
+       [ 'Bones (disambiguation)', ' Bones (album)', 10 ],
+       [ 'Bones (disambiguation)', ' Bone (disambiguation)', 23 ],
+       [ 'Bones (disambiguation)', ' Bone', 14 ],
+       [ 'Bone (disambiguation)', 'Bones (disambiguation)', 83 ],
+       [ 'Bone', 'Bones (disambiguation)', 3789 ],
+       [ 'other-wikipedia', 'Bones (disambiguation)', 172 ],
+       [ 'other-google', 'Bones (disambiguation)', 42 ],
+       [ 'Nickname', 'Bones (disambiguation)', 21 ],
+       [ 'other-empty', 'Bones (disambiguation)', 72 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

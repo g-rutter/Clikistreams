@@ -1,0 +1,94 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Batman (disambiguation)', ' The Batman (TV series)', 270 ],
+       [ 'Batman (disambiguation)', ' Jason Todd', 37 ],
+       [ 'Batman (disambiguation)', ' Division of Batman', 27 ],
+       [ 'Batman (disambiguation)', ' Dick Grayson', 65 ],
+       [ 'Batman (disambiguation)', ' Damian Wayne', 83 ],
+       [ 'Batman (disambiguation)', ' Batman Theme', 11 ],
+       [ 'Batman (disambiguation)', ' Batman Highway', 11 ],
+       [ 'Batman (disambiguation)', ' Batman Bridge', 11 ],
+       [ 'Batman (disambiguation)', ' Batman (unit)', 25 ],
+       [ 'Batman (disambiguation)', ' Batman (serial)', 115 ],
+       [ 'Batman (disambiguation)', ' Batman (manga)', 35 ],
+       [ 'Batman (disambiguation)', ' Batman (comic strip)', 10 ],
+       [ 'Batman (disambiguation)', ' Batman (TV series)', 845 ],
+       [ 'Batman (disambiguation)', ' Batman (2013 arcade game)', 40 ],
+       [ 'Batman (disambiguation)', ' Batman (1989 film)', 1211 ],
+       [ 'Batman (disambiguation)', ' Batman: The Animated Series', 159 ],
+       [ 'Batman (disambiguation)', ' Batman: Mask of the Phantasm', 68 ],
+       [ 'Batman (disambiguation)', ' Batman\'s Hill', 11 ],
+       [ 'Batman (disambiguation)', ' Batman', 110 ],
+       [ 'Batman (disambiguation)', ' B.A.T.M.A.N.', 31 ],
+       [ 'Batman (disambiguation)', ' Azrael (comics)', 44 ],
+       [ 'Batman (disambiguation)', ' Tim Drake', 47 ],
+       [ 'Batman (disambiguation)', ' The Dark Knight (film)', 21 ],
+       [ 'Batman (disambiguation)', ' List of DC Comics characters named Batman', 61 ],
+       [ 'Batman (disambiguation)', ' List of Batman video games', 27 ],
+       [ 'Batman (disambiguation)', ' Dark Knight', 28 ],
+       [ 'Batman (disambiguation)', ' Batting (cricket)', 11 ],
+       [ 'Batman (disambiguation)', ' Batman in film', 1209 ],
+       [ 'Batman (disambiguation)', ' Batman franchise media', 25 ],
+       [ 'Batman (disambiguation)', ' Batman and Robin', 23 ],
+       [ 'Batman (disambiguation)', ' Batman Province', 46 ],
+       [ 'Batman (disambiguation)', ' Batman Begins', 31 ],
+       [ 'Batman (disambiguation)', ' Batman (truck)', 17 ],
+       [ 'Batman (disambiguation)', ' Batman (surname)', 60 ],
+       [ 'Batman (disambiguation)', ' Batman (military)', 249 ],
+       [ 'Batman (disambiguation)', ' Batman (comic book)', 152 ],
+       [ 'Batman (disambiguation)', ' Batman (album)', 18 ],
+       [ 'Batman (disambiguation)', ' Batman (Terry McGinnis)', 46 ],
+       [ 'Batman (disambiguation)', ' Batman (Sega Mega Drive video game)', 12 ],
+       [ 'Batman (disambiguation)', ' Batman (Earth-Two)', 60 ],
+       [ 'Batman (disambiguation)', ' Batman (1990 arcade game)', 57 ],
+       [ 'Batman (disambiguation)', ' Batman (1986 video game)', 26 ],
+       [ 'Batman (disambiguation)', ' Batman (1966 film)', 329 ],
+       [ 'Batman (disambiguation)', ' Batman: The Video Game', 28 ],
+       [ 'Batman (disambiguation)', ' Batman: The Brave and the Bold', 100 ],
+       [ 'Batman (disambiguation)', ' Batman: Arkham Origins', 44 ],
+       [ 'Batman (disambiguation)', ' Batman: Arkham Knight', 68 ],
+       [ 'Batman (disambiguation)', ' Batman: Arkham City', 17 ],
+       [ 'Batman (disambiguation)', ' Batman: Arkham Asylum', 24 ],
+       [ 'Batman (disambiguation)', ' Batman: Arkham', 45 ],
+       [ 'Batman (disambiguation)', ' Batman, Turkey', 104 ],
+       [ 'Batman (disambiguation)', ' Batman, Iran', 38 ],
+       [ 'other-empty', 'Batman (disambiguation)', 119 ],
+       [ 'List of arcade video games: B', 'Batman (disambiguation)', 11 ],
+       [ 'List of Batman video games', 'Batman (disambiguation)', 231 ],
+       [ 'Batman, Turkey', 'Batman (disambiguation)', 91 ],
+       [ 'Batman franchise media', 'Batman (disambiguation)', 29 ],
+       [ 'Batman (military)', 'Batman (disambiguation)', 19 ],
+       [ 'other-wikipedia', 'Batman (disambiguation)', 125 ],
+       [ 'other-google', 'Batman (disambiguation)', 60 ],
+       [ 'List of video games based on DC Comics', 'Batman (disambiguation)', 55 ],
+       [ 'Atari Games', 'Batman (disambiguation)', 31 ],
+       [ 'Batman (film)', 'Batman (disambiguation)', 20 ],
+       [ 'Batman', 'Batman (disambiguation)', 4847 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Person of interest (disambiguation)', ' Person of Interest (song)', 19 ],
+       [ 'Person of interest (disambiguation)', ' Law & Order: Criminal Intent (season 2)', 10 ],
+       [ 'Person of interest (disambiguation)', ' Chicago Fire (TV series)', 27 ],
+       [ 'Person of interest (disambiguation)', ' Person of interest', 61 ],
+       [ 'Person of interest (disambiguation)', ' Person of Interest (TV series)', 6958 ],
+       [ 'Person of interest (disambiguation)', ' Medium (season 5)', 10 ],
+       [ 'Person of interest (disambiguation)', ' List of Lincoln Heights episodes', 12 ],
+       [ 'Person of interest (disambiguation)', ' A Person of Interest (novel)', 10 ],
+       [ 'other-google', 'Person of interest (disambiguation)', 26 ],
+       [ 'other-wikipedia', 'Person of interest (disambiguation)', 249 ],
+       [ 'Katheryn Winnick', 'Person of interest (disambiguation)', 48 ],
+       [ 'Main Page', 'Person of interest (disambiguation)', 122 ],
+       [ 'other-other', 'Person of interest (disambiguation)', 26 ],
+       [ 'other-empty', 'Person of interest (disambiguation)', 603 ],
+       [ 'Poi', 'Person of interest (disambiguation)', 44 ],
+       [ 'Person of interest', 'Person of interest (disambiguation)', 5598 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Empire (disambiguation)', ' Main Page', 10 ],
+       [ 'Empire (disambiguation)', ' Galactic Empire (Star Wars)', 67 ],
+       [ 'Empire (disambiguation)', ' Empires: Dawn of the Modern World', 10 ],
+       [ 'Empire (disambiguation)', ' Empire Trilogy', 27 ],
+       [ 'Empire (disambiguation)', ' Empire Classic', 11 ],
+       [ 'Empire (disambiguation)', ' Empire (graphic novel)', 11 ],
+       [ 'Empire (disambiguation)', ' Empire (film magazine)', 31 ],
+       [ 'Empire (disambiguation)', ' Empire (band)', 26 ],
+       [ 'Empire (disambiguation)', ' Empire (Vidal novel)', 18 ],
+       [ 'Empire (disambiguation)', ' Empire (Shakira song)', 39 ],
+       [ 'Empire (disambiguation)', ' Empire (Saylor novel)', 11 ],
+       [ 'Empire (disambiguation)', ' Empire (Queensrÿche album)', 40 ],
+       [ 'Empire (disambiguation)', ' Empire (Negri and Hardt book)', 123 ],
+       [ 'Empire (disambiguation)', ' Empire (H. Beam Piper book)', 11 ],
+       [ 'Empire (disambiguation)', ' Empire (Card novel)', 35 ],
+       [ 'Empire (disambiguation)', ' Empire (2015 TV series)', 29995 ],
+       [ 'Empire (disambiguation)', ' Empire (2002 film)', 210 ],
+       [ 'Empire (disambiguation)', ' Empire (1986 film)', 17 ],
+       [ 'Empire (disambiguation)', ' Empire (1984 TV series)', 99 ],
+       [ 'Empire (disambiguation)', ' Empire (1964 film)', 106 ],
+       [ 'Empire (disambiguation)', ' Empire (1962 TV series)', 59 ],
+       [ 'Empire (disambiguation)', ' Classic Empire', 33 ],
+       [ 'Empire (disambiguation)', ' The Empire (play)', 23 ],
+       [ 'Empire (disambiguation)', ' Terrence Howard', 34 ],
+       [ 'Empire (disambiguation)', ' Taraji P. Henson', 22 ],
+       [ 'Empire (disambiguation)', ' Scandal (TV series)', 11 ],
+       [ 'Empire (disambiguation)', ' Niall Ferguson', 10 ],
+       [ 'Empire (disambiguation)', ' Galactic Empire (series)', 188 ],
+       [ 'Empire (disambiguation)', ' Empires (band)', 35 ],
+       [ 'Empire (disambiguation)', ' Empire style', 12 ],
+       [ 'Empire (disambiguation)', ' Empire series', 152 ],
+       [ 'Empire (disambiguation)', ' Empire Today', 11 ],
+       [ 'Empire (disambiguation)', ' Empire (online game)', 14 ],
+       [ 'Empire (disambiguation)', ' Empire (comics)', 57 ],
+       [ 'Empire (disambiguation)', ' Empire (Law & Order)', 60 ],
+       [ 'Empire (disambiguation)', ' Empire (Kasabian song)', 10 ],
+       [ 'Empire (disambiguation)', ' Empire (Kasabian album)', 19 ],
+       [ 'Empire (disambiguation)', ' Empire (2012 TV series)', 407 ],
+       [ 'Empire (disambiguation)', ' Empire (2005 TV series)', 366 ],
+       [ 'Empire (disambiguation)', ' Empire: Total War', 19 ],
+       [ 'Empire (disambiguation)', ' Empire', 95 ],
+       [ 'Empire (disambiguation)', ' British Empire', 11 ],
+       [ 'other-google', 'Empire (disambiguation)', 254 ],
+       [ 'other-wikipedia', 'Empire (disambiguation)', 3697 ],
+       [ 'other-bing', 'Empire (disambiguation)', 48 ],
+       [ 'other-other', 'Empire (disambiguation)', 37 ],
+       [ 'Run (Scandal)', 'Empire (disambiguation)', 17 ],
+       [ 'Power (TV series)', 'Empire (disambiguation)', 15 ],
+       [ 'Main Page', 'Empire (disambiguation)', 1203 ],
+       [ 'List of programs broadcast by Jack TV', 'Empire (disambiguation)', 12 ],
+       [ 'Chicago P.D. (season 2)', 'Empire (disambiguation)', 13 ],
+       [ 'Derek Luke', 'Empire (disambiguation)', 52 ],
+       [ 'Better Call Saul', 'Empire (disambiguation)', 26 ],
+       [ 'Agent Carter (TV series)', 'Empire (disambiguation)', 20 ],
+       [ 'List of Chicago P.D. episodes', 'Empire (disambiguation)', 13 ],
+       [ 'List of Glee episodes', 'Empire (disambiguation)', 10 ],
+       [ 'List of The 100 episodes', 'Empire (disambiguation)', 18 ],
+       [ 'Empire (show)', 'Empire (disambiguation)', 380 ],
+       [ 'List of Arrow episodes', 'Empire (disambiguation)', 38 ],
+       [ 'How to Get Away with Murder', 'Empire (disambiguation)', 47 ],
+       [ 'Judd Nelson', 'Empire (disambiguation)', 41 ],
+       [ 'Fresh Off the Boat', 'Empire (disambiguation)', 20 ],
+       [ 'other-yahoo', 'Empire (disambiguation)', 33 ],
+       [ 'Modern Family (season 6)', 'Empire (disambiguation)', 10 ],
+       [ 'Stalker (TV series)', 'Empire (disambiguation)', 20 ],
+       [ 'Scandal (season 4)', 'Empire (disambiguation)', 12 ],
+       [ 'Scandal (TV series)', 'Empire (disambiguation)', 12 ],
+       [ 'other-empty', 'Empire (disambiguation)', 1019 ],
+       [ 'Wiki', 'Empire (disambiguation)', 14 ],
+       [ 'The Flash (2014 TV series)', 'Empire (disambiguation)', 27 ],
+       [ 'Constantine (TV series)', 'Empire (disambiguation)', 11 ],
+       [ 'Black-ish', 'Empire (disambiguation)', 33 ],
+       [ 'Backstrom (TV series)', 'Empire (disambiguation)', 21 ],
+       [ 'List of Sleepy Hollow episodes', 'Empire (disambiguation)', 14 ],
+       [ 'Imperium (disambiguation)', 'Empire (disambiguation)', 11 ],
+       [ 'List of Elementary episodes', 'Empire (disambiguation)', 26 ],
+       [ 'Empire', 'Empire (disambiguation)', 19527 ],
+       [ 'Gotham (TV series)', 'Empire (disambiguation)', 39 ],
+       [ 'List of Suits episodes', 'Empire (disambiguation)', 11 ],
+       [ 'Empire series', 'Empire (disambiguation)', 86 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

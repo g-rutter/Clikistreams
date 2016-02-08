@@ -1,0 +1,68 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Teenage Mutant Ninja Turtles (disambiguation)', ' Teenage Mutant Ninja Turtles action figures', 13 ],
+       [ 'Teenage Mutant Ninja Turtles (disambiguation)', ' Teenage Mutant Ninja Turtles (arcade game)', 58 ],
+       [ 'Teenage Mutant Ninja Turtles (disambiguation)', ' Teenage Mutant Ninja Turtles (NES game)', 106 ],
+       [ 'Teenage Mutant Ninja Turtles (disambiguation)', ' Teenage Mutant Ninja Turtles (Mirage Studios)', 125 ],
+       [ 'Teenage Mutant Ninja Turtles (disambiguation)', ' Teenage Mutant Ninja Turtles: The Original Motion Picture Soundtrack', 12 ],
+       [ 'Teenage Mutant Ninja Turtles (disambiguation)', ' Teenage Mutant Ninja Turtles: Out of the Shadows', 56 ],
+       [ 'Teenage Mutant Ninja Turtles (disambiguation)', ' Teenage Mutant Ninja Turtles: Music from the Motion Picture', 25 ],
+       [ 'Teenage Mutant Ninja Turtles (disambiguation)', ' TMNT (video game)', 25 ],
+       [ 'Teenage Mutant Ninja Turtles (disambiguation)', ' TMNT (film)', 309 ],
+       [ 'Teenage Mutant Ninja Turtles (disambiguation)', ' List of Teenage Mutant Ninja Turtles video games', 46 ],
+       [ 'Teenage Mutant Ninja Turtles (disambiguation)', ' Teenage Mutant Ninja Turtles III', 139 ],
+       [ 'Teenage Mutant Ninja Turtles (disambiguation)', ' Teenage Mutant Ninja Turtles II: The Secret of the Ooze', 238 ],
+       [ 'Teenage Mutant Ninja Turtles (disambiguation)', ' Teenage Mutant Ninja Turtles Adventures', 29 ],
+       [ 'Teenage Mutant Ninja Turtles (disambiguation)', ' Teenage Mutant Ninja Turtles (pinball)', 12 ],
+       [ 'Teenage Mutant Ninja Turtles (disambiguation)', ' Teenage Mutant Ninja Turtles (film series)', 156 ],
+       [ 'Teenage Mutant Ninja Turtles (disambiguation)', ' Teenage Mutant Ninja Turtles (comic strip)', 31 ],
+       [ 'Teenage Mutant Ninja Turtles (disambiguation)', ' Teenage Mutant Ninja Turtles (IDW Publishing)', 52 ],
+       [ 'Teenage Mutant Ninja Turtles (disambiguation)', ' Teenage Mutant Ninja Turtles (Game Boy Advance)', 19 ],
+       [ 'Teenage Mutant Ninja Turtles (disambiguation)', ' Teenage Mutant Ninja Turtles (2014 film)', 2212 ],
+       [ 'Teenage Mutant Ninja Turtles (disambiguation)', ' Teenage Mutant Ninja Turtles (2012 TV series)', 1445 ],
+       [ 'Teenage Mutant Ninja Turtles (disambiguation)', ' Teenage Mutant Ninja Turtles (2003 video game)', 29 ],
+       [ 'Teenage Mutant Ninja Turtles (disambiguation)', ' Teenage Mutant Ninja Turtles (2003 TV series)', 252 ],
+       [ 'Teenage Mutant Ninja Turtles (disambiguation)', ' Teenage Mutant Ninja Turtles (1990 film)', 554 ],
+       [ 'Teenage Mutant Ninja Turtles (disambiguation)', ' Teenage Mutant Ninja Turtles (1987 TV series)', 544 ],
+       [ 'Teenage Mutant Ninja Turtles (disambiguation)', ' Teenage Mutant Ninja Turtles', 86 ],
+       [ 'Teenage Mutant Ninja Turtles (disambiguation)', ' Tales of the Teenage Mutant Ninja Turtles', 30 ],
+       [ 'Teenage Mutant Ninja Turtles (disambiguation)', ' Ninja Turtles: The Next Mutation', 110 ],
+       [ 'other-internal', 'Teenage Mutant Ninja Turtles (disambiguation)', 12 ],
+       [ 'other-wikipedia', 'Teenage Mutant Ninja Turtles (disambiguation)', 305 ],
+       [ 'other-google', 'Teenage Mutant Ninja Turtles (disambiguation)', 295 ],
+       [ 'other-yahoo', 'Teenage Mutant Ninja Turtles (disambiguation)', 21 ],
+       [ 'other-other', 'Teenage Mutant Ninja Turtles (disambiguation)', 41 ],
+       [ 'TMNT (film)', 'Teenage Mutant Ninja Turtles (disambiguation)', 383 ],
+       [ 'other-bing', 'Teenage Mutant Ninja Turtles (disambiguation)', 31 ],
+       [ 'TMNT (video game)', 'Teenage Mutant Ninja Turtles (disambiguation)', 23 ],
+       [ 'other-empty', 'Teenage Mutant Ninja Turtles (disambiguation)', 213 ],
+       [ 'Teenage Mutant Ninja Turtles', 'Teenage Mutant Ninja Turtles (disambiguation)', 4370 ],
+       [ 'Teenage Mutant Ninja Turtles IV', 'Teenage Mutant Ninja Turtles (disambiguation)', 10 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

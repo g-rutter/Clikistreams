@@ -1,0 +1,117 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Alexander (disambiguation)', ' Steve Carell', 14 ],
+       [ 'Alexander (disambiguation)', ' Roxana', 10 ],
+       [ 'Alexander (disambiguation)', ' Cleitus the Black', 20 ],
+       [ 'Alexander (disambiguation)', ' Angelina Jolie', 11 ],
+       [ 'Alexander (disambiguation)', ' Alexander the Last', 28 ],
+       [ 'Alexander (disambiguation)', ' Alexander (surname)', 66 ],
+       [ 'Alexander (disambiguation)', ' Alexander (Alex Ebert album)', 27 ],
+       [ 'Alexander (disambiguation)', ' Alexander (2008 film)', 95 ],
+       [ 'Alexander (disambiguation)', ' Alexander (2004 film)', 1223 ],
+       [ 'Alexander (disambiguation)', ' Zizia aurea', 10 ],
+       [ 'Alexander (disambiguation)', ' Rosario Dawson', 12 ],
+       [ 'Alexander (disambiguation)', ' Rome: Total War: Alexander', 17 ],
+       [ 'Alexander (disambiguation)', ' Olympias', 10 ],
+       [ 'Alexander (disambiguation)', ' Colin Farrell', 51 ],
+       [ 'Alexander (disambiguation)', ' Battle of the Hydaspes', 19 ],
+       [ 'Alexander (disambiguation)', ' Alexander the Great (1956 film)', 61 ],
+       [ 'Alexander (disambiguation)', ' Alexander the Great', 191 ],
+       [ 'Alexander (disambiguation)', ' Alexander and the Terrible, Horrible, No Good, Very Bad Day (film)', 24 ],
+       [ 'Alexander (disambiguation)', ' Alexander (video game)', 25 ],
+       [ 'Alexander (disambiguation)', ' Alexander', 71 ],
+       [ 'Alexander (disambiguation)', ' Aleksander (Hasidic dynasty)', 30 ],
+       [ 'other-google', 'Alexander (disambiguation)', 185 ],
+       [ 'other-twitter', 'Alexander (disambiguation)', 26 ],
+       [ 'other-wikipedia', 'Alexander (disambiguation)', 189 ],
+       [ 'Toby Kebbell', 'Alexander (disambiguation)', 35 ],
+       [ 'Val Kilmer', 'Alexander (disambiguation)', 143 ],
+       [ 'Stateira II', 'Alexander (disambiguation)', 16 ],
+       [ 'other-empty', 'Alexander (disambiguation)', 366 ],
+       [ 'Taking Lives (film)', 'Alexander (disambiguation)', 22 ],
+       [ 'Olympias', 'Alexander (disambiguation)', 29 ],
+       [ 'Ptolemy I Soter', 'Alexander (disambiguation)', 15 ],
+       [ 'Rosario Dawson', 'Alexander (disambiguation)', 170 ],
+       [ 'Metropolis (1927 film)', 'Alexander (disambiguation)', 25 ],
+       [ 'Neil Jackson', 'Alexander (disambiguation)', 10 ],
+       [ 'other-other', 'Alexander (disambiguation)', 102 ],
+       [ 'Main Page', 'Alexander (disambiguation)', 39 ],
+       [ 'Philip II of Macedon', 'Alexander (disambiguation)', 24 ],
+       [ 'Parmenion', 'Alexander (disambiguation)', 15 ],
+       [ 'Rory McCann', 'Alexander (disambiguation)', 73 ],
+       [ 'Roxana', 'Alexander (disambiguation)', 50 ],
+       [ 'Oliver Stone', 'Alexander (disambiguation)', 427 ],
+       [ 'other-bing', 'Alexander (disambiguation)', 137 ],
+       [ 'Vangelis', 'Alexander (disambiguation)', 80 ],
+       [ 'List of most expensive films', 'Alexander (disambiguation)', 134 ],
+       [ 'Elliot Cowan', 'Alexander (disambiguation)', 15 ],
+       [ 'Homosexuality in ancient Greece', 'Alexander (disambiguation)', 35 ],
+       [ 'Jonathan Rhys Meyers', 'Alexander (disambiguation)', 126 ],
+       [ 'Jared Leto filmography', 'Alexander (disambiguation)', 43 ],
+       [ 'Fiona O\'Shaughnessy', 'Alexander (disambiguation)', 15 ],
+       [ 'Hephaestion', 'Alexander (disambiguation)', 47 ],
+       [ 'Gladiator (2000 film)', 'Alexander (disambiguation)', 22 ],
+       [ 'Jason Faunt', 'Alexander (disambiguation)', 13 ],
+       [ 'Colin Farrell', 'Alexander (disambiguation)', 322 ],
+       [ 'Cultural depictions of Alexander the Great', 'Alexander (disambiguation)', 40 ],
+       [ 'Cassander', 'Alexander (disambiguation)', 21 ],
+       [ 'Alexander the Great (disambiguation)', 'Alexander (disambiguation)', 106 ],
+       [ 'Bucephalus', 'Alexander (disambiguation)', 21 ],
+       [ 'Alexander (soundtrack)', 'Alexander (disambiguation)', 18 ],
+       [ 'Angelina Jolie filmography', 'Alexander (disambiguation)', 266 ],
+       [ 'Alexander', 'Alexander (disambiguation)', 969 ],
+       [ 'Bagoas (courtier)', 'Alexander (disambiguation)', 13 ],
+       [ 'Christopher Plummer', 'Alexander (disambiguation)', 11 ],
+       [ 'Brian Blessed filmography', 'Alexander (disambiguation)', 30 ],
+       [ 'Battle of Issus', 'Alexander (disambiguation)', 11 ],
+       [ 'other-yahoo', 'Alexander (disambiguation)', 77 ],
+       [ 'List of historical period drama films', 'Alexander (disambiguation)', 75 ],
+       [ 'List of book-based war films (wars before 1775)', 'Alexander (disambiguation)', 11 ],
+       [ 'List of films based on actual events', 'Alexander (disambiguation)', 22 ],
+       [ 'List of Warner Bros. films', 'Alexander (disambiguation)', 12 ],
+       [ 'List of lesbian, gay, bisexual or transgender-related films', 'Alexander (disambiguation)', 12 ],
+       [ 'List of war films and TV specials', 'Alexander (disambiguation)', 11 ],
+       [ 'List of box office bombs', 'Alexander (disambiguation)', 174 ],
+       [ 'King Porus', 'Alexander (disambiguation)', 230 ],
+       [ 'Laeta Kalogridis', 'Alexander (disambiguation)', 16 ],
+       [ 'Joseph Morgan (actor)', 'Alexander (disambiguation)', 69 ],
+       [ 'Golden Raspberry Award for Worst Picture', 'Alexander (disambiguation)', 19 ],
+       [ 'Jared Leto', 'Alexander (disambiguation)', 361 ],
+       [ 'Bisexuality', 'Alexander (disambiguation)', 11 ],
+       [ 'David Leon', 'Alexander (disambiguation)', 23 ],
+       [ 'Australia (2008 film)', 'Alexander (disambiguation)', 13 ],
+       [ 'Connor Paolo', 'Alexander (disambiguation)', 65 ],
+       [ 'Angelina Jolie', 'Alexander (disambiguation)', 669 ],
+       [ '300 (film)', 'Alexander (disambiguation)', 10 ],
+       [ 'Cleitus the Black', 'Alexander (disambiguation)', 35 ],
+       [ 'Anthony Hopkins filmography', 'Alexander (disambiguation)', 71 ],
+       [ '25th Golden Raspberry Awards', 'Alexander (disambiguation)', 13 ],
+       [ '2004 in film', 'Alexander (disambiguation)', 17 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

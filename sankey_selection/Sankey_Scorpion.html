@@ -1,0 +1,75 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Scorpion (disambiguation)', ' Walter Dean Myers', 10 ],
+       [ 'Scorpion (disambiguation)', ' VAQ-132', 19 ],
+       [ 'Scorpion (disambiguation)', ' USS Scorpion', 33 ],
+       [ 'Scorpion (disambiguation)', ' Scorpions (paramilitary)', 13 ],
+       [ 'Scorpion (disambiguation)', ' Scorpions (band)', 1341 ],
+       [ 'Scorpion (disambiguation)', ' Scorpions (Iraq)', 26 ],
+       [ 'Scorpion (disambiguation)', ' Scorpion W2', 21 ],
+       [ 'Scorpion (disambiguation)', ' Scorpion I', 96 ],
+       [ 'Scorpion (disambiguation)', ' Scorpion (solitaire)', 11 ],
+       [ 'Scorpion (disambiguation)', ' Scorpion (novel)', 11 ],
+       [ 'Scorpion (disambiguation)', ' Scorpion (film)', 155 ],
+       [ 'Scorpion (disambiguation)', ' Scorpion (TV series)', 6568 ],
+       [ 'Scorpion (disambiguation)', ' Scorpion (Mortal Kombat)', 362 ],
+       [ 'Scorpion (disambiguation)', ' Scorpion (Marvel Comics)', 192 ],
+       [ 'Scorpion (disambiguation)', ' Scorpion (CPU)', 19 ],
+       [ 'Scorpion (disambiguation)', ' Scorpion (Atlas/Seaboard Comics)', 33 ],
+       [ 'Scorpion (disambiguation)', ' Scorpion', 399 ],
+       [ 'Scorpion (disambiguation)', ' Scorpio (weapon)', 94 ],
+       [ 'Scorpion (disambiguation)', ' Scorpio', 50 ],
+       [ 'Scorpion (disambiguation)', ' Northrop F-89 Scorpion', 30 ],
+       [ 'Scorpion (disambiguation)', ' Le Scorpion', 10 ],
+       [ 'Scorpion (disambiguation)', ' King Scorpion', 57 ],
+       [ 'Scorpion (disambiguation)', ' Škorpion vz. 61', 80 ],
+       [ 'Scorpion (disambiguation)', ' The Scorpions (Manchester band)', 87 ],
+       [ 'Scorpion (disambiguation)', ' The Scorpion and the Frog', 16 ],
+       [ 'Scorpion (disambiguation)', ' Textron AirLand Scorpion', 63 ],
+       [ 'Scorpion (disambiguation)', ' Scourge', 20 ],
+       [ 'Scorpion (disambiguation)', ' Scorpius (disambiguation)', 15 ],
+       [ 'Scorpion (disambiguation)', ' Scorpions (South Africa)', 10 ],
+       [ 'Scorpion (disambiguation)', ' Scorpion man', 36 ],
+       [ 'Scorpion (disambiguation)', ' Scorpion (dinghy)', 10 ],
+       [ 'Scorpion (disambiguation)', ' Scorpion (album)', 10 ],
+       [ 'Scorpion (disambiguation)', ' Scorpion (Star Trek: Voyager)', 43 ],
+       [ 'Scorpion (disambiguation)', ' Scorpion (Carmilla Black)', 77 ],
+       [ 'Scorpion (disambiguation)', ' Nepidae', 61 ],
+       [ 'Scorpion (disambiguation)', ' M56 Scorpion', 23 ],
+       [ 'Scorpion (disambiguation)', ' List of ZX Spectrum clones', 40 ],
+       [ 'Scorpion (disambiguation)', ' FV101 Scorpion', 76 ],
+       [ 'Scorpion (TV series)', 'Scorpion (disambiguation)', 422 ],
+       [ 'Main Page', 'Scorpion (disambiguation)', 226 ],
+       [ 'Scorpion', 'Scorpion (disambiguation)', 7327 ],
+       [ 'Scorpions (band)', 'Scorpion (disambiguation)', 303 ],
+       [ 'other-empty', 'Scorpion (disambiguation)', 193 ],
+       [ 'other-wikipedia', 'Scorpion (disambiguation)', 486 ],
+       [ 'other-google', 'Scorpion (disambiguation)', 140 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Viking (disambiguation)', ' Wiking', 13 ],
+       [ 'Viking (disambiguation)', ' Vikings (TV series)', 19177 ],
+       [ 'Viking (disambiguation)', ' Vikings (TV documentary series)', 260 ],
+       [ 'Viking (disambiguation)', ' Vikings', 291 ],
+       [ 'Viking (disambiguation)', ' Viking program', 99 ],
+       [ 'Viking (disambiguation)', ' Viking Cruises', 11 ],
+       [ 'Viking (disambiguation)', ' Viking Air', 27 ],
+       [ 'Viking (disambiguation)', ' Viking 2', 26 ],
+       [ 'Viking (disambiguation)', ' Viking (satellite)', 21 ],
+       [ 'Viking (disambiguation)', ' Viking (rocket engine)', 16 ],
+       [ 'Viking (disambiguation)', ' Viking (given name)', 30 ],
+       [ 'Viking (disambiguation)', ' Viking (band)', 25 ],
+       [ 'Viking (disambiguation)', ' Thor: Vikings', 67 ],
+       [ 'Viking (disambiguation)', ' The Vikings (1958 film)', 147 ],
+       [ 'Viking (disambiguation)', ' The Viking (1931 film)', 18 ],
+       [ 'Viking (disambiguation)', ' The Viking (1928 film)', 40 ],
+       [ 'Viking (disambiguation)', ' BvS 10', 26 ],
+       [ 'Viking (disambiguation)', ' Viking Range', 17 ],
+       [ 'Viking (disambiguation)', ' Viking Airlines', 11 ],
+       [ 'Viking (disambiguation)', ' Viking 1', 47 ],
+       [ 'Viking (disambiguation)', ' Viking (rocket)', 32 ],
+       [ 'Viking (disambiguation)', ' Viking (comics)', 95 ],
+       [ 'Viking (disambiguation)', ' Viking: The Ultimate Obstacle Course', 17 ],
+       [ 'Viking (disambiguation)', ' Viking: Battle for Asgard', 86 ],
+       [ 'Viking (disambiguation)', ' Minnesota Vikings', 158 ],
+       [ 'Viking (disambiguation)', ' Lockheed S-3 Viking', 31 ],
+       [ 'Viking (disambiguation)', ' Hagström Viking', 14 ],
+       [ 'Vikings (TV series)', 'Viking (disambiguation)', 11 ],
+       [ 'Vikings (TV documentary series)', 'Viking (disambiguation)', 124 ],
+       [ 'The Walking Dead (season 5)', 'Viking (disambiguation)', 10 ],
+       [ 'Vikings', 'Viking (disambiguation)', 16291 ],
+       [ 'Main Page', 'Viking (disambiguation)', 336 ],
+       [ 'other-empty', 'Viking (disambiguation)', 272 ],
+       [ 'other-google', 'Viking (disambiguation)', 104 ],
+       [ 'other-wikipedia', 'Viking (disambiguation)', 468 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

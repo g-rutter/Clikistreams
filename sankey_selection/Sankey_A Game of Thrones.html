@@ -1,0 +1,53 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'A Game of Thrones (disambiguation)', ' Game of Thrones Ascent', 149 ],
+       [ 'A Game of Thrones (disambiguation)', ' Game of Thrones: Seven Kingdoms', 430 ],
+       [ 'A Game of Thrones (disambiguation)', ' A Game of Thrones (card game)', 86 ],
+       [ 'A Game of Thrones (disambiguation)', ' A Game of Thrones (board game)', 160 ],
+       [ 'A Game of Thrones (disambiguation)', ' A Game of Thrones: Genesis', 277 ],
+       [ 'A Game of Thrones (disambiguation)', ' Music of Game of Thrones', 21 ],
+       [ 'A Game of Thrones (disambiguation)', ' Game of Thrones (2014 video game)', 1756 ],
+       [ 'A Game of Thrones (disambiguation)', ' Game of Thrones (2012 video game)', 793 ],
+       [ 'A Game of Thrones (disambiguation)', ' Game of Thrones', 2076 ],
+       [ 'A Game of Thrones (disambiguation)', ' A Song of Ice and Fire', 1862 ],
+       [ 'A Game of Thrones (disambiguation)', ' A Game of Thrones (role-playing game)', 280 ],
+       [ 'A Game of Thrones (disambiguation)', ' A Game of Thrones (comics)', 185 ],
+       [ 'A Game of Thrones (disambiguation)', ' A Game of Thrones', 632 ],
+       [ 'other-yahoo', 'A Game of Thrones (disambiguation)', 40 ],
+       [ 'other-wikipedia', 'A Game of Thrones (disambiguation)', 1481 ],
+       [ 'other-google', 'A Game of Thrones (disambiguation)', 831 ],
+       [ 'Main Page', 'A Game of Thrones (disambiguation)', 10 ],
+       [ 'other-other', 'A Game of Thrones (disambiguation)', 65 ],
+       [ 'other-bing', 'A Game of Thrones (disambiguation)', 30 ],
+       [ 'Game of Thrones', 'A Game of Thrones (disambiguation)', 4229 ],
+       [ 'GOT', 'A Game of Thrones (disambiguation)', 452 ],
+       [ 'A Game of Thrones', 'A Game of Thrones (disambiguation)', 1334 ],
+       [ 'other-empty', 'A Game of Thrones (disambiguation)', 376 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Wolverine (disambiguation)', ' X-Men Origins: Wolverine (video game)', 48 ],
+       [ 'Wolverine (disambiguation)', ' X-Men Origins: Wolverine', 476 ],
+       [ 'Wolverine (disambiguation)', ' X-Men', 10 ],
+       [ 'Wolverine (disambiguation)', ' Wolverine in other media', 41 ],
+       [ 'Wolverine (disambiguation)', ' Wolverine 1', 18 ],
+       [ 'Wolverine (disambiguation)', ' Wolverine (video game)', 37 ],
+       [ 'Wolverine (disambiguation)', ' Wolverine (train)', 10 ],
+       [ 'Wolverine (disambiguation)', ' Wolverine', 1551 ],
+       [ 'Wolverine (disambiguation)', ' USS Wolverine', 11 ],
+       [ 'Wolverine (disambiguation)', ' The Wolverine (film)', 1370 ],
+       [ 'Wolverine (disambiguation)', ' M10 tank destroyer', 66 ],
+       [ 'Wolverine (disambiguation)', ' KTO Rosomak', 17 ],
+       [ 'Wolverine (disambiguation)', ' Wolverine World Wide', 36 ],
+       [ 'Wolverine (disambiguation)', ' Wolverine 2', 12 ],
+       [ 'Wolverine (disambiguation)', ' Wolverine (comic book)', 776 ],
+       [ 'Wolverine (disambiguation)', ' Wolverine (character)', 3905 ],
+       [ 'Wolverine (disambiguation)', ' Wolverine (band)', 31 ],
+       [ 'Wolverine (disambiguation)', ' Red Dawn', 37 ],
+       [ 'Wolverine (disambiguation)', ' Marvel Anime', 38 ],
+       [ 'Wolverine (disambiguation)', ' M104 Wolverine', 13 ],
+       [ 'Wolverine (disambiguation)', ' Jeff Hardy', 60 ],
+       [ 'Wolverine (disambiguation)', ' Hugo Viana (fighter)', 44 ],
+       [ 'Wolverine (disambiguation)', ' HMS Wolverine', 20 ],
+       [ 'other-yahoo', 'Wolverine (disambiguation)', 297 ],
+       [ 'Wolverine', 'Wolverine (disambiguation)', 4196 ],
+       [ 'The Wolverine (film)', 'Wolverine (disambiguation)', 133 ],
+       [ 'X-Men Origins: Wolverine', 'Wolverine (disambiguation)', 118 ],
+       [ 'X-Men: First Class', 'Wolverine (disambiguation)', 12 ],
+       [ 'other-bing', 'Wolverine (disambiguation)', 424 ],
+       [ 'Main Page', 'Wolverine (disambiguation)', 125 ],
+       [ 'other-other', 'Wolverine (disambiguation)', 257 ],
+       [ 'other-empty', 'Wolverine (disambiguation)', 689 ],
+       [ 'X-Men: Days of Future Past', 'Wolverine (disambiguation)', 18 ],
+       [ 'Wolverine (character)', 'Wolverine (disambiguation)', 17 ],
+       [ 'other-wikipedia', 'Wolverine (disambiguation)', 624 ],
+       [ 'other-internal', 'Wolverine (disambiguation)', 14 ],
+       [ 'other-twitter', 'Wolverine (disambiguation)', 64 ],
+       [ 'other-google', 'Wolverine (disambiguation)', 3123 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

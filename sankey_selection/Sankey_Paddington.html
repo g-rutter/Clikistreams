@@ -1,0 +1,43 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Paddington (disambiguation)', ' The Adventures of Paddington Bear', 99 ],
+       [ 'Paddington (disambiguation)', ' Paddington Bear (1989 TV series)', 127 ],
+       [ 'Paddington (disambiguation)', ' Paddington Bear', 866 ],
+       [ 'Paddington (disambiguation)', ' Paddington (1975 TV series)', 150 ],
+       [ 'Paddington (disambiguation)', ' 4.50 from Paddington', 10 ],
+       [ 'Paddington (disambiguation)', ' Paddington (film)', 3987 ],
+       [ 'Paddington (disambiguation)', ' Paddington, New South Wales', 13 ],
+       [ 'Paddington (disambiguation)', ' Paddington', 17 ],
+       [ 'Paddington (disambiguation)', ' London Paddington station', 19 ],
+       [ 'Paddington', 'Paddington (disambiguation)', 4745 ],
+       [ 'other-wikipedia', 'Paddington (disambiguation)', 17 ],
+       [ 'other-google', 'Paddington (disambiguation)', 29 ],
+       [ 'other-empty', 'Paddington (disambiguation)', 54 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Poltergeist (disambiguation)', ' Poltergeist (computer programming)', 11 ],
+       [ 'Poltergeist (disambiguation)', ' Poltergeist (band)', 13 ],
+       [ 'Poltergeist (disambiguation)', ' Poltergeist (2015 film)', 3523 ],
+       [ 'Poltergeist (disambiguation)', ' Poltergeist (1982 film)', 4031 ],
+       [ 'Poltergeist (disambiguation)', ' List of Marvel Comics characters: P', 43 ],
+       [ 'Poltergeist (disambiguation)', ' Regininha Poltergeist', 30 ],
+       [ 'Poltergeist (disambiguation)', ' Poltergeist III', 293 ],
+       [ 'Poltergeist (disambiguation)', ' Poltergeist II: The Other Side', 371 ],
+       [ 'Poltergeist (disambiguation)', ' Poltergeist (roller coaster)', 37 ],
+       [ 'Poltergeist (disambiguation)', ' Poltergeist (film series)', 673 ],
+       [ 'Poltergeist (disambiguation)', ' Poltergeist: The Legacy', 60 ],
+       [ 'Poltergeist (disambiguation)', ' Poltergeist', 49 ],
+       [ 'other-wikipedia', 'Poltergeist (disambiguation)', 31 ],
+       [ 'other-google', 'Poltergeist (disambiguation)', 65 ],
+       [ 'Poltergeist', 'Poltergeist (disambiguation)', 7336 ],
+       [ 'other-empty', 'Poltergeist (disambiguation)', 65 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

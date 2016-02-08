@@ -1,0 +1,47 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Nashville (disambiguation)', ' Nashville, Tennessee', 17 ],
+       [ 'Nashville (disambiguation)', ' Nashville, California', 10 ],
+       [ 'Nashville (disambiguation)', ' USS Nashville', 12 ],
+       [ 'Nashville (disambiguation)', ' Nashville (film)', 161 ],
+       [ 'Nashville (disambiguation)', ' Nashville (2012 TV series)', 4287 ],
+       [ 'Nashville (disambiguation)', ' Nashville (2007 TV series)', 112 ],
+       [ 'Nashville (disambiguation)', ' Nashville, Texas', 10 ],
+       [ 'Nashville (disambiguation)', ' Nashville, Missouri', 10 ],
+       [ 'List of Arrow episodes', 'Nashville (disambiguation)', 10 ],
+       [ 'List of Modern Family episodes', 'Nashville (disambiguation)', 18 ],
+       [ 'List of Agents of S.H.I.E.L.D. episodes', 'Nashville (disambiguation)', 10 ],
+       [ 'List of Suits episodes', 'Nashville (disambiguation)', 12 ],
+       [ 'Black-ish', 'Nashville (disambiguation)', 10 ],
+       [ 'Nashville, Tennessee', 'Nashville (disambiguation)', 3215 ],
+       [ 'Main Page', 'Nashville (disambiguation)', 199 ],
+       [ 'other-wikipedia', 'Nashville (disambiguation)', 484 ],
+       [ 'other-empty', 'Nashville (disambiguation)', 130 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

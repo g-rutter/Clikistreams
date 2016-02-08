@@ -1,0 +1,50 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'The Amazing Spider-Man (disambiguation)', ' The Amazing Spider-Man 2 (2014 video game)', 200 ],
+       [ 'The Amazing Spider-Man (disambiguation)', ' The Amazing Spider-Man 2 (1992 video game)', 22 ],
+       [ 'The Amazing Spider-Man (disambiguation)', ' The Amazing Spider-Man 2', 2648 ],
+       [ 'The Amazing Spider-Man (disambiguation)', ' The Amazing Spider-Man (handheld video game)', 17 ],
+       [ 'The Amazing Spider-Man (disambiguation)', ' Spider-Man (1977 film)', 137 ],
+       [ 'The Amazing Spider-Man (disambiguation)', ' The Amazing Spider-Man 3: Invasion of the Spider-Slayers', 49 ],
+       [ 'The Amazing Spider-Man (disambiguation)', ' The Amazing Spider-Man (TV series)', 163 ],
+       [ 'The Amazing Spider-Man (disambiguation)', ' The Amazing Spider-Man (2012 video game)', 183 ],
+       [ 'The Amazing Spider-Man (disambiguation)', ' The Amazing Spider-Man (2012 film)', 3460 ],
+       [ 'The Amazing Spider-Man (disambiguation)', ' The Amazing Spider-Man (1990 video game)', 33 ],
+       [ 'The Amazing Spider-Man (disambiguation)', ' The Amazing Spider-Man', 53 ],
+       [ 'The Amazing Spider-Man (disambiguation)', ' Spider-Man in other media', 58 ],
+       [ 'The Amazing Spider-Man (disambiguation)', ' Spider-Man (disambiguation)', 55 ],
+       [ 'The Amazing Spider-Man (disambiguation)', ' Spider-Man', 15 ],
+       [ 'other-empty', 'The Amazing Spider-Man (disambiguation)', 181 ],
+       [ 'The Amazing Spider-Man', 'The Amazing Spider-Man (disambiguation)', 5307 ],
+       [ 'Spider-Man (disambiguation)', 'The Amazing Spider-Man (disambiguation)', 838 ],
+       [ 'Main Page', 'The Amazing Spider-Man (disambiguation)', 10 ],
+       [ 'other-wikipedia', 'The Amazing Spider-Man (disambiguation)', 248 ],
+       [ 'other-google', 'The Amazing Spider-Man (disambiguation)', 16 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

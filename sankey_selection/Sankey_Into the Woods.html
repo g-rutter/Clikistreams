@@ -1,0 +1,45 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Into the Woods (disambiguation)', ' Warriors (novel series)', 12 ],
+       [ 'Into the Woods (disambiguation)', ' Into the Woods (soundtrack)', 50 ],
+       [ 'Into the Woods (disambiguation)', ' Into the Woods (novel)', 166 ],
+       [ 'Into the Woods (disambiguation)', ' Into the Woods (film)', 9334 ],
+       [ 'Into the Woods (disambiguation)', ' Into the Woods (Desperate Housewives)', 33 ],
+       [ 'Into the Woods (disambiguation)', ' Into the Woods (Buffy the Vampire Slayer)', 98 ],
+       [ 'Into the Woods (disambiguation)', ' Into the Woods', 102 ],
+       [ 'Into the Woods (disambiguation)', ' Criminal Minds (season 6)', 25 ],
+       [ 'Into the Woods (disambiguation)', ' Into the Woods (band)', 12 ],
+       [ 'Into the Woods (disambiguation)', ' Into the Woods (album)', 11 ],
+       [ 'Into the Woods (disambiguation)', ' Into the Forest', 53 ],
+       [ 'other-wikipedia', 'Into the Woods (disambiguation)', 17 ],
+       [ 'other-google', 'Into the Woods (disambiguation)', 88 ],
+       [ 'Into the Woods', 'Into the Woods (disambiguation)', 9405 ],
+       [ 'other-empty', 'Into the Woods (disambiguation)', 82 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

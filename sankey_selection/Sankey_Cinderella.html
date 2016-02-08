@@ -1,0 +1,62 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Cinderella (disambiguation)', ' List of Shrek characters', 83 ],
+       [ 'Cinderella (disambiguation)', ' Ever After', 16 ],
+       [ 'Cinderella (disambiguation)', ' Cinderella III: A Twist in Time', 91 ],
+       [ 'Cinderella (disambiguation)', ' Cinderella II: Dreams Come True', 101 ],
+       [ 'Cinderella (disambiguation)', ' Cinderella (musical)', 223 ],
+       [ 'Cinderella (disambiguation)', ' Cinderella (i5 song)', 10 ],
+       [ 'Cinderella (disambiguation)', ' Cinderella (Filipino band)', 11 ],
+       [ 'Cinderella (disambiguation)', ' Cinderella (Disney character)', 299 ],
+       [ 'Cinderella (disambiguation)', ' Cinderella (2013 Broadway production)', 82 ],
+       [ 'Cinderella (disambiguation)', ' Cinderella (1994 film)', 76 ],
+       [ 'Cinderella (disambiguation)', ' Cinderella (1950 film)', 801 ],
+       [ 'Cinderella (disambiguation)', ' Cinderella (1947 film)', 35 ],
+       [ 'Cinderella (disambiguation)', ' Cinderella (1914 film)', 56 ],
+       [ 'Cinderella (disambiguation)', ' Cinderella (1899 film)', 86 ],
+       [ 'Cinderella (disambiguation)', ' Cinderella', 92 ],
+       [ 'Cinderella (disambiguation)', ' Another Cinderella Story', 12 ],
+       [ 'Cinderella (disambiguation)', ' A Cinderella Story', 34 ],
+       [ 'Cinderella (disambiguation)', ' Cinderella (sports)', 11 ],
+       [ 'Cinderella (disambiguation)', ' Cinderella (band)', 752 ],
+       [ 'Cinderella (disambiguation)', ' Cinderella (Prokofiev)', 34 ],
+       [ 'Cinderella (disambiguation)', ' Cinderella (2015 film)', 6185 ],
+       [ 'Cinderella (disambiguation)', ' Cinderella (2006 film)', 257 ],
+       [ 'Cinderella (disambiguation)', ' Cinderella (2000 film)', 192 ],
+       [ 'Cinderella (disambiguation)', ' Cinderella (1997 film)', 238 ],
+       [ 'Cinderella (disambiguation)', ' Cinderella (1979 film)', 28 ],
+       [ 'Cinderella (disambiguation)', ' Cinderella (1977 film)', 71 ],
+       [ 'Main Page', 'Cinderella (disambiguation)', 61 ],
+       [ 'other-google', 'Cinderella (disambiguation)', 128 ],
+       [ 'other-empty', 'Cinderella (disambiguation)', 131 ],
+       [ 'other-wikipedia', 'Cinderella (disambiguation)', 413 ],
+       [ 'Cinderella', 'Cinderella (disambiguation)', 7453 ],
+       [ 'Cinderella (musical)', 'Cinderella (disambiguation)', 179 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Chicago (disambiguation)', ' Novosibirsk', 36 ],
+       [ 'Chicago (disambiguation)', ' Frank Sinatra', 13 ],
+       [ 'Chicago (disambiguation)', ' Chicago (poem)', 10 ],
+       [ 'Chicago (disambiguation)', ' Chicago (band)', 2155 ],
+       [ 'Chicago (disambiguation)', ' Chicago (album)', 39 ],
+       [ 'Chicago (disambiguation)', ' Chicago (Prison Break)', 13 ],
+       [ 'Chicago (disambiguation)', ' Chicago (Graham Nash song)', 29 ],
+       [ 'Chicago (disambiguation)', ' Chicago (2002 film)', 1399 ],
+       [ 'Chicago (disambiguation)', ' Top Gear test track', 39 ],
+       [ 'Chicago (disambiguation)', ' Paarl', 37 ],
+       [ 'Chicago (disambiguation)', ' New Chicago, Indiana', 12 ],
+       [ 'Chicago (disambiguation)', ' New Chicago, California', 16 ],
+       [ 'Chicago (disambiguation)', ' Chicago (play)', 184 ],
+       [ 'Chicago (disambiguation)', ' Chicago (musical)', 678 ],
+       [ 'Chicago (disambiguation)', ' Chicago (manga)', 20 ],
+       [ 'Chicago (disambiguation)', ' Chicago (That Toddlin\' Town)', 31 ],
+       [ 'Chicago (disambiguation)', ' Chicago (Sufjan Stevens song)', 25 ],
+       [ 'Chicago (disambiguation)', ' Chicago (1927 film)', 70 ],
+       [ 'Chicago (disambiguation)', ' Chicago-style politics', 14 ],
+       [ 'Chicago (disambiguation)', ' Chicago', 47 ],
+       [ 'Chicago (disambiguation)', ' 1200 Micrograms', 19 ],
+       [ 'Chicago', 'Chicago (disambiguation)', 3913 ],
+       [ 'other-empty', 'Chicago (disambiguation)', 123 ],
+       [ 'Main Page', 'Chicago (disambiguation)', 51 ],
+       [ 'other-wikipedia', 'Chicago (disambiguation)', 146 ],
+       [ 'other-google', 'Chicago (disambiguation)', 220 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

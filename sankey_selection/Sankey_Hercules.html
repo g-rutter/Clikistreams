@@ -1,0 +1,87 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Hercules (disambiguation)', ' The Sons of Hercules', 24 ],
+       [ 'Hercules (disambiguation)', ' The Legend of Hercules', 328 ],
+       [ 'Hercules (disambiguation)', ' The Asylum', 18 ],
+       [ 'Hercules (disambiguation)', ' Liger', 75 ],
+       [ 'Hercules (disambiguation)', ' Hercules beetle', 16 ],
+       [ 'Hercules (disambiguation)', ' Hercules Unchained', 26 ],
+       [ 'Hercules (disambiguation)', ' Hercules Returns', 50 ],
+       [ 'Hercules (disambiguation)', ' Hercules (wrestler)', 34 ],
+       [ 'Hercules (disambiguation)', ' Hercules (miniseries)', 45 ],
+       [ 'Hercules (disambiguation)', ' Hercules (comics)', 15 ],
+       [ 'Hercules (disambiguation)', ' Hercules (chef)', 10 ],
+       [ 'Hercules (disambiguation)', ' Hercules (bear)', 37 ],
+       [ 'Hercules (disambiguation)', ' Hercules (Marvel Comics)', 93 ],
+       [ 'Hercules (disambiguation)', ' Hercules (DC Comics)', 27 ],
+       [ 'Hercules (disambiguation)', ' Hercules (2014 film)', 1689 ],
+       [ 'Hercules (disambiguation)', ' Hercules (1998 TV series)', 106 ],
+       [ 'Hercules (disambiguation)', ' Hercules (1983 film)', 166 ],
+       [ 'Hercules (disambiguation)', ' Hercules (1958 film)', 111 ],
+       [ 'Hercules (disambiguation)', ' Hercules: The Legendary Journeys', 376 ],
+       [ 'Hercules (disambiguation)', ' Hercules', 33 ],
+       [ 'Hercules (disambiguation)', ' Heracles', 46 ],
+       [ 'Hercules (disambiguation)', ' Fletcher Hercules', 10 ],
+       [ 'Hercules (disambiguation)', ' De Havilland Hercules', 22 ],
+       [ 'Hercules (disambiguation)', ' Young Hercules', 24 ],
+       [ 'Hercules (disambiguation)', ' The Mighty Hercules', 68 ],
+       [ 'Hercules (disambiguation)', ' M88 Recovery Vehicle', 13 ],
+       [ 'Hercules (disambiguation)', ' Lockheed Martin C-130J Super Hercules', 44 ],
+       [ 'Hercules (disambiguation)', ' Lockheed C-130 Hercules', 165 ],
+       [ 'Hercules (disambiguation)', ' Labours of Hercules', 46 ],
+       [ 'Hercules (disambiguation)', ' Hércules CF', 10 ],
+       [ 'Hercules (disambiguation)', ' Hughes H-4 Hercules', 35 ],
+       [ 'Hercules (disambiguation)', ' Hercules in popular culture', 44 ],
+       [ 'Hercules (disambiguation)', ' Hercules in ancient Rome', 49 ],
+       [ 'Hercules (disambiguation)', ' Hercules in New York', 56 ],
+       [ 'Hercules (disambiguation)', ' Hercules Reborn', 42 ],
+       [ 'Hercules (disambiguation)', ' Hercules Inc.', 16 ],
+       [ 'Hercules (disambiguation)', ' Hercules Graphics Card', 19 ],
+       [ 'Hercules (disambiguation)', ' Hercules Gas Engine Company', 16 ],
+       [ 'Hercules (disambiguation)', ' Hercules Computer Technology', 41 ],
+       [ 'Hercules (disambiguation)', ' Hercules (motorcycle)', 12 ],
+       [ 'Hercules (disambiguation)', ' Hercules (emulator)', 20 ],
+       [ 'Hercules (disambiguation)', ' Hercules (dwarf galaxy)', 11 ],
+       [ 'Hercules (disambiguation)', ' Hercules (constellation)', 29 ],
+       [ 'Hercules (disambiguation)', ' Hercules (1997 film)', 1341 ],
+       [ 'Hercules (disambiguation)', ' Hercules (1984 video game)', 11 ],
+       [ 'Hercules (disambiguation)', ' Herc\'s Adventures', 11 ],
+       [ 'Hercules (disambiguation)', ' HMS Hercules', 12 ],
+       [ 'Hercules (disambiguation)', ' Disney\'s Hercules (video game)', 27 ],
+       [ 'other-wikipedia', 'Hercules (disambiguation)', 345 ],
+       [ 'other-google', 'Hercules (disambiguation)', 225 ],
+       [ 'Heracles (disambiguation)', 'Hercules (disambiguation)', 29 ],
+       [ 'Hercules', 'Hercules (disambiguation)', 3974 ],
+       [ 'Hercules (comics)', 'Hercules (disambiguation)', 11 ],
+       [ 'Main Page', 'Hercules (disambiguation)', 17 ],
+       [ 'The Legend of Hercules', 'Hercules (disambiguation)', 86 ],
+       [ 'other-empty', 'Hercules (disambiguation)', 122 ],
+       [ 'Hercule', 'Hercules (disambiguation)', 22 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

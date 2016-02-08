@@ -1,0 +1,55 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Marco Polo (disambiguation)', ' The Adventures of Marco Polo', 20 ],
+       [ 'Marco Polo (disambiguation)', ' Marcopolo S.A.', 32 ],
+       [ 'Marco Polo (disambiguation)', ' Marco Polo sheep', 11 ],
+       [ 'Marco Polo (disambiguation)', ' Marco Polo (ship)', 13 ],
+       [ 'Marco Polo (disambiguation)', ' Marco Polo (producer)', 93 ],
+       [ 'Marco Polo (disambiguation)', ' Marco Polo (miniseries)', 74 ],
+       [ 'Marco Polo (disambiguation)', ' Marco Polo (game)', 253 ],
+       [ 'Marco Polo (disambiguation)', ' Marco Polo (TV series)', 5939 ],
+       [ 'Marco Polo (disambiguation)', ' Marco Polo (Doctor Who)', 54 ],
+       [ 'Marco Polo (disambiguation)', ' Marco Polo (2007 film)', 112 ],
+       [ 'Marco Polo (disambiguation)', ' Marco Polo (1961 film)', 35 ],
+       [ 'Marco Polo (disambiguation)', ' Marco Polo', 121 ],
+       [ 'Marco Polo (disambiguation)', ' Venice Marco Polo Airport', 10 ],
+       [ 'Marco Polo (disambiguation)', ' TS Maxim Gorkiy', 14 ],
+       [ 'Marco Polo (disambiguation)', ' Marco Polo (The Sopranos)', 21 ],
+       [ 'Marco Polo (disambiguation)', ' Marc O\'Polo', 19 ],
+       [ 'Marco Polo (disambiguation)', ' MS Marco Polo', 61 ],
+       [ 'other-empty', 'Marco Polo (disambiguation)', 85 ],
+       [ 'Thor (satellite)', 'Marco Polo (disambiguation)', 29 ],
+       [ 'other-other', 'Marco Polo (disambiguation)', 14 ],
+       [ 'Marco Polo', 'Marco Polo (disambiguation)', 5764 ],
+       [ 'Marco Polo (ship)', 'Marco Polo (disambiguation)', 39 ],
+       [ 'Main Page', 'Marco Polo (disambiguation)', 27 ],
+       [ 'other-google', 'Marco Polo (disambiguation)', 100 ],
+       [ 'other-wikipedia', 'Marco Polo (disambiguation)', 129 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Iron Man (disambiguation)', ' The Iron Man (serial)', 26 ],
+       [ 'Iron Man (disambiguation)', ' The Iron Man (novel)', 39 ],
+       [ 'Iron Man (disambiguation)', ' The Avengers', 12 ],
+       [ 'Iron Man (disambiguation)', ' Marvel Animated Features', 68 ],
+       [ 'Iron Man (disambiguation)', ' Ironman World Championship', 85 ],
+       [ 'Iron Man (disambiguation)', ' Ironman (surf lifesaving)', 17 ],
+       [ 'Iron Man (disambiguation)', ' Iron man (sports streak)', 24 ],
+       [ 'Iron Man (disambiguation)', ' Iron Man 3', 544 ],
+       [ 'Iron Man (disambiguation)', ' Iron Man (video game)', 82 ],
+       [ 'Iron Man (disambiguation)', ' Iron Man (TV series)', 70 ],
+       [ 'Iron Man (disambiguation)', ' Iron Man (Canadian comics)', 31 ],
+       [ 'Iron Man (disambiguation)', ' Iron Man', 658 ],
+       [ 'Iron Man (disambiguation)', ' Alternative versions of Iron Man', 11 ],
+       [ 'Iron Man (disambiguation)', ' A Man of Iron', 14 ],
+       [ 'Iron Man (disambiguation)', ' Timex Ironman', 15 ],
+       [ 'Iron Man (disambiguation)', ' The Marvel Super Heroes', 11 ],
+       [ 'Iron Man (disambiguation)', ' The Iron Man: The Musical by Pete Townshend', 20 ],
+       [ 'Iron Man (disambiguation)', ' Tetsuo: The Iron Man', 49 ],
+       [ 'Iron Man (disambiguation)', ' One-platoon system', 12 ],
+       [ 'Iron Man (disambiguation)', ' Marvel Anime', 143 ],
+       [ 'Iron Man (disambiguation)', ' Ironman Triathlon', 470 ],
+       [ 'Iron Man (disambiguation)', ' Ironman (novel)', 15 ],
+       [ 'Iron Man (disambiguation)', ' Ironman (Ghostface Killah album)', 72 ],
+       [ 'Iron Man (disambiguation)', ' Iron Man 2020', 19 ],
+       [ 'Iron Man (disambiguation)', ' Iron Man 2', 315 ],
+       [ 'Iron Man (disambiguation)', ' Iron Man (song)', 379 ],
+       [ 'Iron Man (disambiguation)', ' Iron Man (2008 film)', 3440 ],
+       [ 'Iron Man (disambiguation)', ' Iron Man (1951 film)', 60 ],
+       [ 'Iron Man (disambiguation)', ' Iron Man (1931 film)', 68 ],
+       [ 'Iron Man (disambiguation)', ' Iron Man: The Best of Black Sabbath', 13 ],
+       [ 'Iron Man (disambiguation)', ' Iron Man: Armored Adventures', 30 ],
+       [ 'Ironman Triathlon', 'Iron Man (disambiguation)', 25 ],
+       [ 'Iron Man 2', 'Iron Man (disambiguation)', 10 ],
+       [ 'Hulk (comics)', 'Iron Man (disambiguation)', 11 ],
+       [ 'Captain America', 'Iron Man (disambiguation)', 13 ],
+       [ 'Batman', 'Iron Man (disambiguation)', 25 ],
+       [ 'Captain America: The First Avenger', 'Iron Man (disambiguation)', 11 ],
+       [ 'Iron Man', 'Iron Man (disambiguation)', 4067 ],
+       [ 'Hawaii', 'Iron Man (disambiguation)', 11 ],
+       [ 'Ironman 70.3', 'Iron Man (disambiguation)', 20 ],
+       [ 'other-google', 'Iron Man (disambiguation)', 105 ],
+       [ 'other-internal', 'Iron Man (disambiguation)', 10 ],
+       [ 'other-twitter', 'Iron Man (disambiguation)', 15 ],
+       [ 'other-wikipedia', 'Iron Man (disambiguation)', 714 ],
+       [ 'The Iron Man (novel)', 'Iron Man (disambiguation)', 43 ],
+       [ 'The Avengers (2012 film)', 'Iron Man (disambiguation)', 13 ],
+       [ 'Thor (film)', 'Iron Man (disambiguation)', 11 ],
+       [ 'other-bing', 'Iron Man (disambiguation)', 159 ],
+       [ 'Superman', 'Iron Man (disambiguation)', 10 ],
+       [ 'Main Page', 'Iron Man (disambiguation)', 252 ],
+       [ 'other-other', 'Iron Man (disambiguation)', 190 ],
+       [ 'other-yahoo', 'Iron Man (disambiguation)', 155 ],
+       [ 'other-empty', 'Iron Man (disambiguation)', 621 ],
+       [ 'The Incredible Hulk (film)', 'Iron Man (disambiguation)', 16 ],
+       [ 'Spider-Man', 'Iron Man (disambiguation)', 32 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

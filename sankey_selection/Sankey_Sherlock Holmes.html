@@ -1,0 +1,66 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Sherlock Holmes (disambiguation)', ' Sherlock Holmes and the Deadly Necklace', 30 ],
+       [ 'Sherlock Holmes (disambiguation)', ' Sherlock Holmes (puppetry)', 35 ],
+       [ 'Sherlock Holmes (disambiguation)', ' Sherlock Holmes (Stoll film series)', 31 ],
+       [ 'Sherlock Holmes (disambiguation)', ' Sherlock Holmes (2013 TV series)', 231 ],
+       [ 'Sherlock Holmes (disambiguation)', ' Sherlock Holmes (1984 TV series)', 221 ],
+       [ 'Sherlock Holmes (disambiguation)', ' Sherlock Holmes (1951 TV series)', 22 ],
+       [ 'Sherlock Holmes (disambiguation)', ' Sherlock Holmes (1939 film series)', 70 ],
+       [ 'Sherlock Holmes (disambiguation)', ' Sherlock Holmes (1931 film series)', 24 ],
+       [ 'Sherlock Holmes (disambiguation)', ' Sherlock Holmes (1922 film)', 27 ],
+       [ 'Sherlock Holmes (disambiguation)', ' Sherlock Holmes: A Game of Shadows', 552 ],
+       [ 'Sherlock Holmes (disambiguation)', ' Sherlock (TV series)', 1325 ],
+       [ 'Sherlock Holmes (disambiguation)', ' Jude Law', 24 ],
+       [ 'Sherlock Holmes (disambiguation)', ' Adaptations of Sherlock Holmes', 56 ],
+       [ 'Sherlock Holmes (disambiguation)', ' The Adventures of Sherlock Holmes and Dr. Watson', 27 ],
+       [ 'Sherlock Holmes (disambiguation)', ' Sherlock Holmes in the 22nd Century', 31 ],
+       [ 'Sherlock Holmes (disambiguation)', ' Sherlock Holmes and the Leading Lady', 21 ],
+       [ 'Sherlock Holmes (disambiguation)', ' Sherlock Holmes and the Case of the Silk Stocking', 37 ],
+       [ 'Sherlock Holmes (disambiguation)', ' Sherlock Holmes (2010 film)', 316 ],
+       [ 'Sherlock Holmes (disambiguation)', ' Sherlock Holmes (2009 film)', 996 ],
+       [ 'Sherlock Holmes (disambiguation)', ' Sherlock Holmes (1965 TV series)', 31 ],
+       [ 'Sherlock Holmes (disambiguation)', ' Sherlock Holmes (1954 TV series)', 51 ],
+       [ 'Sherlock Holmes (disambiguation)', ' Sherlock Holmes (1932 film)', 15 ],
+       [ 'Sherlock Holmes (disambiguation)', ' Sherlock Holmes (1916 film)', 41 ],
+       [ 'Sherlock Holmes (disambiguation)', ' Sherlock Holmes', 142 ],
+       [ 'Sherlock Holmes (disambiguation)', ' Popular culture references to Sherlock Holmes', 13 ],
+       [ 'Sherlock Holmes (disambiguation)', ' List of actors who have played Sherlock Holmes', 28 ],
+       [ 'Sherlock Holmes (disambiguation)', ' Jeremy Brett', 12 ],
+       [ 'Sherlock Holmes (disambiguation)', ' Elementary', 10 ],
+       [ 'Sherlock Holmes (disambiguation)', ' Canon of Sherlock Holmes', 98 ],
+       [ 'Adaptations of Sherlock Holmes', 'Sherlock Holmes (disambiguation)', 45 ],
+       [ 'Sherlock', 'Sherlock Holmes (disambiguation)', 228 ],
+       [ 'Main Page', 'Sherlock Holmes (disambiguation)', 16 ],
+       [ 'Sherlock Holmes', 'Sherlock Holmes (disambiguation)', 3356 ],
+       [ 'other-empty', 'Sherlock Holmes (disambiguation)', 87 ],
+       [ 'other-wikipedia', 'Sherlock Holmes (disambiguation)', 131 ],
+       [ 'other-google', 'Sherlock Holmes (disambiguation)', 76 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

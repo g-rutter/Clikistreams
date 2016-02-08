@@ -1,0 +1,47 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Tusk (disambiguation)', ' Tusk (comics)', 56 ],
+       [ 'Tusk (disambiguation)', ' Tusk (2014 film)', 3476 ],
+       [ 'Tusk (disambiguation)', ' Tusk', 16 ],
+       [ 'Tusk (disambiguation)', ' Máel Brigte of Moray', 10 ],
+       [ 'Tusk (disambiguation)', ' M1 Abrams', 17 ],
+       [ 'Tusk (disambiguation)', ' Éminence grise', 33 ],
+       [ 'Tusk (disambiguation)', ' Tusk (song)', 177 ],
+       [ 'Tusk (disambiguation)', ' Tusk (album)', 368 ],
+       [ 'Tusk (disambiguation)', ' Tusk (1980 film)', 153 ],
+       [ 'Tusk (disambiguation)', ' List of Killer Instinct characters', 29 ],
+       [ 'Tusk (disambiguation)', ' Donald Tusk', 45 ],
+       [ 'Alejandro Jodorowsky', 'Tusk (disambiguation)', 53 ],
+       [ 'Main Page', 'Tusk (disambiguation)', 93 ],
+       [ 'Tusk', 'Tusk (disambiguation)', 3422 ],
+       [ 'other-wikipedia', 'Tusk (disambiguation)', 218 ],
+       [ 'other-google', 'Tusk (disambiguation)', 19 ],
+       [ 'other-empty', 'Tusk (disambiguation)', 96 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

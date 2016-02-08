@@ -1,0 +1,65 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Odyssey (disambiguation)', ' The Odyssey (album)', 14 ],
+       [ 'Odyssey (disambiguation)', ' Space Odyssey', 28 ],
+       [ 'Odyssey (disambiguation)', ' Odyssey Marine Exploration', 26 ],
+       [ 'Odyssey (disambiguation)', ' Odyssey Engine', 17 ],
+       [ 'Odyssey (disambiguation)', ' Odyssey (band)', 198 ],
+       [ 'Odyssey (disambiguation)', ' Odyssey: Pepsi to Apple', 10 ],
+       [ 'Odyssey (disambiguation)', ' Oblivion (2013 film)', 23 ],
+       [ 'Odyssey (disambiguation)', ' List of Earth starships in Stargate', 13 ],
+       [ 'Odyssey (disambiguation)', ' L\'Odissea', 11 ],
+       [ 'Odyssey (disambiguation)', ' Isaac Asimov\'s Robot City: Odyssey', 12 ],
+       [ 'Odyssey (disambiguation)', ' Honda Odyssey', 37 ],
+       [ 'Odyssey (disambiguation)', ' The Odyssey (miniseries)', 158 ],
+       [ 'Odyssey (disambiguation)', ' The Odyssey (TV series)', 105 ],
+       [ 'Odyssey (disambiguation)', ' The Odyssey: A Modern Sequel', 25 ],
+       [ 'Odyssey (disambiguation)', ' Star Trek: Odyssey', 18 ],
+       [ 'Odyssey (disambiguation)', ' Odyssey 5', 20 ],
+       [ 'Odyssey (disambiguation)', ' Odyssey (children\'s magazine)', 10 ],
+       [ 'Odyssey (disambiguation)', ' Odyssey (Yngwie Malmsteen album)', 10 ],
+       [ 'Odyssey (disambiguation)', ' Odyssey (TV series)', 1602 ],
+       [ 'Odyssey (disambiguation)', ' Odyssey', 78 ],
+       [ 'Odyssey (disambiguation)', ' Oddworld: Abe\'s Oddysee', 10 ],
+       [ 'Odyssey (disambiguation)', ' Magnavox Odyssey²', 14 ],
+       [ 'Odyssey (disambiguation)', ' Magnavox Odyssey series', 10 ],
+       [ 'Odyssey (disambiguation)', ' Magnavox Odyssey', 81 ],
+       [ 'Odyssey (disambiguation)', ' List of Star Trek Starfleet starships ordered by class', 17 ],
+       [ 'Odyssey (disambiguation)', ' Honda Odyssey (ATV)', 11 ],
+       [ 'Odyssey (disambiguation)', ' Homer\'s Odyssey (The Simpsons)', 16 ],
+       [ 'Odyssey (disambiguation)', ' 2001 Mars Odyssey', 12 ],
+       [ 'other-wikipedia', 'Odyssey (disambiguation)', 180 ],
+       [ 'other-google', 'Odyssey (disambiguation)', 250 ],
+       [ 'Main Page', 'Odyssey (disambiguation)', 16 ],
+       [ 'The Odyssey (TV series)', 'Odyssey (disambiguation)', 532 ],
+       [ 'other-empty', 'Odyssey (disambiguation)', 73 ],
+       [ 'Odyssey Television Network', 'Odyssey (disambiguation)', 25 ],
+       [ 'Odyssey', 'Odyssey (disambiguation)', 2802 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

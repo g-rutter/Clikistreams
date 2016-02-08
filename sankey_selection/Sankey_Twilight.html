@@ -1,0 +1,54 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Twilight (disambiguation)', ' Twilight Zone', 31 ],
+       [ 'Twilight (disambiguation)', ' Twilight (series)', 535 ],
+       [ 'Twilight (disambiguation)', ' Twilight (band)', 24 ],
+       [ 'Twilight (disambiguation)', ' Twilight (Warriors)', 13 ],
+       [ 'Twilight (disambiguation)', ' Twilight (2008 film)', 1265 ],
+       [ 'Twilight (disambiguation)', ' Twilight (1919 film)', 29 ],
+       [ 'Twilight (disambiguation)', ' Twilight: Where Darkness Begins', 10 ],
+       [ 'Twilight (disambiguation)', ' The Twilight Saga (film series)', 2296 ],
+       [ 'Twilight (disambiguation)', ' Fifty Shades of Grey', 10 ],
+       [ 'Twilight (disambiguation)', ' Twilight (short story)', 10 ],
+       [ 'Twilight (disambiguation)', ' Twilight (novel)', 230 ],
+       [ 'Twilight (disambiguation)', ' Twilight (Wiesel novel)', 12 ],
+       [ 'Twilight (disambiguation)', ' Twilight (Electric Light Orchestra song)', 17 ],
+       [ 'Twilight (disambiguation)', ' Twilight (1998 film)', 191 ],
+       [ 'Twilight (disambiguation)', ' Twilight', 389 ],
+       [ 'Twilight (disambiguation)', ' List of My Little Pony: Friendship Is Magic characters', 22 ],
+       [ 'Twilight (novel)', 'Twilight (disambiguation)', 217 ],
+       [ 'Twilight', 'Twilight (disambiguation)', 3634 ],
+       [ 'other-empty', 'Twilight (disambiguation)', 158 ],
+       [ 'Main Page', 'Twilight (disambiguation)', 76 ],
+       [ 'Twilight (series)', 'Twilight (disambiguation)', 609 ],
+       [ 'other-wikipedia', 'Twilight (disambiguation)', 372 ],
+       [ 'other-google', 'Twilight (disambiguation)', 61 ],
+       [ 'Fifty Shades of Grey (film)', 'Twilight (disambiguation)', 24 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

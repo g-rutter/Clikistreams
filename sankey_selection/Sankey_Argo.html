@@ -1,0 +1,48 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Argo (disambiguation)', ' Canadian Caper', 158 ],
+       [ 'Argo (disambiguation)', ' Argo (spacecraft)', 20 ],
+       [ 'Argo (disambiguation)', ' Argo (oceanography)', 19 ],
+       [ 'Argo (disambiguation)', ' Argo (Indian ship)', 28 ],
+       [ 'Argo (disambiguation)', ' Argo (2012 film)', 5058 ],
+       [ 'Argo (disambiguation)', ' Argo', 41 ],
+       [ 'Argo (disambiguation)', ' Star Blazers', 11 ],
+       [ 'Argo (disambiguation)', ' Argo (web browser)', 16 ],
+       [ 'Argo (disambiguation)', ' Argo (automobile)', 10 ],
+       [ 'Argo (disambiguation)', ' Argo (ROV)', 19 ],
+       [ 'Argo (disambiguation)', ' Argo (2006 film)', 181 ],
+       [ 'Argo (disambiguation)', ' Argo (1800)', 11 ],
+       [ 'Argo (disambiguation)', ' ARGO (ATV manufacturer)', 35 ],
+       [ 'other-empty', 'Argo (disambiguation)', 161 ],
+       [ 'Argo', 'Argo (disambiguation)', 4421 ],
+       [ 'Main Page', 'Argo (disambiguation)', 124 ],
+       [ 'other-wikipedia', 'Argo (disambiguation)', 209 ],
+       [ 'other-google', 'Argo (disambiguation)', 98 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

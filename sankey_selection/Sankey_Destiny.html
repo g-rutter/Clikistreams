@@ -1,0 +1,51 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Destiny (disambiguation)', ' List of Marvel Comics characters: D', 14 ],
+       [ 'Destiny (disambiguation)', ' Destiny (given name)', 29 ],
+       [ 'Destiny (disambiguation)', ' Destiny (2006 film)', 10 ],
+       [ 'Destiny (disambiguation)', ' Star Trek: Titan', 39 ],
+       [ 'Destiny (disambiguation)', ' List of starships in Stargate', 15 ],
+       [ 'Destiny (disambiguation)', ' Doctor Destiny', 12 ],
+       [ 'Destiny (disambiguation)', ' Destiny (wordless novel)', 127 ],
+       [ 'Destiny (disambiguation)', ' Destiny (video game)', 3706 ],
+       [ 'Destiny (disambiguation)', ' Destiny (Zero 7 song)', 12 ],
+       [ 'Destiny (disambiguation)', ' Destiny (The Jacksons album)', 29 ],
+       [ 'Destiny (disambiguation)', ' Destiny (Marvel Comics personification)', 11 ],
+       [ 'Destiny (disambiguation)', ' Destiny (Irene Adler)', 76 ],
+       [ 'Destiny (disambiguation)', ' Destiny (DC Comics)', 46 ],
+       [ 'Destiny (disambiguation)', ' Destiny (1921 film)', 10 ],
+       [ 'Destiny (disambiguation)', ' Destiny', 20 ],
+       [ 'other-google', 'Destiny (disambiguation)', 36 ],
+       [ 'other-wikipedia', 'Destiny (disambiguation)', 115 ],
+       [ 'Main Page', 'Destiny (disambiguation)', 12 ],
+       [ 'other-empty', 'Destiny (disambiguation)', 84 ],
+       [ 'Destiny', 'Destiny (disambiguation)', 3957 ],
+       [ 'Destiny (Irene Adler)', 'Destiny (disambiguation)', 15 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

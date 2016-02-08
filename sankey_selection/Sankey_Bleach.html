@@ -1,0 +1,51 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Bleach (disambiguation)', ' Textile bleaching', 12 ],
+       [ 'Bleach (disambiguation)', ' Skin whitening', 11 ],
+       [ 'Bleach (disambiguation)', ' Bleach (manga)', 1388 ],
+       [ 'Bleach (disambiguation)', ' Bleach (film)', 43 ],
+       [ 'Bleach (disambiguation)', ' Bleach (anime)', 2100 ],
+       [ 'Bleach (disambiguation)', ' Bleach (Nintendo home consoles series)', 58 ],
+       [ 'Bleach (disambiguation)', ' Bleach (American band)', 81 ],
+       [ 'Bleach (disambiguation)', ' Bleach', 233 ],
+       [ 'Bleach (disambiguation)', ' Bleach (Nirvana album)', 532 ],
+       [ 'Bleach (disambiguation)', ' Bleach (Japanese band)', 33 ],
+       [ 'Bleach (disambiguation)', ' Bleach (British band)', 36 ],
+       [ 'Bleach (disambiguation)', ' Bleach (Bleach (American band) album)', 12 ],
+       [ 'Bleach (disambiguation)', ' Anal bleaching', 85 ],
+       [ 'other-empty', 'Bleach (disambiguation)', 106 ],
+       [ 'Bleach (manga)', 'Bleach (disambiguation)', 474 ],
+       [ 'Bleach', 'Bleach (disambiguation)', 3596 ],
+       [ 'other-google', 'Bleach (disambiguation)', 64 ],
+       [ 'other-wikipedia', 'Bleach (disambiguation)', 182 ],
+       [ 'other-internal', 'Bleach (disambiguation)', 14 ],
+       [ 'other-other', 'Bleach (disambiguation)', 63 ],
+       [ 'Main Page', 'Bleach (disambiguation)', 39 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

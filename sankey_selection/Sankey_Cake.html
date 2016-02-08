@@ -1,0 +1,52 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Cake (disambiguation)', ' Wedding cake', 10 ],
+       [ 'Cake (disambiguation)', ' Urinal deodorizer block', 13 ],
+       [ 'Cake (disambiguation)', ' Cheesecake', 15 ],
+       [ 'Cake (disambiguation)', ' Cake (firework)', 12 ],
+       [ 'Cake (disambiguation)', ' Cake (band)', 1075 ],
+       [ 'Cake (disambiguation)', ' Press cake', 14 ],
+       [ 'Cake (disambiguation)', ' Kake', 13 ],
+       [ 'Cake (disambiguation)', ' Cupcake', 13 ],
+       [ 'Cake (disambiguation)', ' Cake (TV series)', 19 ],
+       [ 'Cake (disambiguation)', ' Cake (2014 film)', 3240 ],
+       [ 'Cake (disambiguation)', ' Cake (2005 film)', 110 ],
+       [ 'Cake (disambiguation)', ' Cake', 35 ],
+       [ 'List of films: C', 'Cake (disambiguation)', 14 ],
+       [ 'Cake', 'Cake (disambiguation)', 3429 ],
+       [ 'other-empty', 'Cake (disambiguation)', 177 ],
+       [ 'Wild (film)', 'Cake (disambiguation)', 13 ],
+       [ 'other-wikipedia', 'Cake (disambiguation)', 402 ],
+       [ 'other-google', 'Cake (disambiguation)', 29 ],
+       [ 'other-yahoo', 'Cake (disambiguation)', 15 ],
+       [ 'Main Page', 'Cake (disambiguation)', 172 ],
+       [ 'other-bing', 'Cake (disambiguation)', 57 ],
+       [ 'Still Alice', 'Cake (disambiguation)', 14 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

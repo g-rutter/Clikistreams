@@ -1,0 +1,47 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Sonic boom (disambiguation)', ' Sonic the Hedgehog Boom: The Music from Sonic CD and Sonic Spinball', 82 ],
+       [ 'Sonic boom (disambiguation)', ' Sonic Boom Six', 11 ],
+       [ 'Sonic boom (disambiguation)', ' Sonic Boom, Inc.', 15 ],
+       [ 'Sonic boom (disambiguation)', ' Peter Kember', 77 ],
+       [ 'Sonic boom (disambiguation)', ' Sonic the Hedgehog CD', 24 ],
+       [ 'Sonic boom (disambiguation)', ' Sonic boom', 52 ],
+       [ 'Sonic boom (disambiguation)', ' Sonic Boom (TV series)', 1832 ],
+       [ 'Sonic boom (disambiguation)', ' Sonic Boom (Kiss album)', 43 ],
+       [ 'Sonic boom (disambiguation)', ' Sonic Boom (1987 video game)', 98 ],
+       [ 'Sonic boom (disambiguation)', ' Sonic Boom: Shattered Crystal', 465 ],
+       [ 'Sonic boom (disambiguation)', ' Sonic Boom: Rise of Lyric', 2263 ],
+       [ 'Sonic Boom (TV series)', 'Sonic boom (disambiguation)', 439 ],
+       [ 'Sonic boom', 'Sonic boom (disambiguation)', 3997 ],
+       [ 'other-empty', 'Sonic boom (disambiguation)', 45 ],
+       [ 'other-google', 'Sonic boom (disambiguation)', 159 ],
+       [ 'other-wikipedia', 'Sonic boom (disambiguation)', 35 ],
+       [ 'Main Page', 'Sonic boom (disambiguation)', 11 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

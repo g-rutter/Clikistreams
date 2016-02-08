@@ -1,0 +1,41 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'The Girl with the Dragon Tattoo (disambiguation)', ' The Girl with the Dragon Tattoo (soundtrack)', 50 ],
+       [ 'The Girl with the Dragon Tattoo (disambiguation)', ' The Girl with the Dragon Tattoo (2009 film)', 1355 ],
+       [ 'The Girl with the Dragon Tattoo (disambiguation)', ' The Girl with the Dragon Tattoo', 228 ],
+       [ 'The Girl with the Dragon Tattoo (disambiguation)', ' The Girl with the Dragon Tattoo (2011 film)', 3168 ],
+       [ 'The Girl with the Dragon Tattoo (disambiguation)', ' Lisbeth Salander', 72 ],
+       [ 'Main Page', 'The Girl with the Dragon Tattoo (disambiguation)', 53 ],
+       [ 'The Girl with the Dragon Tattoo', 'The Girl with the Dragon Tattoo (disambiguation)', 4066 ],
+       [ 'other-other', 'The Girl with the Dragon Tattoo (disambiguation)', 20 ],
+       [ 'other-wikipedia', 'The Girl with the Dragon Tattoo (disambiguation)', 259 ],
+       [ 'other-google', 'The Girl with the Dragon Tattoo (disambiguation)', 58 ],
+       [ 'other-empty', 'The Girl with the Dragon Tattoo (disambiguation)', 94 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

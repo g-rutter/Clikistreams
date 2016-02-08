@@ -1,0 +1,43 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Allegiance (disambiguation)', ' Allegiance (video game)', 31 ],
+       [ 'Allegiance (disambiguation)', ' Allegiance (musical)', 117 ],
+       [ 'Allegiance (disambiguation)', ' Allegiance (film)', 32 ],
+       [ 'Allegiance (disambiguation)', ' Allegiance (TV series)', 9707 ],
+       [ 'Allegiance (disambiguation)', ' Allegiance (Star Trek: The Next Generation)', 59 ],
+       [ 'Allegiance (disambiguation)', ' The Gordin Cell', 331 ],
+       [ 'Allegiance (disambiguation)', ' Stargate SG-1 (season 6)', 36 ],
+       [ 'other-wikipedia', 'Allegiance (disambiguation)', 241 ],
+       [ 'other-google', 'Allegiance (disambiguation)', 745 ],
+       [ 'other-empty', 'Allegiance (disambiguation)', 137 ],
+       [ 'other-other', 'Allegiance (disambiguation)', 11 ],
+       [ 'Allegiance', 'Allegiance (disambiguation)', 8524 ],
+       [ 'Allegiance (video game)', 'Allegiance (disambiguation)', 28 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

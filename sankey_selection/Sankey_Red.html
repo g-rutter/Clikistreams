@@ -1,0 +1,74 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Red (disambiguation)', ' Three Colors: Red', 46 ],
+       [ 'Red (disambiguation)', ' Red (programming language)', 19 ],
+       [ 'Red (disambiguation)', ' Red (play)', 31 ],
+       [ 'Red (disambiguation)', ' Red (novel)', 13 ],
+       [ 'Red (disambiguation)', ' Red (nickname)', 124 ],
+       [ 'Red (disambiguation)', ' Red (manga)', 15 ],
+       [ 'Red (disambiguation)', ' Red (WildStorm comics)', 63 ],
+       [ 'Red (disambiguation)', ' Red (Dutch band)', 23 ],
+       [ 'Red (disambiguation)', ' Red (American band)', 2106 ],
+       [ 'Red (disambiguation)', ' Red (2010 film)', 1091 ],
+       [ 'Red (disambiguation)', ' Red', 208 ],
+       [ 'Red (disambiguation)', ' Random early detection', 17 ],
+       [ 'Red (disambiguation)', ' R.E.D. (Ne-Yo album)', 17 ],
+       [ 'Red (disambiguation)', ' Product Red', 58 ],
+       [ 'Red (disambiguation)', ' Giuseppe Verdi', 12 ],
+       [ 'Red (disambiguation)', ' Uisce Beatha (band)', 81 ],
+       [ 'Red (disambiguation)', ' Reds (film)', 17 ],
+       [ 'Red (disambiguation)', ' Red Party (Norway)', 18 ],
+       [ 'Red (disambiguation)', ' Red Digital Cinema Camera Company', 130 ],
+       [ 'Red (disambiguation)', ' Red 2 (film)', 219 ],
+       [ 'Red (disambiguation)', ' Red (Taylor Swift song)', 39 ],
+       [ 'Red (disambiguation)', ' Red (Taylor Swift album)', 443 ],
+       [ 'Red (disambiguation)', ' Red (King Crimson album)', 87 ],
+       [ 'Red (disambiguation)', ' Red (Daniel Merriweather song)', 12 ],
+       [ 'Red (disambiguation)', ' Red (2008 film)', 260 ],
+       [ 'Red (disambiguation)', ' Red (2002 film)', 116 ],
+       [ 'Red (disambiguation)', ' Red: Werewolf Hunter', 28 ],
+       [ 'Red (disambiguation)', ' Red: The Dark Side', 19 ],
+       [ 'Red (disambiguation)', ' RED Distribution', 15 ],
+       [ 'Red (disambiguation)', ' List of Pokémon characters', 30 ],
+       [ 'Red (disambiguation)', ' A Talk', 12 ],
+       [ 'other-yahoo', 'Red (disambiguation)', 177 ],
+       [ 'other-google', 'Red (disambiguation)', 149 ],
+       [ 'other-wikipedia', 'Red (disambiguation)', 421 ],
+       [ 'other-other', 'Red (disambiguation)', 68 ],
+       [ 'The R.E.D. Album', 'Red (disambiguation)', 14 ],
+       [ 'other-bing', 'Red (disambiguation)', 262 ],
+       [ 'Three Colors: Red', 'Red (disambiguation)', 19 ],
+       [ 'Main Page', 'Red (disambiguation)', 179 ],
+       [ 'Red', 'Red (disambiguation)', 3408 ],
+       [ 'Reds', 'Red (disambiguation)', 13 ],
+       [ 'Reds (film)', 'Red (disambiguation)', 47 ],
+       [ 'other-empty', 'Red (disambiguation)', 442 ],
+       [ 'Trailer (promotion)', 'Red (disambiguation)', 36 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

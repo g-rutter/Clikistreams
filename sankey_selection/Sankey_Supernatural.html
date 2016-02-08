@@ -1,0 +1,74 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Supernatural (disambiguation)', ' Supernatural (season 10)', 12 ],
+       [ 'Supernatural (disambiguation)', ' Supernatural (U.S. TV series)', 17760 ],
+       [ 'Supernatural (disambiguation)', ' Supernatural (1977 TV series)', 358 ],
+       [ 'Supernatural (disambiguation)', ' Main Page', 11 ],
+       [ 'Supernatural (disambiguation)', ' Warrior (Kesha album)', 12 ],
+       [ 'Supernatural (disambiguation)', ' The Supernatural', 21 ],
+       [ 'Supernatural (disambiguation)', ' Supernature', 18 ],
+       [ 'Supernatural (disambiguation)', ' Supernatural (rapper)', 30 ],
+       [ 'Supernatural (disambiguation)', ' Supernatural (film)', 116 ],
+       [ 'Supernatural (disambiguation)', ' Supernatural (Santana album)', 98 ],
+       [ 'Supernatural (disambiguation)', ' Supernatural: The Unseen Powers of Animals', 42 ],
+       [ 'Supernatural (disambiguation)', ' Supernatural', 80 ],
+       [ 'Supernatural (disambiguation)', ' Graham Hancock', 15 ],
+       [ 'other-yahoo', 'Supernatural (disambiguation)', 143 ],
+       [ 'other-bing', 'Supernatural (disambiguation)', 140 ],
+       [ 'other-other', 'Supernatural (disambiguation)', 183 ],
+       [ 'Main Page', 'Supernatural (disambiguation)', 326 ],
+       [ 'List of Arrow episodes', 'Supernatural (disambiguation)', 40 ],
+       [ 'List of New Girl episodes', 'Supernatural (disambiguation)', 10 ],
+       [ 'List of Pretty Little Liars episodes', 'Supernatural (disambiguation)', 11 ],
+       [ 'Arrow (TV series)', 'Supernatural (disambiguation)', 11 ],
+       [ 'Agent Carter (TV series)', 'Supernatural (disambiguation)', 11 ],
+       [ '2014–15 United States network television schedule', 'Supernatural (disambiguation)', 70 ],
+       [ 'other-wikipedia', 'Supernatural (disambiguation)', 1317 ],
+       [ 'other-twitter', 'Supernatural (disambiguation)', 12 ],
+       [ 'other-google', 'Supernatural (disambiguation)', 488 ],
+       [ 'List of The Originals episodes', 'Supernatural (disambiguation)', 12 ],
+       [ 'List of Castle episodes', 'Supernatural (disambiguation)', 15 ],
+       [ 'List of Person of Interest episodes', 'Supernatural (disambiguation)', 30 ],
+       [ 'List of Suits episodes', 'Supernatural (disambiguation)', 17 ],
+       [ 'Gotham (TV series)', 'Supernatural (disambiguation)', 23 ],
+       [ 'List of The Vampire Diaries episodes', 'Supernatural (disambiguation)', 10 ],
+       [ 'List of Grimm episodes', 'Supernatural (disambiguation)', 20 ],
+       [ 'List of The Walking Dead episodes', 'Supernatural (disambiguation)', 13 ],
+       [ 'List of Elementary episodes', 'Supernatural (disambiguation)', 10 ],
+       [ 'Forever (U.S. TV series)', 'Supernatural (disambiguation)', 10 ],
+       [ 'List of Sleepy Hollow episodes', 'Supernatural (disambiguation)', 26 ],
+       [ 'Constantine (TV series)', 'Supernatural (disambiguation)', 21 ],
+       [ 'Sleepy Hollow (TV series)', 'Supernatural (disambiguation)', 10 ],
+       [ 'Stalker (TV series)', 'Supernatural (disambiguation)', 18 ],
+       [ 'The Flash (2014 TV series)', 'Supernatural (disambiguation)', 98 ],
+       [ 'other-empty', 'Supernatural (disambiguation)', 1288 ],
+       [ 'Supernatural', 'Supernatural (disambiguation)', 13571 ],
+       [ 'The Supernatural', 'Supernatural (disambiguation)', 25 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'X-Men (disambiguation)', ' X-Men (film series)', 2784 ],
+       [ 'X-Men (disambiguation)', ' X-Men (film)', 1044 ],
+       [ 'X-Men (disambiguation)', ' X-Men (TV series)', 317 ],
+       [ 'X-Men (disambiguation)', ' X-Men (1992 video game)', 21 ],
+       [ 'X-Men (disambiguation)', ' X-Men: Legacy', 47 ],
+       [ 'X-Men (disambiguation)', ' X-Men', 69 ],
+       [ 'X-Men (disambiguation)', ' X-Man (disambiguation)', 53 ],
+       [ 'X-Men (disambiguation)', ' List of X-Men comics', 90 ],
+       [ 'X-Men (disambiguation)', ' X-Men (comic book)', 115 ],
+       [ 'X-Men (disambiguation)', ' X-Men (1993 video game)', 24 ],
+       [ 'X-Men (disambiguation)', ' X-Men: The Manga', 14 ],
+       [ 'X-Men (disambiguation)', ' Marvel Anime', 141 ],
+       [ 'X-Men (disambiguation)', ' List of X-Men video games', 23 ],
+       [ 'other-empty', 'X-Men (disambiguation)', 91 ],
+       [ 'Xman', 'X-Men (disambiguation)', 18 ],
+       [ 'other-wikipedia', 'X-Men (disambiguation)', 68 ],
+       [ 'other-google', 'X-Men (disambiguation)', 27 ],
+       [ 'other-twitter', 'X-Men (disambiguation)', 12 ],
+       [ 'X-Man (disambiguation)', 'X-Men (disambiguation)', 22 ],
+       [ 'X-Men', 'X-Men (disambiguation)', 4024 ],
+       [ 'X-Men (TV series)', 'X-Men (disambiguation)', 197 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

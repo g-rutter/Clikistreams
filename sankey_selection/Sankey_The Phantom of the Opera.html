@@ -1,0 +1,58 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'The Phantom of the Opera (disambiguation)', ' The Phantom of the Opera (miniseries)', 62 ],
+       [ 'The Phantom of the Opera (disambiguation)', ' The Phantom of the Opera (Andrew Lloyd Webber song)', 204 ],
+       [ 'The Phantom of the Opera (disambiguation)', ' The Phantom of the Opera (1998 film)', 79 ],
+       [ 'The Phantom of the Opera (disambiguation)', ' The Phantom of the Opera (1983 film)', 20 ],
+       [ 'The Phantom of the Opera (disambiguation)', ' The Phantom of the Opera (1925 film)', 167 ],
+       [ 'The Phantom of the Opera (disambiguation)', ' The Phantom of the Opera: The Motion Picture', 146 ],
+       [ 'The Phantom of the Opera (disambiguation)', ' The Phantom of the Opera', 140 ],
+       [ 'The Phantom of the Opera (disambiguation)', ' Phantom of the Opera (1976 musical)', 380 ],
+       [ 'The Phantom of the Opera (disambiguation)', ' Phantom of the Opera (1943 film)', 69 ],
+       [ 'The Phantom of the Opera (disambiguation)', ' Phantom (musical)', 129 ],
+       [ 'The Phantom of the Opera (disambiguation)', ' Nightwish', 19 ],
+       [ 'The Phantom of the Opera (disambiguation)', ' Century Child', 33 ],
+       [ 'The Phantom of the Opera (disambiguation)', ' The Phantom of the Opera at the Royal Albert Hall', 156 ],
+       [ 'The Phantom of the Opera (disambiguation)', ' The Phantom of the Opera (2004 soundtrack)', 92 ],
+       [ 'The Phantom of the Opera (disambiguation)', ' The Phantom of the Opera (2004 film)', 1289 ],
+       [ 'The Phantom of the Opera (disambiguation)', ' The Phantom of the Opera (1986 musical)', 1758 ],
+       [ 'The Phantom of the Opera (disambiguation)', ' The Phantom of the Opera (1962 film)', 48 ],
+       [ 'The Phantom of the Opera (disambiguation)', ' Iron Maiden (album)', 85 ],
+       [ 'The Phantom of the Opera (disambiguation)', ' Erik (The Phantom of the Opera)', 49 ],
+       [ 'The Phantom of the Opera (disambiguation)', ' Adaptations of The Phantom of the Opera', 119 ],
+       [ 'other-yahoo', 'The Phantom of the Opera (disambiguation)', 15 ],
+       [ 'other-empty', 'The Phantom of the Opera (disambiguation)', 98 ],
+       [ 'other-wikipedia', 'The Phantom of the Opera (disambiguation)', 273 ],
+       [ 'other-google', 'The Phantom of the Opera (disambiguation)', 429 ],
+       [ 'other-other', 'The Phantom of the Opera (disambiguation)', 30 ],
+       [ 'other-bing', 'The Phantom of the Opera (disambiguation)', 12 ],
+       [ 'The Phantom of the Opera', 'The Phantom of the Opera (disambiguation)', 3572 ],
+       [ 'The Phantom of the Opera (1986 musical)', 'The Phantom of the Opera (disambiguation)', 442 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

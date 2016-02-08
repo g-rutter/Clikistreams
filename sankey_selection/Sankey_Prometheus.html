@@ -1,0 +1,67 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Prometheus (disambiguation)', ' The Post-Modern Prometheus', 12 ],
+       [ 'Prometheus (disambiguation)', ' Prometheus Society', 36 ],
+       [ 'Prometheus (disambiguation)', ' Prometheus Bound', 34 ],
+       [ 'Prometheus (disambiguation)', ' Prometheus (moon)', 88 ],
+       [ 'Prometheus (disambiguation)', ' Prometheus: The Poem of Fire', 18 ],
+       [ 'Prometheus (disambiguation)', ' List of Earth starships in Stargate', 47 ],
+       [ 'Prometheus (disambiguation)', ' Kryptonite', 11 ],
+       [ 'Prometheus (disambiguation)', ' KaBlam!', 13 ],
+       [ 'Prometheus (disambiguation)', ' Benji Vaughan', 15 ],
+       [ 'Prometheus (disambiguation)', ' Prometheus Unbound', 18 ],
+       [ 'Prometheus (disambiguation)', ' Prometheus (volcano)', 23 ],
+       [ 'Prometheus (disambiguation)', ' Prometheus (tree)', 64 ],
+       [ 'Prometheus (disambiguation)', ' Prometheus (spacecraft)', 73 ],
+       [ 'Prometheus (disambiguation)', ' Prometheus (comics)', 111 ],
+       [ 'Prometheus (disambiguation)', ' Prometheus (Marvel Comics)', 65 ],
+       [ 'Prometheus (disambiguation)', ' Prometheus (Manship)', 26 ],
+       [ 'Prometheus (disambiguation)', ' Prometheus (Kafka)', 32 ],
+       [ 'Prometheus (disambiguation)', ' Prometheus (Goethe)', 35 ],
+       [ 'Prometheus (disambiguation)', ' Prometheus (2012 film)', 5261 ],
+       [ 'Prometheus (disambiguation)', ' Prometheus (1998 film)', 36 ],
+       [ 'Prometheus (disambiguation)', ' Prometheus', 390 ],
+       [ 'Prometheus (disambiguation)', ' Prometheia', 10 ],
+       [ 'Prometheus (disambiguation)', ' Project Prometheus', 52 ],
+       [ 'Prometheus (disambiguation)', ' Lord Byron', 12 ],
+       [ 'Prometheus (disambiguation)', ' Frankenstein', 23 ],
+       [ 'Prometheus (disambiguation)', ' Factions of Halo', 19 ],
+       [ 'other-wikipedia', 'Prometheus (disambiguation)', 310 ],
+       [ 'other-twitter', 'Prometheus (disambiguation)', 13 ],
+       [ 'other-google', 'Prometheus (disambiguation)', 555 ],
+       [ 'John Lebar', 'Prometheus (disambiguation)', 21 ],
+       [ 'Prometheus', 'Prometheus (disambiguation)', 5008 ],
+       [ 'other-empty', 'Prometheus (disambiguation)', 348 ],
+       [ 'other-other', 'Prometheus (disambiguation)', 126 ],
+       [ 'Main Page', 'Prometheus (disambiguation)', 46 ],
+       [ 'Promethean', 'Prometheus (disambiguation)', 50 ],
+       [ 'other-bing', 'Prometheus (disambiguation)', 299 ],
+       [ 'other-yahoo', 'Prometheus (disambiguation)', 286 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

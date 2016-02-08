@@ -1,0 +1,68 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Saw (disambiguation)', ' Surface acoustic wave', 19 ],
+       [ 'Saw (disambiguation)', ' Stock Aitken Waterman', 20 ],
+       [ 'Saw (disambiguation)', ' Squad automatic weapon', 171 ],
+       [ 'Saw (disambiguation)', ' See', 25 ],
+       [ 'Saw (disambiguation)', ' Saw VI', 299 ],
+       [ 'Saw (disambiguation)', ' Saw IV', 224 ],
+       [ 'Saw (disambiguation)', ' Saw III', 257 ],
+       [ 'Saw (disambiguation)', ' Saw II: Flesh & Blood', 46 ],
+       [ 'Saw (disambiguation)', ' Saw 3D', 394 ],
+       [ 'Saw (disambiguation)', ' Saw (video game)', 73 ],
+       [ 'Saw (disambiguation)', ' Saw (2003 film)', 1145 ],
+       [ 'Saw (disambiguation)', ' Saw', 167 ],
+       [ 'Saw (disambiguation)', ' List of Saw media', 48 ],
+       [ 'Saw (disambiguation)', ' Electronic filter', 15 ],
+       [ 'Saw (disambiguation)', ' Submerged arc welding', 13 ],
+       [ 'Saw (disambiguation)', ' Saw – The Ride', 74 ],
+       [ 'Saw (disambiguation)', ' Saw V', 199 ],
+       [ 'Saw (disambiguation)', ' Saw II', 347 ],
+       [ 'Saw (disambiguation)', ' Saw (saying)', 33 ],
+       [ 'Saw (disambiguation)', ' Saw (franchise)', 1090 ],
+       [ 'Saw (disambiguation)', ' Saw (2004 film)', 1716 ],
+       [ 'Saw (disambiguation)', ' Sabiha Gökçen International Airport', 29 ],
+       [ 'Saw (disambiguation)', ' Peace be upon him (Islam)', 31 ],
+       [ 'Saw (disambiguation)', ' Musical saw', 12 ],
+       [ 'Saw (disambiguation)', ' M249 light machine gun', 137 ],
+       [ 'Saw', 'Saw (disambiguation)', 3014 ],
+       [ 'Scary Movie (film series)', 'Saw (disambiguation)', 14 ],
+       [ 'Main Page', 'Saw (disambiguation)', 106 ],
+       [ 'other-other', 'Saw (disambiguation)', 129 ],
+       [ 'other-bing', 'Saw (disambiguation)', 227 ],
+       [ 'other-yahoo', 'Saw (disambiguation)', 145 ],
+       [ 'other-wikipedia', 'Saw (disambiguation)', 352 ],
+       [ 'other-twitter', 'Saw (disambiguation)', 19 ],
+       [ 'other-google', 'Saw (disambiguation)', 1201 ],
+       [ 'other-empty', 'Saw (disambiguation)', 477 ],
+       [ 'Saw II', 'Saw (disambiguation)', 19 ],
+       [ 'Musical saw', 'Saw (disambiguation)', 15 ],
+       [ 'Gregg Hoffman', 'Saw (disambiguation)', 19 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

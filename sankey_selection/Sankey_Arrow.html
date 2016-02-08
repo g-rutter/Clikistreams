@@ -1,0 +1,83 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Arrow (disambiguation)', ' ↓', 18 ],
+       [ 'Arrow (disambiguation)', ' ↑', 19 ],
+       [ 'Arrow (disambiguation)', ' War of the Arrows', 60 ],
+       [ 'Arrow (disambiguation)', ' The Arrows (Canadian band)', 24 ],
+       [ 'Arrow (disambiguation)', ' The Arrow', 154 ],
+       [ 'Arrow (disambiguation)', ' R-37 (missile)', 14 ],
+       [ 'Arrow (disambiguation)', ' Main Page', 10 ],
+       [ 'Arrow (disambiguation)', ' Green Arrow (disambiguation)', 38 ],
+       [ 'Arrow (disambiguation)', ' Green Arrow', 42 ],
+       [ 'Arrow (disambiguation)', ' Black Arrow (disambiguation)', 10 ],
+       [ 'Arrow (disambiguation)', ' Arrows (song)', 31 ],
+       [ 'Arrow (disambiguation)', ' Arrows (British band)', 91 ],
+       [ 'Arrow (disambiguation)', ' Arrow of time', 16 ],
+       [ 'Arrow (disambiguation)', ' Arrow Films', 18 ],
+       [ 'Arrow (disambiguation)', ' Arrow Electronics', 17 ],
+       [ 'Arrow (disambiguation)', ' Arrow (symbol)', 68 ],
+       [ 'Arrow (disambiguation)', ' Arrow (computer science)', 31 ],
+       [ 'Arrow (disambiguation)', ' Arrow (comics)', 436 ],
+       [ 'Arrow (disambiguation)', ' Arrow (TV series)', 28291 ],
+       [ 'Arrow (disambiguation)', ' Arrow (Israeli missile)', 46 ],
+       [ 'Arrow (disambiguation)', ' Arrow, Warwickshire', 12 ],
+       [ 'Arrow (disambiguation)', ' Arrow', 132 ],
+       [ 'Arrow (disambiguation)', ' →', 40 ],
+       [ 'Arrow (disambiguation)', ' ←', 10 ],
+       [ 'Arrow (disambiguation)', ' The Flash (2014 TV series)', 12 ],
+       [ 'Arrow (disambiguation)', ' Random House', 13 ],
+       [ 'Arrow (disambiguation)', ' Flash (comics)', 20 ],
+       [ 'Arrow (disambiguation)', ' Flash', 14 ],
+       [ 'Arrow (disambiguation)', ' Dharma Initiative', 32 ],
+       [ 'Arrow (disambiguation)', ' Avro Canada CF-105 Arrow', 27 ],
+       [ 'Arrow (disambiguation)', ' Arrows Grand Prix International', 23 ],
+       [ 'Arrow (disambiguation)', ' Arrows (TV series)', 408 ],
+       [ 'Arrow (disambiguation)', ' Arrows (Australian band)', 19 ],
+       [ 'Arrow (disambiguation)', ' Arrow Supermarkets (Australia)', 10 ],
+       [ 'Arrow (disambiguation)', ' Arrow Dynamics', 10 ],
+       [ 'Arrow (disambiguation)', ' Arrow Air', 17 ],
+       [ 'Arrow (disambiguation)', ' Arrow (musician)', 27 ],
+       [ 'Arrow (disambiguation)', ' Arrow (motorcycle part manufacturer)', 12 ],
+       [ 'Australian Research Repositories Online to the World', 'Arrow (disambiguation)', 240 ],
+       [ 'Green Arrow (disambiguation)', 'Arrow (disambiguation)', 25 ],
+       [ 'Arrow', 'Arrow (disambiguation)', 24379 ],
+       [ 'Arrow (symbol)', 'Arrow (disambiguation)', 255 ],
+       [ 'Arrows (British band)', 'Arrow (disambiguation)', 12 ],
+       [ 'Arrow (TV series)', 'Arrow (disambiguation)', 527 ],
+       [ 'The Arrow', 'Arrow (disambiguation)', 2403 ],
+       [ 'Main Page', 'Arrow (disambiguation)', 21 ],
+       [ 'other-other', 'Arrow (disambiguation)', 21 ],
+       [ '↑', 'Arrow (disambiguation)', 36 ],
+       [ '↓', 'Arrow (disambiguation)', 18 ],
+       [ 'other-empty', 'Arrow (disambiguation)', 340 ],
+       [ 'other-twitter', 'Arrow (disambiguation)', 13 ],
+       [ 'other-wikipedia', 'Arrow (disambiguation)', 377 ],
+       [ 'other-google', 'Arrow (disambiguation)', 30 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

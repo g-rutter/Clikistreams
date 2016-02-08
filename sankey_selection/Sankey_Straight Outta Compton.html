@@ -1,0 +1,40 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Straight Outta Compton (disambiguation)', ' Straight Outta Compton (film)', 7065 ],
+       [ 'Straight Outta Compton (disambiguation)', ' Straight Outta Compton', 92 ],
+       [ 'Straight Outta Compton (disambiguation)', ' Straight Outta Compton (song)', 241 ],
+       [ 'Straight Outta Compton (disambiguation)', ' Straight Out of Compton (film)', 971 ],
+       [ 'other-empty', 'Straight Outta Compton (disambiguation)', 66 ],
+       [ 'Straight Out of Compton (film)', 'Straight Outta Compton (disambiguation)', 14 ],
+       [ 'other-wikipedia', 'Straight Outta Compton (disambiguation)', 106 ],
+       [ 'Main Page', 'Straight Outta Compton (disambiguation)', 19 ],
+       [ 'Straight Outta Compton (film)', 'Straight Outta Compton (disambiguation)', 163 ],
+       [ 'Straight Outta Compton', 'Straight Outta Compton (disambiguation)', 6698 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

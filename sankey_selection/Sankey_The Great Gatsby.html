@@ -1,0 +1,49 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'The Great Gatsby (disambiguation)', ' The Great Gatsby (opera)', 37 ],
+       [ 'The Great Gatsby (disambiguation)', ' The Great Gatsby (2013 film)', 4327 ],
+       [ 'The Great Gatsby (disambiguation)', ' The Great Gatsby (2000 film)', 292 ],
+       [ 'The Great Gatsby (disambiguation)', ' The Great Gatsby (1926 film)', 197 ],
+       [ 'The Great Gatsby (disambiguation)', ' Robert Montgomery Presents', 81 ],
+       [ 'The Great Gatsby (disambiguation)', ' The Great Gatsby (1974 film)', 584 ],
+       [ 'The Great Gatsby (disambiguation)', ' The Great Gatsby (1949 film)', 173 ],
+       [ 'The Great Gatsby (disambiguation)', ' The Great Gatsby: Music from Baz Luhrmann\'s Film', 116 ],
+       [ 'The Great Gatsby (disambiguation)', ' The Great Gatsby', 180 ],
+       [ 'The Great Gatsby (disambiguation)', ' The Great Catsby', 17 ],
+       [ 'The Great Gatsby (disambiguation)', ' Great Gatsby curve', 15 ],
+       [ 'The Great Gatsby (disambiguation)', ' G (2002 film)', 26 ],
+       [ 'The Great Gatsby', 'The Great Gatsby (disambiguation)', 4448 ],
+       [ 'other-empty', 'The Great Gatsby (disambiguation)', 85 ],
+       [ 'Gatsby', 'The Great Gatsby (disambiguation)', 40 ],
+       [ 'other-google', 'The Great Gatsby (disambiguation)', 48 ],
+       [ 'other-wikipedia', 'The Great Gatsby (disambiguation)', 118 ],
+       [ 'The Great Gatsby (2013 film)', 'The Great Gatsby (disambiguation)', 219 ],
+       [ 'Main Page', 'The Great Gatsby (disambiguation)', 82 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

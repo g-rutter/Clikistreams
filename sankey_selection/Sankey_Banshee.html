@@ -1,0 +1,54 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Banshee (disambiguation)', ' Yamaha Banshee 350', 52 ],
+       [ 'Banshee (disambiguation)', ' Siouxsie and the Banshees', 28 ],
+       [ 'Banshee (disambiguation)', ' Pontiac Banshee', 46 ],
+       [ 'Banshee (disambiguation)', ' HMS Banshee (1894)', 36 ],
+       [ 'Banshee (disambiguation)', ' Douglas SBD Dauntless', 45 ],
+       [ 'Banshee (disambiguation)', ' Banshee (dinghy)', 31 ],
+       [ 'Banshee (disambiguation)', ' Banshee (band)', 17 ],
+       [ 'Banshee (disambiguation)', ' Undead (Discworld)', 24 ],
+       [ 'Banshee (disambiguation)', ' Silver Banshee', 40 ],
+       [ 'Banshee (disambiguation)', ' Meggitt Banshee', 21 ],
+       [ 'Banshee (disambiguation)', ' McDonnell F2H Banshee', 95 ],
+       [ 'Banshee (disambiguation)', ' International Ultralight Banchee', 17 ],
+       [ 'Banshee (disambiguation)', ' Banshee (video game)', 70 ],
+       [ 'Banshee (disambiguation)', ' Banshee (short story)', 21 ],
+       [ 'Banshee (disambiguation)', ' Banshee (roller coaster)', 37 ],
+       [ 'Banshee (disambiguation)', ' Banshee (media player)', 93 ],
+       [ 'Banshee (disambiguation)', ' Banshee (comics)', 266 ],
+       [ 'Banshee (disambiguation)', ' Banshee (TV series)', 7866 ],
+       [ 'Banshee (disambiguation)', ' Banshee', 23 ],
+       [ 'Banshee (disambiguation)', ' 3dfx Interactive', 39 ],
+       [ 'Banshee', 'Banshee (disambiguation)', 7903 ],
+       [ 'other-empty', 'Banshee (disambiguation)', 100 ],
+       [ 'other-wikipedia', 'Banshee (disambiguation)', 111 ],
+       [ 'other-google', 'Banshee (disambiguation)', 48 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Helix (disambiguation)', ' Spiral (disambiguation)', 11 ],
+       [ 'Helix (disambiguation)', ' Mythology of Heroes', 10 ],
+       [ 'Helix (disambiguation)', ' Kamov Ka-27', 15 ],
+       [ 'Helix (disambiguation)', ' Infinity, Inc.', 16 ],
+       [ 'Helix (disambiguation)', ' Helix (multimedia project)', 13 ],
+       [ 'Helix (disambiguation)', ' Helix (gastropod)', 35 ],
+       [ 'Helix (disambiguation)', ' Helix (database)', 16 ],
+       [ 'Helix (disambiguation)', ' Helix (company)', 17 ],
+       [ 'Helix (disambiguation)', ' Helix (band)', 173 ],
+       [ 'Helix (disambiguation)', ' The Helix Bridge', 35 ],
+       [ 'Helix (disambiguation)', ' Phelix', 15 ],
+       [ 'Helix (disambiguation)', ' New Jersey Route 495', 24 ],
+       [ 'Helix (disambiguation)', ' Innocent (2009 film)', 243 ],
+       [ 'Helix (disambiguation)', ' Helix Nebula', 42 ],
+       [ 'Helix (disambiguation)', ' Helix (video game)', 85 ],
+       [ 'Helix (disambiguation)', ' Helix (roller coaster)', 15 ],
+       [ 'Helix (disambiguation)', ' Helix (ear)', 44 ],
+       [ 'Helix (disambiguation)', ' Helix (comics)', 110 ],
+       [ 'Helix (disambiguation)', ' Helix (TV series)', 7507 ],
+       [ 'Helix (disambiguation)', ' Helix', 34 ],
+       [ 'Helix', 'Helix (disambiguation)', 7484 ],
+       [ 'other-google', 'Helix (disambiguation)', 48 ],
+       [ 'other-wikipedia', 'Helix (disambiguation)', 60 ],
+       [ 'other-empty', 'Helix (disambiguation)', 76 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

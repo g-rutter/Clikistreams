@@ -1,0 +1,57 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Valentine\'s Day (disambiguation)', ' Valentine\'s Day (The Office)', 36 ],
+       [ 'Valentine\'s Day (disambiguation)', ' Valentine\'s Day (TV series)', 34 ],
+       [ 'Valentine\'s Day (disambiguation)', ' Valentine\'s Day (Faze song)', 49 ],
+       [ 'Valentine\'s Day (disambiguation)', ' Valentine\'s Day (2010 film)', 1962 ],
+       [ 'Valentine\'s Day (disambiguation)', ' Valentine\'s Day', 552 ],
+       [ 'Valentine\'s Day (disambiguation)', ' The Lexicon of Love', 18 ],
+       [ 'Valentine\'s Day (disambiguation)', ' Saint Valentine\'s Day Massacre', 217 ],
+       [ 'Valentine\'s Day (disambiguation)', ' Minutes to Midnight (album)', 18 ],
+       [ 'Valentine\'s Day (disambiguation)', ' Main Page', 41 ],
+       [ 'Valentine\'s Day (disambiguation)', ' Blood, Sweat & Tears 4', 15 ],
+       [ 'Valentine\'s Day (disambiguation)', ' Valentine\'s Day (TV film)', 149 ],
+       [ 'Valentine\'s Day (disambiguation)', ' Valentine\'s Day (David Bowie song)', 76 ],
+       [ 'Valentine\'s Day (disambiguation)', ' Tunnel of Love (album)', 20 ],
+       [ 'Valentine\'s Day (disambiguation)', ' SpongeBob SquarePants (season 1)', 11 ],
+       [ 'Valentine\'s Day (disambiguation)', ' Never Die Young', 10 ],
+       [ 'Valentine\'s Day (disambiguation)', ' I Feel Alright', 11 ],
+       [ 'other-empty', 'Valentine\'s Day (disambiguation)', 680 ],
+       [ 'other-twitter', 'Valentine\'s Day (disambiguation)', 15 ],
+       [ 'other-wikipedia', 'Valentine\'s Day (disambiguation)', 622 ],
+       [ 'other-google', 'Valentine\'s Day (disambiguation)', 1679 ],
+       [ 'other-yahoo', 'Valentine\'s Day (disambiguation)', 121 ],
+       [ 'List of 2015 box office number-one films in the United States', 'Valentine\'s Day (disambiguation)', 43 ],
+       [ 'Main Page', 'Valentine\'s Day (disambiguation)', 23 ],
+       [ 'other-other', 'Valentine\'s Day (disambiguation)', 81 ],
+       [ 'other-facebook', 'Valentine\'s Day (disambiguation)', 24 ],
+       [ 'other-bing', 'Valentine\'s Day (disambiguation)', 138 ],
+       [ 'Valentine\'s Day', 'Valentine\'s Day (disambiguation)', 3311 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

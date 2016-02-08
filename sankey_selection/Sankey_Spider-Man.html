@@ -1,0 +1,70 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Spider-Man (disambiguation)', ' The Amazing Spider-Man 2', 17 ],
+       [ 'Spider-Man (disambiguation)', ' Spider Man (album)', 12 ],
+       [ 'Spider-Man (disambiguation)', ' Spider-Man in film', 24 ],
+       [ 'Spider-Man (disambiguation)', ' Spider-Man 2', 358 ],
+       [ 'Spider-Man (disambiguation)', ' Spider-Man (theme song)', 22 ],
+       [ 'Spider-Man (disambiguation)', ' Spider-Man (2002 video game)', 48 ],
+       [ 'Spider-Man (disambiguation)', ' Spider-Man (2002 film)', 2549 ],
+       [ 'Spider-Man (disambiguation)', ' Spider-Man (2000 video game)', 62 ],
+       [ 'Spider-Man (disambiguation)', ' Spider-Man (1977 film)', 441 ],
+       [ 'Spider-Man (disambiguation)', ' Spider-Man: Turn Off the Dark', 48 ],
+       [ 'Spider-Man (disambiguation)', ' Spider-Man: The Video Game', 32 ],
+       [ 'Spider-Man (disambiguation)', ' Spider-Man: The New Animated Series', 115 ],
+       [ 'Spider-Man (disambiguation)', ' Spider-Man: Original Motion Picture Score', 66 ],
+       [ 'Spider-Man (disambiguation)', ' Peter Parker: Spider-Man', 317 ],
+       [ 'Spider-Man (disambiguation)', ' Main Page', 13 ],
+       [ 'Spider-Man (disambiguation)', ' The Amazing Spider-Man (disambiguation)', 838 ],
+       [ 'Spider-Man (disambiguation)', ' The Amazing Spider-Man (2012 film)', 25 ],
+       [ 'Spider-Man (disambiguation)', ' The Amazing Spider-Man', 112 ],
+       [ 'Spider-Man (disambiguation)', ' Spider-Man Unlimited', 60 ],
+       [ 'Spider-Man (disambiguation)', ' Spider-Man 3', 910 ],
+       [ 'Spider-Man (disambiguation)', ' Spider-Man (nickname)', 46 ],
+       [ 'Spider-Man (disambiguation)', ' Spider-Man (Toei TV series)', 64 ],
+       [ 'Spider-Man (disambiguation)', ' Spider-Man (Miles Morales)', 295 ],
+       [ 'Spider-Man (disambiguation)', ' Spider-Man (1994 TV series)', 167 ],
+       [ 'Spider-Man (disambiguation)', ' Spider-Man (1981 TV series)', 93 ],
+       [ 'Spider-Man (disambiguation)', ' Spider-Man (1967 TV series)', 139 ],
+       [ 'Spider-Man (disambiguation)', ' Spider-Man', 200 ],
+       [ 'Spider-Man (disambiguation)', ' Andrew Garfield', 10 ],
+       [ 'Spider-Man (disambiguation)', ' Alternative versions of Spider-Man', 149 ],
+       [ 'List of programs broadcast by Teletoon', 'Spider-Man (disambiguation)', 12 ],
+       [ 'Main Page', 'Spider-Man (disambiguation)', 49 ],
+       [ 'other-other', 'Spider-Man (disambiguation)', 108 ],
+       [ 'other-bing', 'Spider-Man (disambiguation)', 149 ],
+       [ 'other-google', 'Spider-Man (disambiguation)', 243 ],
+       [ 'other-wikipedia', 'Spider-Man (disambiguation)', 651 ],
+       [ 'other-yahoo', 'Spider-Man (disambiguation)', 73 ],
+       [ 'The Amazing Spider-Man (disambiguation)', 'Spider-Man (disambiguation)', 55 ],
+       [ 'other-empty', 'Spider-Man (disambiguation)', 375 ],
+       [ 'The Amazing Spider-Man', 'Spider-Man (disambiguation)', 11 ],
+       [ 'Spider-Man', 'Spider-Man (disambiguation)', 5129 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

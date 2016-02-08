@@ -1,0 +1,40 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Firestorm (disambiguation)', ' Firestorm (novel)', 10 ],
+       [ 'Firestorm (disambiguation)', ' Firestorm (comics)', 3069 ],
+       [ 'Firestorm (disambiguation)', ' Firestorm (anime)', 74 ],
+       [ 'Firestorm (disambiguation)', ' Firestorm (1998 film)', 71 ],
+       [ 'Firestorm (disambiguation)', ' Firestorm', 29 ],
+       [ 'Firestorm (disambiguation)', ' Firestorm (2013 film)', 106 ],
+       [ 'Firestorm', 'Firestorm (disambiguation)', 3250 ],
+       [ 'other-empty', 'Firestorm (disambiguation)', 35 ],
+       [ 'other-wikipedia', 'Firestorm (disambiguation)', 59 ],
+       [ 'other-google', 'Firestorm (disambiguation)', 29 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

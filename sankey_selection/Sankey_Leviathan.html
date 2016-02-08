@@ -1,0 +1,74 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Leviathan (disambiguation)', ' The Illuminatus! Trilogy', 24 ],
+       [ 'Leviathan (disambiguation)', ' SS Leviathan', 27 ],
+       [ 'Leviathan (disambiguation)', ' SS Great Eastern', 14 ],
+       [ 'Leviathan (disambiguation)', ' Mass Effect 3 downloadable content', 27 ],
+       [ 'Leviathan (disambiguation)', ' List of races in Farscape', 40 ],
+       [ 'Leviathan (disambiguation)', ' Leviathan of Parsonstown', 11 ],
+       [ 'Leviathan (disambiguation)', ' Leviathan in popular culture', 96 ],
+       [ 'Leviathan (disambiguation)', ' Leviathan gas field', 32 ],
+       [ 'Leviathan (disambiguation)', ' Leviathan (book)', 323 ],
+       [ 'Leviathan (disambiguation)', ' Leviathan (album)', 76 ],
+       [ 'Leviathan (disambiguation)', ' Leviathan (Auster novel)', 74 ],
+       [ 'Leviathan (disambiguation)', ' Leviathan: The Last Day of the Decade', 17 ],
+       [ 'Leviathan (disambiguation)', ' LEVIATHAN (cipher)', 24 ],
+       [ 'Leviathan (disambiguation)', ' INS Leviathan', 16 ],
+       [ 'Leviathan (disambiguation)', ' HMS Leviathan', 57 ],
+       [ 'Leviathan (disambiguation)', ' Characters of Supernatural', 46 ],
+       [ 'Leviathan (disambiguation)', ' Livyatan melvillei', 117 ],
+       [ 'Leviathan (disambiguation)', ' Leviathan The Last Defense', 31 ],
+       [ 'Leviathan (disambiguation)', ' Leviathan (roller coaster)', 42 ],
+       [ 'Leviathan (disambiguation)', ' Leviathan (punk band)', 23 ],
+       [ 'Leviathan (disambiguation)', ' Leviathan (musical project)', 419 ],
+       [ 'Leviathan (disambiguation)', ' Leviathan (comic strip)', 12 ],
+       [ 'Leviathan (disambiguation)', ' Leviathan (Westerfeld novel)', 199 ],
+       [ 'Leviathan (disambiguation)', ' Leviathan (Marvel Comics)', 416 ],
+       [ 'Leviathan (disambiguation)', ' Leviathan (DC Comics)', 23 ],
+       [ 'Leviathan (disambiguation)', ' Leviathan (2014 film)', 3723 ],
+       [ 'Leviathan (disambiguation)', ' Leviathan (2012 film)', 278 ],
+       [ 'Leviathan (disambiguation)', ' Leviathan (2000 AD)', 31 ],
+       [ 'Leviathan (disambiguation)', ' Leviathan (1989 film)', 602 ],
+       [ 'Leviathan (disambiguation)', ' Leviathan', 292 ],
+       [ 'Leviathan (disambiguation)', ' Harsh Realm', 14 ],
+       [ 'Leviathan (disambiguation)', ' Dave Bautista', 41 ],
+       [ 'Leviathan (disambiguation)', ' Cross-stitch', 22 ],
+       [ 'other-google', 'Leviathan (disambiguation)', 375 ],
+       [ 'other-wikipedia', 'Leviathan (disambiguation)', 332 ],
+       [ 'other-yahoo', 'Leviathan (disambiguation)', 24 ],
+       [ 'other-empty', 'Leviathan (disambiguation)', 195 ],
+       [ 'Leviathan in popular culture', 'Leviathan (disambiguation)', 46 ],
+       [ 'Leviathan (book)', 'Leviathan (disambiguation)', 514 ],
+       [ 'other-bing', 'Leviathan (disambiguation)', 23 ],
+       [ 'SS Leviathan', 'Leviathan (disambiguation)', 16 ],
+       [ 'Main Page', 'Leviathan (disambiguation)', 22 ],
+       [ 'other-other', 'Leviathan (disambiguation)', 15 ],
+       [ 'Leviathan', 'Leviathan (disambiguation)', 5640 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

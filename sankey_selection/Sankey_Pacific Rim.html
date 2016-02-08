@@ -1,0 +1,37 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Pacific Rim (disambiguation)', ' Ring of Fire', 30 ],
+       [ 'Pacific Rim (disambiguation)', ' Pacific Rim (video game)', 130 ],
+       [ 'Pacific Rim (disambiguation)', ' Pacific Rim (soundtrack)', 35 ],
+       [ 'Pacific Rim (disambiguation)', ' Pacific Rim (film)', 3540 ],
+       [ 'other-wikipedia', 'Pacific Rim (disambiguation)', 52 ],
+       [ 'other-empty', 'Pacific Rim (disambiguation)', 32 ],
+       [ 'Pacific Rim', 'Pacific Rim (disambiguation)', 3406 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

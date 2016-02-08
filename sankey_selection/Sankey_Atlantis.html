@@ -1,0 +1,66 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Atlantis (disambiguation)', ' Space Shuttle Atlantis', 78 ],
+       [ 'Atlantis (disambiguation)', ' Six Flags Atlantis', 38 ],
+       [ 'Atlantis (disambiguation)', ' RV Atlantis', 11 ],
+       [ 'Atlantis (disambiguation)', ' Main Page', 10 ],
+       [ 'Atlantis (disambiguation)', ' Features of the Marvel Universe', 21 ],
+       [ 'Atlantis (disambiguation)', ' Atlantis Condominium', 19 ],
+       [ 'Atlantis (disambiguation)', ' Atlantis (song)', 41 ],
+       [ 'Atlantis (disambiguation)', ' Atlantis (Stargate)', 40 ],
+       [ 'Atlantis (disambiguation)', ' Atlantis (Hercules: The Legendary Journeys)', 24 ],
+       [ 'Atlantis (disambiguation)', ' Atlantis (1991 film)', 98 ],
+       [ 'Atlantis (disambiguation)', ' Atlantis (1913 film)', 21 ],
+       [ 'Atlantis (disambiguation)', ' Atlantis: The Lost Tales', 29 ],
+       [ 'Atlantis (disambiguation)', ' Atlantis, Western Cape', 15 ],
+       [ 'Atlantis (disambiguation)', ' Atlantis, The Palm', 76 ],
+       [ 'Atlantis (disambiguation)', ' German auxiliary cruiser Atlantis', 29 ],
+       [ 'Atlantis (disambiguation)', ' Atlantis Paradise Island', 246 ],
+       [ 'Atlantis (disambiguation)', ' Atlantis Massif', 30 ],
+       [ 'Atlantis (disambiguation)', ' Atlantis Casino Resort', 34 ],
+       [ 'Atlantis (disambiguation)', ' Atlantis (wrestler)', 11 ],
+       [ 'Atlantis (disambiguation)', ' Atlantis (video game)', 12 ],
+       [ 'Atlantis (disambiguation)', ' Atlantis (novel)', 18 ],
+       [ 'Atlantis (disambiguation)', ' Atlantis (docudrama)', 18 ],
+       [ 'Atlantis (disambiguation)', ' Atlantis (Wisconsin Dells)', 23 ],
+       [ 'Atlantis (disambiguation)', ' Atlantis (TV series)', 2051 ],
+       [ 'Atlantis (disambiguation)', ' Atlantis (Sun Ra album)', 11 ],
+       [ 'Atlantis (disambiguation)', ' Atlantis (Disney franchise)', 15 ],
+       [ 'Atlantis (disambiguation)', ' Atlantis (DC Comics)', 22 ],
+       [ 'Atlantis (disambiguation)', ' Atlantis: The Lost Empire', 581 ],
+       [ 'Atlantis (disambiguation)', ' Atlantis, the Lost Continent', 38 ],
+       [ 'Atlantis (disambiguation)', ' Atlantis, Florida', 10 ],
+       [ 'Atlantis (disambiguation)', ' Atlantis', 138 ],
+       [ 'Atlantis', 'Atlantis (disambiguation)', 3185 ],
+       [ 'Atlantis (comics)', 'Atlantis (disambiguation)', 17 ],
+       [ 'other-empty', 'Atlantis (disambiguation)', 68 ],
+       [ 'other-google', 'Atlantis (disambiguation)', 108 ],
+       [ 'other-wikipedia', 'Atlantis (disambiguation)', 154 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

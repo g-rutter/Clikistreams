@@ -1,0 +1,70 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Beauty and the Beast (disambiguation)', ' Merlin (series 2)', 11 ],
+       [ 'Beauty and the Beast (disambiguation)', ' List of X-Men (TV series) episodes', 32 ],
+       [ 'Beauty and the Beast (disambiguation)', ' List of Faerie Tale Theatre episodes', 17 ],
+       [ 'Beauty and the Beast (disambiguation)', ' Emma Watson', 134 ],
+       [ 'Beauty and the Beast (disambiguation)', ' Cinderella', 12 ],
+       [ 'Beauty and the Beast (disambiguation)', ' Beauty and the Beat (disambiguation)', 18 ],
+       [ 'Beauty and the Beast (disambiguation)', ' Beauty and the Beasts', 17 ],
+       [ 'Beauty and the Beast (disambiguation)', ' Beauty and the Beast (Stevie Nicks song)', 12 ],
+       [ 'Beauty and the Beast (disambiguation)', ' Beauty and the Beast (David Bowie song)', 20 ],
+       [ 'Beauty and the Beast (disambiguation)', ' Beauty and the Beast (1991 film)', 2784 ],
+       [ 'Beauty and the Beast (disambiguation)', ' Beauty and the Beast (1976 TV film)', 15 ],
+       [ 'Beauty and the Beast (disambiguation)', ' Beauty and the Beast (1962 film)', 129 ],
+       [ 'Beauty and the Beast (disambiguation)', ' Beauty and the Beast (1946 film)', 211 ],
+       [ 'Beauty and the Beast (disambiguation)', ' Beauty and the Beast: Original Motion Picture Soundtrack', 100 ],
+       [ 'Beauty and the Beast (disambiguation)', ' Beauty & the Beast (2012 TV series)', 3924 ],
+       [ 'Beauty and the Beast (disambiguation)', ' Beauty and the Beast Live on Stage', 16 ],
+       [ 'Beauty and the Beast (disambiguation)', ' Beauty and the Beast (talk show)', 17 ],
+       [ 'Beauty and the Beast (disambiguation)', ' Beauty and the Beast (musical)', 167 ],
+       [ 'Beauty and the Beast (disambiguation)', ' Beauty and the Beast (Disney song)', 87 ],
+       [ 'Beauty and the Beast (disambiguation)', ' Beauty and the Beast (2014 film)', 1047 ],
+       [ 'Beauty and the Beast (disambiguation)', ' Beauty and the Beast (2009 film)', 372 ],
+       [ 'Beauty and the Beast (disambiguation)', ' Beauty and the Beast (2005 film)', 210 ],
+       [ 'Beauty and the Beast (disambiguation)', ' Beauty and the Beast (1992 film)', 233 ],
+       [ 'Beauty and the Beast (disambiguation)', ' Beauty and the Beast (1987 film)', 158 ],
+       [ 'Beauty and the Beast (disambiguation)', ' Beauty and the Beast (1987 TV series)', 387 ],
+       [ 'Beauty and the Beast (disambiguation)', ' Beauty and the Beast (1983 film)', 74 ],
+       [ 'Beauty and the Beast (disambiguation)', ' Beauty and the Beast: The Enchanted Christmas', 56 ],
+       [ 'Beauty and the Beast (disambiguation)', ' Beauty and the Beast', 95 ],
+       [ 'Beauty and the Beast (disambiguation)', ' Beastly (film)', 33 ],
+       [ 'other-wikipedia', 'Beauty and the Beast (disambiguation)', 462 ],
+       [ 'other-google', 'Beauty and the Beast (disambiguation)', 166 ],
+       [ 'La Belle et la Bête', 'Beauty and the Beast (disambiguation)', 15 ],
+       [ 'other-other', 'Beauty and the Beast (disambiguation)', 85 ],
+       [ 'other-yahoo', 'Beauty and the Beast (disambiguation)', 20 ],
+       [ 'other-empty', 'Beauty and the Beast (disambiguation)', 278 ],
+       [ 'Main Page', 'Beauty and the Beast (disambiguation)', 105 ],
+       [ 'other-bing', 'Beauty and the Beast (disambiguation)', 18 ],
+       [ 'Beauty and the Beast (1987 TV series)', 'Beauty and the Beast (disambiguation)', 248 ],
+       [ 'Beauty and the Beast', 'Beauty and the Beast (disambiguation)', 7584 ],
+       [ 'Beauty and the Beast (2014 film)', 'Beauty and the Beast (disambiguation)', 178 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>

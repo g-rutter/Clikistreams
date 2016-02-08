@@ -1,0 +1,80 @@
+<html>
+<body>
+<script type="text/javascript"
+           src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_multiple" style="width: 300px; height: 1000px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       [ 'Monster (disambiguation)', ' Something Real', 13 ],
+       [ 'Monster (disambiguation)', ' Monsters (TV series)', 90 ],
+       [ 'Monster (disambiguation)', ' Monsters (Japanese TV series)', 42 ],
+       [ 'Monster (disambiguation)', ' Monsters (2010 film)', 699 ],
+       [ 'Monster (disambiguation)', ' Monster Energy', 282 ],
+       [ 'Monster (disambiguation)', ' Monster (physics)', 11 ],
+       [ 'Monster (disambiguation)', ' Monster (musician)', 10 ],
+       [ 'Monster (disambiguation)', ' Monster (company)', 89 ],
+       [ 'Monster (disambiguation)', ' Monster (band)', 25 ],
+       [ 'Monster (disambiguation)', ' Monster (The Automatic song)', 23 ],
+       [ 'Monster (disambiguation)', ' Monster (Steppenwolf album)', 17 ],
+       [ 'Monster (disambiguation)', ' Monster (Paramore song)', 31 ],
+       [ 'Monster (disambiguation)', ' Monster (Michael Jackson song)', 10 ],
+       [ 'Monster (disambiguation)', ' Monster (Lady Gaga song)', 30 ],
+       [ 'Monster (disambiguation)', ' Monster (Imagine Dragons song)', 63 ],
+       [ 'Monster (disambiguation)', ' Monster (Frank E. Peretti novel)', 14 ],
+       [ 'Monster (disambiguation)', ' Monster (2008 film)', 356 ],
+       [ 'Monster (disambiguation)', ' Monster (1980 film)', 106 ],
+       [ 'Monster (disambiguation)', ' Monster.com', 157 ],
+       [ 'Monster (disambiguation)', ' Monster, South Holland', 11 ],
+       [ 'Monster (disambiguation)', ' Mob (video gaming)', 12 ],
+       [ 'Monster (disambiguation)', ' Eminem', 14 ],
+       [ 'Monster (disambiguation)', ' Charlize Theron', 11 ],
+       [ 'Monster (disambiguation)', ' The Monster (roller coaster)', 10 ],
+       [ 'Monster (disambiguation)', ' The Monster', 12 ],
+       [ 'Monster (disambiguation)', ' Monsters HD', 10 ],
+       [ 'Monster (disambiguation)', ' Monsters (2004 film)', 104 ],
+       [ 'Monster (disambiguation)', ' Monsters, Inc.', 22 ],
+       [ 'Monster (disambiguation)', ' Monster (ride)', 13 ],
+       [ 'Monster (disambiguation)', ' Monster (manga)', 726 ],
+       [ 'Monster (disambiguation)', ' Monster (Walter Dean Myers novel)', 44 ],
+       [ 'Monster (disambiguation)', ' Monster (Skillet song)', 46 ],
+       [ 'Monster (disambiguation)', ' Monster (R.E.M. album)', 74 ],
+       [ 'Monster (disambiguation)', ' Monster (Kiss album)', 10 ],
+       [ 'Monster (disambiguation)', ' Monster (Kanye West song)', 184 ],
+       [ 'Monster (disambiguation)', ' Monster (Jonathan Kellerman novel)', 20 ],
+       [ 'Monster (disambiguation)', ' Monster (2014 film)', 125 ],
+       [ 'Monster (disambiguation)', ' Monster (2003 film)', 989 ],
+       [ 'Monster (disambiguation)', ' Monster: The Autobiography of an L.A. Gang Member', 17 ],
+       [ 'Monster (disambiguation)', ' Monster! (1999 film)', 24 ],
+       [ 'Monster (disambiguation)', ' Monster', 42 ],
+       [ 'Monster (disambiguation)', ' Landkreuzer P. 1500 Monster', 10 ],
+       [ 'other-wikipedia', 'Monster (disambiguation)', 443 ],
+       [ 'other-google', 'Monster (disambiguation)', 170 ],
+       [ 'other-empty', 'Monster (disambiguation)', 117 ],
+       [ 'Monster', 'Monster (disambiguation)', 3067 ],
+       [ 'Giant', 'Monster (disambiguation)', 12 ],
+       [ 'Monster movie (disambiguation)', 'Monster (disambiguation)', 56 ],
+       [ 'Main Page', 'Monster (disambiguation)', 60 ],
+       [ 'Monster movie', 'Monster (disambiguation)', 14 ],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 600,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>
