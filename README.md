@@ -30,8 +30,6 @@ The current output of the script are Sankey diagrams showing the traffic to and 
 
 [Beauty and the Beast](https://cdn.rawgit.com/g-rutter/Clikistreams/4a156dc4b37166566fe35d39c59dea2426c7a36e/sankey_selection/Sankey_Beauty%20and%20the%20Beast.html)
 
-[Blacklist](https://cdn.rawgit.com/g-rutter/Clikistreams/4a156dc4b37166566fe35d39c59dea2426c7a36e/sankey_selection/Sankey_Blacklist.html)
-
 [Bleach](https://cdn.rawgit.com/g-rutter/Clikistreams/4a156dc4b37166566fe35d39c59dea2426c7a36e/sankey_selection/Sankey_Bleach.html)
 
 [Bones](https://cdn.rawgit.com/g-rutter/Clikistreams/4a156dc4b37166566fe35d39c59dea2426c7a36e/sankey_selection/Sankey_Bones.html)
@@ -200,7 +198,7 @@ The current output of the script are Sankey diagrams showing the traffic to and 
 
 [Utopia](https://cdn.rawgit.com/g-rutter/Clikistreams/4a156dc4b37166566fe35d39c59dea2426c7a36e/sankey_selection/Sankey_Utopia.html)
 
-[Valentine\'s Day](https://cdn.rawgit.com/g-rutter/Clikistreams/4a156dc4b37166566fe35d39c59dea2426c7a36e/sankey_selection/Sankey_Valentine\'s%20Day.html)
+[Valentine's Day](https://cdn.rawgit.com/g-rutter/Clikistreams/4a156dc4b37166566fe35d39c59dea2426c7a36e/sankey_selection/Sankey_Valentine\\'s%20Day.html)
 
 [Viking](https://cdn.rawgit.com/g-rutter/Clikistreams/4a156dc4b37166566fe35d39c59dea2426c7a36e/sankey_selection/Sankey_Viking.html)
 
